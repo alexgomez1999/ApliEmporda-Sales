@@ -1,28 +1,11 @@
 <?php
 
-/**
- * Exemple per a M07.
- * @author: Dani Prados dprados@cendrassos.net
- *
- * Model les imatges.
- *
-**/
-
 namespace Daw;
 
-/**
- * Imatges
-*/
 class UsuarisPDO
 {
-
     private $sql;
 
-    /**
-     * Constructor de la classe imatges amb PDO
-     *
-     * @param array $config
-     */
     public function __construct($config)
     {
         $dsn = "mysql:dbname={$config['dbname']};host={$config['host']}";
@@ -36,15 +19,9 @@ class UsuarisPDO
         }
     }
 
-    /**
-     * get et retorna la imatge amb l'id
-     *
-     * @param int $id
-     * @return array imatge amb ["titol", "url"]
-     */
     public function getUser($user)
     {
-        $query = 'select codi, usuari, pass from usuaris where usuari=:user;';
+        $query = 'SELECT * FROM usuaris WHERE Usuari = :user;';
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([':user' => $user]);
 

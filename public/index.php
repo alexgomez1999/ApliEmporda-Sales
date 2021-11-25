@@ -3,12 +3,12 @@
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 include "../src/config.php";
 
-
 include "../src/controladors/index.php";
 include "../src/controladors/login.php";
 include "../src/controladors/dologin.php";
 
 include "../src/middleware/middleAdmin.php";
+include "../src/middleware/middleLogin.php";
 
 $r = $_REQUEST["r"];
 
@@ -17,7 +17,7 @@ $resposta = $contenidor->resposta();
 $peticio = $contenidor->peticio();
 
 if ($r == "") {
-    $resposta = ctrlIndex($peticio, $resposta, $contenidor);
+    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlIndex");
 } elseif ($r === "dologin") {
     $resposta = ctrldoLogin($peticio, $resposta, $contenidor);
 } elseif ($r === "login") {

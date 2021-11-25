@@ -1,21 +1,5 @@
 <?php
 
-/**
-    * Middleware que controla si l'usuari està identificat.
-    * Exemple per a M07.
-    * @author: Dani Prados dprados@cendrassos.net
-    *
-    *
-**/
-
-/**
-  * middleAdmin: Middleware que controla si l'usuari està identificat.
-  *
-  * @param $peticio contingut de la petició http.
-  * @param $resposta contingut de la resposta http.
-  * @param $next controlador que s'ha d'executar si l'usuari està identificat.
-  *
-**/
 function middleAdmin($peticio, $resposta, $contenidor, $next)
 {
     $login = $peticio->get("SESSION", "login");
