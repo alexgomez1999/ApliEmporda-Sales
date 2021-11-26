@@ -6,6 +6,7 @@ include "../src/config.php";
 include "../src/controladors/index.php";
 include "../src/controladors/login.php";
 include "../src/controladors/dologin.php";
+include "../src/controladors/calendari.php";
 
 include "../src/middleware/middleAdmin.php";
 include "../src/middleware/middleLogin.php";
@@ -22,6 +23,8 @@ if ($r == "") {
     $resposta = ctrldoLogin($peticio, $resposta, $contenidor);
 } elseif ($r === "login") {
     $resposta = ctrlLogin($peticio, $resposta, $contenidor);
+} else if ($r === "calendari") {
+    $resposta = ctrlCalendari($peticio, $resposta, $contenidor);
 }
 
 $resposta->resposta();
