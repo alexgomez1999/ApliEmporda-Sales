@@ -2,6 +2,20 @@ body {
     box-sizing: border-box;
 }
 
+/* NAVBAR */
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    text-decoration: none;
+    width: 20%;
+    list-style: none;
+    position: absolute;
+    right: 0;
+}
+
+/* END NAVBAR */
+
 /* LOGIN PAGE */
 
 .login-container {
@@ -33,3 +47,12 @@ body {
 }
 
 /* END LOGIN PAGE */
+
+/* HOME PAGE */
+
+.index-admin-container,
+.index-user-container {
+    display: flex;
+}
+
+/* END HOME PAGE */

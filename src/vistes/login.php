@@ -11,8 +11,12 @@
         <input type="hidden" name="r" value="dologin">
         <div><i class="fas fa-user"></i><input type="text" name="user" placeholder="Usuari"></div>
         <div><i class="fas fa-key"></i><input type="password" name="pass" placeholder="Contrasenya"></div>
-        <button>Accedir</button>
+        <button type="submit" class="btn btn-primary">Accedir</button>
       </form>
+      <?php if($_SESSION['missatge-login']) {
+        echo "<h3 class='bad'>" . $_SESSION['missatge-login'] . "</h3>";
+      } ?>
     </div>
   </body>
+  <?php include "util/footer.php" ?>
 </html>

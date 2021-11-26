@@ -14,7 +14,8 @@ function ctrldoLogin($peticio, $resposta, $contenidor)
         $resposta->setSession("login", $actual);
         $resposta->redirect("location: index.php");
     } else {
-        $resposta->setSession("logat", false);
+        $resposta->setSession("logat", false);  
+        $resposta->setSession("missatge-login", "Usuari o contrasenya incorrecte"); 
         $resposta->redirect("location: index.php?r=login");
     }
     return $resposta;
