@@ -2,20 +2,17 @@
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
-    <title>Exemple d'us de sessions</title>
+      <?php include "util/head.php" ?>
+    <title>Login</title>
   </head>
   <body>
-    <form action="index.php" method="POST">
-      <input type="hidden" name="r" value="dologin">
-      <input type="text" name="user"><br>
-      <input type="password" name="pass"><br>
-      <button>Login</button>
-    </form>
+    <div class="login-container">
+      <form class="login-form" action="index.php" method="POST">
+        <input type="hidden" name="r" value="dologin">
+        <div><i class="fas fa-user"></i><input type="text" name="user" placeholder="Usuari"></div>
+        <div><i class="fas fa-key"></i><input type="password" name="pass" placeholder="Contrasenya"></div>
+        <button>Accedir</button>
+      </form>
+    </div>
   </body>
 </html>

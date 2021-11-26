@@ -1,3 +1,35 @@
 body {
     box-sizing: border-box;
 }
+
+/* LOGIN PAGE */
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 400px;
+    background: linear-gradient(skyblue, pink);
+    border-radius: 20px;
+    box-shadow: 5px 0 5px 1px;
+}
+
+.login-form div input {
+    margin: 5px;
+}
+
+.login-form button {
+    margin-top: 25px;
+}
+
+/* END LOGIN PAGE */
