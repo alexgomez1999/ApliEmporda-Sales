@@ -17,13 +17,16 @@ function setCrearCalendari(i) {
     let divCalendari = document.getElementById("divCalendari");
 
     let taula = document.createElement("table");
+    taula.setAttribute("class", "table table-striped");
     divCalendari.appendChild(taula);
 
     let capsalera = document.createElement("thead");
+    capsalera.setAttribute("class", "table-primary");
     taula.appendChild(capsalera);
     let fila1 = document.createElement("tr");
     capsalera.appendChild(fila1);
     let columnaMes = document.createElement("th");
+    columnaMes.setAttribute("colspan", mesosAny.length);
     columnaMes.innerHTML = mesosAny[i];
     fila1.appendChild(columnaMes);
     let fila2 = document.createElement("tr");

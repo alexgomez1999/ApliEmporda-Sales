@@ -1,3 +1,16 @@
-body {
-    box-sizing: border-box;
+@media screen and (min-width: 1051px) {
+    div#divCalendari {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+}
+@media screen and (max-width: 1050px) {
+    div#divCalendari {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
 }
