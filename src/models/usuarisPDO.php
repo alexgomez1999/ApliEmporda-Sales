@@ -21,7 +21,7 @@ class UsuarisPDO
 
     public function getUser($user)
     {
-        $query = 'SELECT * FROM usuaris WHERE Usuari = :user;';
+        $query = 'SELECT * FROM usuaris WHERE Usuari = :user';
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([':user' => $user]);
 
