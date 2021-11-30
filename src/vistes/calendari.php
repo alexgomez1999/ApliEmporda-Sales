@@ -1,18 +1,21 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link type="text/css" rel="stylesheet" href="css/calendari.css">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
+    <?php include "../src/vistes/util/head.php"?>
+    <link rel="stylesheet" href="css/calendari.css">
     <title>Calendari de Sales</title>
     <script src="js/calendari.js"></script>
   </head>
   <body>
-    <div id="divCalendari"></div>
+    <?php include "util/navbar.php" ?>
+    <br>
+    <div class="container-sm">
+      <div id="navCalendari" class="row">
+        <p id="infoCalendar" class="col">Novembre de 2021</p>
+        <button type="button" id="btnAbans" class="col"><i class="fa fa-chevron-left"></i></button>
+        <button type="button" id="btnDespres" class="col"><i class="fa fa-chevron-right"></i></button>
+      </div>
+      <div id="divCalendari"></div>
+    </div>
   </body>
 </html>

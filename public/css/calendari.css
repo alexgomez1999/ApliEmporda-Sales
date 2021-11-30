@@ -1,16 +1,40 @@
-@media screen and (min-width: 1051px) {
-    div#divCalendari {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-column-gap: 10px;
-        grid-row-gap: 10px;
-    }
+* {
+    font-size: 20px;
 }
-@media screen and (max-width: 1050px) {
-    div#divCalendari {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-column-gap: 10px;
-        grid-row-gap: 10px;
-    }
+div#divCalendari {
+    margin-top: 1em;
+}
+div#navCalendari {
+    margin-top: 5em;
+}
+div#divCalendari > table {
+    border-radius: 10px;
+    box-shadow: 0 0 5px 5px #C4C4C4;
+}
+.diaMes {
+    border-radius: 5px;
+    background-color: #F2F2F2;
+    box-shadow: 0 0 5px 3px #C4C4C4;
+    transition: box-shadow 1s, background-color 0.1s, border 0.5s;
+}
+.diaMes:hover {
+    border: 1px solid #0091ff;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 3px #C4C4C4;
+    transition: box-shadow 1s, background-color 0.1s, border 0.5s;
+}
+div#navCalendari p, div#navCalendari i {
+    font-size: 25px;
+}
+div#navCalendari button {
+    margin: 2px;
+    border: 1px solid #0091ff;
+    border-radius: 3px;
+    background-color: #0091ff;
+    color: #ffffff;
+    transition: box-shadow 1s;
+}
+div#navCalendari button:hover {
+    box-shadow: 0 0 0 5px #72C2FF;
+    transition: box-shadow 1s;
 }

@@ -6,29 +6,22 @@ window.onload = function() {
 }
 
 function setEstructura() {
-    for (let i = 0; i < mesosAny.length; i++) {
-        setCrearCalendari(i);
-    }
+    let dataActual = new Date();
 
-    setCalendari();
+    setCrearCalendari();
+
+    setCalendari(dataActual.getFullYear(), dataActual.getMonth());
 };
 
-function setCrearCalendari(i) {
+function setCrearCalendari() {
     let divCalendari = document.getElementById("divCalendari");
 
     let taula = document.createElement("table");
-    taula.setAttribute("class", "table table-striped");
+    taula.setAttribute("class", "col-md-12 table table-lg align-middle text-center");
     divCalendari.appendChild(taula);
 
     let capsalera = document.createElement("thead");
-    capsalera.setAttribute("class", "table-primary");
     taula.appendChild(capsalera);
-    let fila1 = document.createElement("tr");
-    capsalera.appendChild(fila1);
-    let columnaMes = document.createElement("th");
-    columnaMes.setAttribute("colspan", mesosAny.length);
-    columnaMes.innerHTML = mesosAny[i];
-    fila1.appendChild(columnaMes);
     let fila2 = document.createElement("tr");
     capsalera.appendChild(fila2);
     for (let i = 0; i < diasSetmanaEuropeu.length; i++) {
@@ -50,7 +43,7 @@ function setCrearCalendari(i) {
     }
 };
 
-function setCalendari() {
+function setCalendari(anyActual, mesActual) {
     let divCalendari = document.getElementById("divCalendari");
     let setmana;
     for (let i = 1; i < 366; i++) {
@@ -70,7 +63,10 @@ function setCalendari() {
             setmana = 0;
         }
 
-        divCalendari.children[mes].children[1].children[setmana].children[dia_setmana].innerHTML = dia;
+        if (mesActual == mes) {
+            divCalendari.children[0].children[1].children[setmana].children[dia_setmana].setAttribute("class", "diaMes");
+            divCalendari.children[0].children[1].children[setmana].children[dia_setmana].innerHTML = dia;
+        }
 
         if (dia_setmana == 6) {
             setmana = setmana + 1;
