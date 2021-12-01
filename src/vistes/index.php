@@ -14,19 +14,27 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Sala</th>
-      <th scope="col">Descripció</th>
+      <th scope="col">Centre</th>
+      <th scope="col">Ubicació</th>
       <th scope="col">Data</th>
+      <th scope="col">Hora entrada</th>
+      <th scope="col">Hora sortida</th>
     </tr>
   </thead>
   <tbody>
     <!-- FILES DINÀMIQUES CONFORME SALES TINGUI RESERVADES L'USUARI -->
+    <?php foreach ($sala as $row) { ?>
     <tr>
-      <th scope="row">1</th>
-      <td>Sala Polivalent</td>
-      <td>Àmplia sala amb moltes taules, cadires i recursos per a realitzar presentacions</td>
-      <td>27/06/2022</td>
+      <th scope="row"><?= $row['Codi'] ?></th>
+      <td><?= $row['Nom'] ?></td>
+      <td><?= $row['Centre'] ?></td>
+      <td><?= $row['Ubicacio'] ?></td>
+      <td><?= $row['Data'] ?></td>
+      <td><?= $row['HoraInici'] ?></td>
+      <td><?= $row['HoraFi'] ?></td>
       <td><a href="#">Eliminar</a></td>
     </tr>
+    <?php } ?>
   </tbody>
 </table>
 <a href="index.php?r=newReservation" class="reservarBtn" style="text-decoration:none"><i class="fas fa-plus"></i></a>
