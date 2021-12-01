@@ -7,20 +7,20 @@ div#divCalendari {
 div#navCalendari {
     margin-top: 5em;
 }
-div#divCalendari > table {
-    border-radius: 10px;
-    box-shadow: 0 0 5px 5px #C4C4C4;
+div#divCalendari > table th, div#divCalendari > table td {
+    border-top: none;
+    border-bottom: none;
 }
 .diaMes {
     border-radius: 5px;
     background-color: #F2F2F2;
-    box-shadow: 0 0 5px 3px #C4C4C4;
+    box-shadow: 0 0 1px 1px #C4C4C4;
     transition: box-shadow 1s, background-color 0.1s, border 0.5s;
 }
 .diaMes:hover {
     border: 1px solid #0091ff;
     border-radius: 5px;
-    box-shadow: 0 0 20px 3px #C4C4C4;
+    box-shadow: 0 0 3px 3px #C4C4C4;
     transition: box-shadow 1s, background-color 0.1s, border 0.5s;
 }
 .diesFestius {
@@ -37,12 +37,12 @@ div#navCalendari {
     justify-content: space-between;
     align-items: center;
 }
-div#navCalendari p, div#navCalendari i {
-    font-size: 25px;
+div#navCalendari p {
+    font-size: 23px;
 }
 div#navCalendari button {
-    width: 75px;
-    height: 40px;
+    width: 40px;
+    height: 35px;
     border: 1px solid #0091ff;
     border-radius: 3px;
     background-color: #0091ff;
@@ -52,4 +52,7 @@ div#navCalendari button {
 div#navCalendari button:hover {
     box-shadow: 0 0 0 5px #72C2FF;
     transition: box-shadow 1s;
+}
+div#navCalendari button i {
+    font-size: 15px;
 }
