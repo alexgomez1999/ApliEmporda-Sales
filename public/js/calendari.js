@@ -115,6 +115,7 @@ function setCrearCalendari() {
     }
 };
 
+<<<<<<< HEAD
 /**
  * setCalendari: Funció que afageix els dies correctament al calendari
  * @param anySelect any actualment seleccionat del calendari
@@ -122,6 +123,9 @@ function setCrearCalendari() {
  * **/
 function setCalendari(anySelect, mesSelect) {
     let dataActual = new Date();
+=======
+function setCalendari(anyActual, mesActual) {
+>>>>>>> b3e8ba6 (disseny inicial del calendari)
     let divCalendari = document.getElementById("divCalendari");
     let setmana;
     for (let i = 1; i < 366; i++) {
@@ -141,6 +145,7 @@ function setCalendari(anySelect, mesSelect) {
             dia_setmana = dia_setmana - 1;
         }
 
+<<<<<<< HEAD
         if (mesSelect == mes) {
             divCalendari.children[0].children[1].children[setmana].children[dia_setmana].setAttribute("class", "diaMes");
             divCalendari.children[0].children[1].children[setmana].children[dia_setmana].innerHTML = dia;
@@ -154,6 +159,11 @@ function setCalendari(anySelect, mesSelect) {
                 divCalendari.children[0].children[1].children[setmana].children[dia_setmana].removeAttribute("class")
                 divCalendari.children[0].children[1].children[setmana].children[dia_setmana].setAttribute("class", "diaMes diaActual");
             }
+=======
+        if (mesActual == mes) {
+            divCalendari.children[0].children[1].children[setmana].children[dia_setmana].setAttribute("class", "diaMes");
+            divCalendari.children[0].children[1].children[setmana].children[dia_setmana].innerHTML = dia;
+>>>>>>> b3e8ba6 (disseny inicial del calendari)
         }
 
         if (dia_setmana == 6) {
