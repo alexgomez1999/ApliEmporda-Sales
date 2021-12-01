@@ -23,11 +23,26 @@ div#divCalendari > table {
     box-shadow: 0 0 20px 3px #C4C4C4;
     transition: box-shadow 1s, background-color 0.1s, border 0.5s;
 }
+.diesFestius {
+    color: #C50000;
+    font-weight: bold;
+}
+.diaActual {
+    color: #0D3184;
+    font-weight: bold;
+}
+div#navCalendari {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 div#navCalendari p, div#navCalendari i {
     font-size: 25px;
 }
 div#navCalendari button {
-    margin: 2px;
+    width: 75px;
+    height: 40px;
     border: 1px solid #0091ff;
     border-radius: 3px;
     background-color: #0091ff;

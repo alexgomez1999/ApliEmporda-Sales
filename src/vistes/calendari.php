@@ -10,10 +10,10 @@
     <?php include "util/navbar.php" ?>
     <br>
     <div class="container-sm">
-      <div id="navCalendari" class="row">
-        <p id="infoCalendar" class="col">Novembre de 2021</p>
-        <button type="button" id="btnAbans" class="col"><i class="fa fa-chevron-left"></i></button>
-        <button type="button" id="btnDespres" class="col"><i class="fa fa-chevron-right"></i></button>
+      <div id="navCalendari">
+        <button type="button" id="btnAbans"><i class="fa fa-chevron-left"></i></button>
+        <p id="infoCalendar"></p>
+        <button type="button" id="btnDespres"><i class="fa fa-chevron-right"></i></button>
       </div>
       <div id="divCalendari"></div>
     </div>
