@@ -37,7 +37,7 @@
     <?php } ?>
   </tbody>
 </table>
-<a href="index.php?r=newReservation" class="reservarBtn" style="text-decoration:none"><i class="fas fa-plus"></i></a>
+<a href="index.php?r=newReservation" class="reservarBtn" style="text-decoration:none"><i class="fa fa-plus"></i></a>
       </div>
 
       <?php } else { ?>
