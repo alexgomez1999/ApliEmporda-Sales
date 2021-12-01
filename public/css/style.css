@@ -27,6 +27,10 @@ nav ul li i {
     font-size: 25px;
     color: #fff;
 }
+input#marginHidden {
+    display:hidden;
+    margin-top: 3em;
+}
 
 /* END NAVBAR */
 

@@ -9,3 +9,4 @@
         <li><p><?= $_SESSION['login']['Usuari'] ?></p></li>
     </ul>
 </nav>
+<input type="text" id="marginHidden">
