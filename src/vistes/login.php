@@ -9,7 +9,7 @@
     <div class="login-container">
       <form class="login-form" action="index.php" method="POST">
         <input type="hidden" name="r" value="dologin">
-        <div><i class="fas fa-user" for="user"></i><input type="text" name="user" id="user" placeholder="Usuari"></div>
+        <div><i class="fas fa-user" for="user"></i><input type="text" name="user" id="user" value="<?=$usuarilogat;?>" placeholder="Usuari"></div>
         <div><i class="fas fa-key" for="pass"></i><input type="password" name="pass" id="pass" placeholder="Contrasenya"></div>
         <button type="submit" class="btn btn-primary">Accedir</button>
       </form>

@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <?php include "../src/vistes/util/head.php"?>
-    <link rel="stylesheet" href="css/calendari.css">
     <title>Calendari de Sales</title>
     <script src="js/calendari.js"></script>
   </head>
