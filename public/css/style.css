@@ -89,18 +89,20 @@ a {
     right: 20px;
     height: 50px;
     width: 50px;
-    border: 2px solid black;
+    border: 2px solid green;
+    background: green;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     transition-duration: 1.5s;
     cursor: pointer;
-    color: black;
+    color: white;
 }
 
 .reservarBtn:hover {
-    background: black;
+    background: green;
+    border: 2px solid black;
     color: white;
     transition-duration: 1.5s;
 }
