@@ -7,6 +7,7 @@ include "../src/controladors/index.php";
 include "../src/controladors/login.php";
 include "../src/controladors/dologin.php";
 include "../src/controladors/newReservation.php";
+include "../src/controladors/makeReservation.php";
 
 include "../src/middleware/middleAdmin.php";
 include "../src/middleware/middleLogin.php";
@@ -25,6 +26,8 @@ if ($r == "") {
     $resposta = ctrlLogin($peticio, $resposta, $contenidor);
 } elseif ($r === "newReservation") {
     $resposta = ctrlNewReservation($peticio, $resposta, $contenidor);
+} elseif ($r === "makeReservation") {
+    $resposta = ctrlMakeReservation($peticio, $resposta, $contenidor);
 }
 
 $resposta->resposta();

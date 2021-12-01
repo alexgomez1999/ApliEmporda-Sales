@@ -133,3 +133,42 @@ a {
     background: lightgray;
 }
 /* END HOME PAGE */
+
+/* RESERVATION PAGE */
+
+.flex-column-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.reservation-form {
+    display: flex;
+    margin-top: 75px;
+}
+
+.reservation-form input,
+.reservation-form select {
+    margin: 5px;
+    border: 1px solid;
+    border-radius: 15px;
+    padding: 5px;
+    text-align: center;
+}
+
+.reservation-form button {
+    margin-top: 30px;
+    border: none;
+    background: none;
+}
+
+/* END RESERVATION PAGE */
