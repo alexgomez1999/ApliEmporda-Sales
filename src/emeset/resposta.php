@@ -79,6 +79,11 @@ class Resposta
         setcookie($name, $value, $expire, $path, $domain, $secure, $httponly);
     }
 
+    public function logout()
+    {
+        session_unset();
+    }
+
     /**
      * setHeader Afegeix una capçalera http a la resposta
      *
