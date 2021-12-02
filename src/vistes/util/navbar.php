@@ -2,7 +2,8 @@
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php"><i class="fa fa-home"></i> ApliSales</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <!-- <span class="navbar-toggler-icon"></span> -->
+      <i class="fa fa-bars"></i>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
@@ -33,3 +34,4 @@
     </div>
   </div>
 </nav>
+<script src="js/menu.js"></script>
