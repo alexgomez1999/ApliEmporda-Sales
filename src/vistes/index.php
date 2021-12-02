@@ -32,12 +32,12 @@
       <td><?= $row['Data'] ?></td>
       <td><?= $row['HoraInici'] ?></td>
       <td><?= $row['HoraFi'] ?></td>
-      <td><a href="#">Eliminar</a></td>
+      <td><a href="index.php?r=deleteReservation&id=<?= $row['Id'] ?>">Eliminar</a></td>
     </tr>
     <?php } ?>
   </tbody>
 </table>
-<a href="index.php?r=newReservation" class="reservarBtn" style="text-decoration:none"><i class="fa fa-plus"></i></a>
+<a href="index.php?r=newReservation" class="reservarBtn" style="text-decoration:none"><i class="fas fa-plus"></i></a>
       </div>
 
       <?php } else { ?>

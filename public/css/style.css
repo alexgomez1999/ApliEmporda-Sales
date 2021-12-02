@@ -1,52 +1,17 @@
 body {
     box-sizing: border-box;
-    background-color: #F9F9F9;
 }
 
 /* NAVBAR */
 
-nav {
-    position: fixed;
-    z-index: 2;
-    top: 0;
-    width: 100%;
-    box-shadow: 0 0 5px 5px #C4C4C4;
-    background-color: #1240AB;
-}
-nav#menu > div > div#navbarNav {
+nav ul {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-}
-nav#menu ul > li > a, nav#menu > div > a {
-    display: flex;
-    align-items: center;
-    height: 70px;
-    padding: 20px;
-    font-size: 20px;
-    color: #fff;
+    justify-content: space-around;
     text-decoration: none;
-    transition: transform 1s, background-color 1s, color 1s;
-}
-nav#menu ul > li > a:hover{
-    transform: translate(0px, -3px);
-    transition: transform 1s, background-color 1s, color 1s;
-}
-nav#menu li:hover > ul {
-    display: block;
-}
-nav#menu ul ul {
-    right: 3px;
-    top: auto;
-    background-color: #1240AB;
-}
-nav#menu ul ul > li > a {
-    font-size: 15px;
-    color: #fff;
-}
-nav#menu ul ul > li > a:hover {
-    color: #fff;
-    background-color: #1240AB;
+    width: 20%;
+    list-style: none;
+    position: absolute;
+    right: 0;
 }
 
 /* END NAVBAR */
@@ -185,56 +150,41 @@ a {
 }
 /* END HOME PAGE */
 
-/* SELECT DAY RESERVATION IN CALENDAR PAGE */
-div#divCalendari, div#navCalendari {
-    font-size: 20px;
-}
-div#divCalendari > table th, div#divCalendari > table td {
-    border-top: none;
-    border-bottom: none;
-}
-.diaMes {
-    border-radius: 5px;
-    background-color: #F2F2F2;
-    box-shadow: 0 0 1px 1px #C4C4C4;
-    transition: box-shadow 1s, background-color 0.1s, border 0.5s;
-}
-.diaMes:hover {
-    border: 1px solid #0091ff;
-    border-radius: 5px;
-    box-shadow: 0 0 3px 3px #C4C4C4;
-    transition: box-shadow 1s, background-color 0.1s, border 0.5s;
-}
-.diesFestius {
-    color: #C50000;
-    font-weight: bold;
-}
-.diaActual {
-    color: #0D3184;
-    font-weight: bold;
-}
-div#navCalendari {
+/* RESERVATION PAGE */
+
+.flex-column-container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    text-align: center;
+    flex-direction: column;
 }
-div#navCalendari p {
-    font-size: 23px;
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
-div#navCalendari button {
-    width: 40px;
-    height: 35px;
-    border: 1px solid #0091ff;
-    border-radius: 3px;
-    background-color: #0091ff;
-    color: #ffffff;
-    transition: box-shadow 1s;
+
+.reservation-form {
+    display: flex;
+    margin-top: 75px;
 }
-div#navCalendari button:hover {
-    box-shadow: 0 0 0 5px #72C2FF;
-    transition: box-shadow 1s;
+
+.reservation-form input,
+.reservation-form select {
+    margin: 5px;
+    border: 1px solid;
+    border-radius: 15px;
+    padding: 5px;
+    text-align: center;
 }
-div#navCalendari button i {
-    font-size: 15px;
+
+.reservation-form button {
+    margin-top: 30px;
+    border: none;
+    background: none;
 }
+
+/* END RESERVATION PAGE */

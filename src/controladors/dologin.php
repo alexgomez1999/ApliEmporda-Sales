@@ -12,7 +12,6 @@ function ctrldoLogin($peticio, $resposta, $contenidor)
     if($actual && $actual["Contrasenya"] === $pass) {
         $resposta->setSession("logat", true);
         $resposta->setSession("login", $actual);
-        $resposta->setCookie("usuarilogat" , $actual["Usuari"], strtotime("+1 days"));
         $resposta->redirect("location: index.php");
     } else {
         $resposta->setSession("logat", false);  
