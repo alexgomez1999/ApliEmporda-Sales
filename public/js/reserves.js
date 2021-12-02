@@ -42,7 +42,7 @@ $('#hsortida').on('keyup', () => {
 });
 
 // members listener
-$('#persones').on('keyup', () => {
+$('#persones').on('keyup change', () => {
     persones = $('#persones').val();
     drawResults();
 });
