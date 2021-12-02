@@ -6,6 +6,7 @@
   </head>
   <body>
   <?php include "util/navbar.php" ?>
+  <?php include "util/sidebaradmin.php" ?>
     <?php if($_SESSION['login']['Rol'] != 'Administrador') { ?>
       <!-- VISTA USUARI NORMAL -->
       <div class="index-user-container">
