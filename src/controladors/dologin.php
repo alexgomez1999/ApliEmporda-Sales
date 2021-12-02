@@ -9,6 +9,8 @@ function ctrldoLogin($peticio, $resposta, $contenidor)
 
     $actual = $usuaris->getUser($usuari);
 
+    $resposta->setCookie("usuarilogat", $usuari, strtotime("+1 day"));
+
     if($actual && $actual["Contrasenya"] === $pass) {
         $resposta->setSession("logat", true);
         $resposta->setSession("login", $actual);

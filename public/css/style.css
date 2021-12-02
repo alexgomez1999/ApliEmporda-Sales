@@ -4,20 +4,60 @@ body {
 
 /* NAVBAR */
 
-nav ul {
+nav {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 0 5px 5px #C4C4C4;
+    background-color: #1240AB;
+}
+nav#menu > div > div#navbarNav {
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+nav#menu ul > li > a, nav#menu > div > a {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    padding: 20px;
+    font-size: 20px;
+    color: #fff;
     text-decoration: none;
-    width: 20%;
-    list-style: none;
-    position: absolute;
-    right: 0;
+    transition: transform 1s, background-color 1s, color 1s;
+}
+nav#menu ul > li > a:hover{
+    transform: translate(0px, -3px);
+    transition: transform 1s, background-color 1s, color 1s;
+}
+nav#menu li:hover > ul {
+    display: block;
+}
+nav#menu ul ul {
+    right: 3px;
+    top: auto;
+    background-color: #1240AB;
+}
+nav#menu ul ul > li > a {
+    font-size: 15px;
+    color: #fff;
+}
+nav#menu ul ul > li > a:hover {
+    color: #fff;
+    background-color: #1240AB;
 }
 
 /* END NAVBAR */
 
 /* LOGIN PAGE */
 
+.missatge-login {
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #ff0000;
+    color: #fff;
+}
 .login-container {
     display: flex;
     flex-direction: column;
@@ -31,7 +71,7 @@ nav ul {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 200px;
+    height: 500px;
     width: 400px;
     background: rgb(189,92,243);
     background: linear-gradient(0deg, rgba(189,92,243,1) 0%, rgba(100,143,243,1) 50%); 
@@ -188,3 +228,57 @@ a {
 }
 
 /* END RESERVATION PAGE */
+
+/* SELECT DAY RESERVATION IN CALENDAR PAGE */
+div#divCalendari, div#navCalendari {
+    font-size: 20px;
+}
+div#divCalendari > table th, div#divCalendari > table td {
+    border-top: none;
+    border-bottom: none;
+}
+.diaMes {
+    border-radius: 5px;
+    background-color: #F2F2F2;
+    box-shadow: 0 0 1px 1px #C4C4C4;
+    transition: box-shadow 1s, background-color 0.1s, border 0.5s;
+}
+.diaMes:hover {
+    border: 1px solid #0091ff;
+    border-radius: 5px;
+    box-shadow: 0 0 3px 3px #C4C4C4;
+    transition: box-shadow 1s, background-color 0.1s, border 0.5s;
+}
+.diesFestius {
+    color: #C50000;
+    font-weight: bold;
+}
+.diaActual {
+    color: #0D3184;
+    font-weight: bold;
+}
+div#navCalendari {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+div#navCalendari p {
+    font-size: 23px;
+}
+div#navCalendari button {
+    width: 40px;
+    height: 35px;
+    border: 1px solid #0091ff;
+    border-radius: 3px;
+    background-color: #0091ff;
+    color: #ffffff;
+    transition: box-shadow 1s;
+}
+div#navCalendari button:hover {
+    box-shadow: 0 0 0 5px #72C2FF;
+    transition: box-shadow 1s;
+}
+div#navCalendari button i {
+    font-size: 15px;
+}
