@@ -68,9 +68,10 @@ nav#menu ul ul > li > a:hover {
     align-items: center;
     height: 200px;
     width: 400px;
-    background: linear-gradient(skyblue, pink);
+    background: rgb(189,92,243);
+    background: linear-gradient(0deg, rgba(189,92,243,1) 0%, rgba(100,143,243,1) 50%); 
     border-radius: 20px;
-    box-shadow: 5px 0 5px 1px;
+    box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.5);
 }
 
 .login-form div input {
@@ -79,6 +80,21 @@ nav#menu ul ul > li > a:hover {
 
 .login-form button {
     margin-top: 25px;
+}
+
+button#login {
+    width: 150px;
+    height: 50px;
+    border: 1px solid #0091ff;
+    border-radius: 3px;
+    font-size: 20px;
+    background-color: #0091ff;
+    color: #ffffff;
+    transition: box-shadow 1s;
+}
+button#login:hover {
+    box-shadow: 0 0 0 5px #72C2FF;
+    transition: box-shadow 1s;
 }
 
 /* END LOGIN PAGE */
