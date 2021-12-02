@@ -43,9 +43,13 @@
                 <input type="number" name="Persones" id="persones">
             </div>
             <div class="flex-column-container">
-                <button type="submit"><i class="fas fa-search"></i></button>
+                <button type="submit" id="submit"><i class="fas fa-search"></i></button>
             </div>
         </form>
+        <div id="cont"></div>
     </div>
 </body>
+<footer>
+    <?php include "util/footer.php" ?>
+</footer>
 </html>
