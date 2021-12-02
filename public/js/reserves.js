@@ -10,12 +10,28 @@ const cont = $('#cont');
 // ubication listener
 $('#ubi').on('change', () => {
     ubi = $("#ubi option:selected").text();
+    $.ajax({
+        url: 'index.php?r=checkUbi',
+        type: 'POST',
+        data: { ubi },
+        success: (response) => {
+            console.log(response);
+        }
+    });
     drawResults();
 });
 
 // center listener
 $('#centre').on('change', () => {
     centre = $("#centre option:selected").text();
+    $.ajax({
+        url: 'index.php?r=checkCenter',
+        type: 'POST',
+        data: { centre },
+        success: (response) => {
+            console.log(response);
+        }
+    });
     drawResults();
 });
 
@@ -26,6 +42,14 @@ $('#data').on('change', () => {
     month = date.getMonth() + 1;
     year = date.getFullYear();
     dia = [day, month, year].join('/');
+    $.ajax({
+        url: 'index.php?r=checkDay',
+        type: 'POST',
+        data: { dia },
+        success: (response) => {
+            console.log(response);
+        }
+    });
     drawResults();
 });
 
@@ -38,20 +62,38 @@ $('#hentrada').on('keyup', () => {
 // departure listener
 $('#hsortida').on('keyup', () => {
     sortida = $('#hsortida').val();
+    $.ajax({
+        url: 'index.php?r=checkHours',
+        type: 'POST',
+        data: { entrada, sortida },
+        success: (response) => {
+            console.log(response);
+        }
+    });
     drawResults();
 });
 
-// members listener
-$('#persones').on('keyup', () => {
+// persons listener
+$('#persones').on('keyup change', () => {
     persones = $('#persones').val();
+    $.ajax({
+        url: 'index.php?r=checkPersons',
+        type: 'POST',
+        data: { persones },
+        success: (response) => {
+            console.log(response);
+        }
+    });
     drawResults();
 });
 
+// submit button listener
 $('#submit').on('click', (e) => {
     e.preventDefault();
     drawResults();
 });
 
+// function to implement results
 function drawResults() {
     let temp =  `<p>
                 Ubi: ${ubi}<br>
