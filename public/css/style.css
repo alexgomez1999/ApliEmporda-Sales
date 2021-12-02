@@ -58,12 +58,18 @@ nav#menu ul ul > li > a:hover {
 .missatge-login {
     padding: 10px;
     border-radius: 15px;
+<<<<<<< HEAD
     background-color: #970808;
     color: #fff;
 }
 .login-body {
     background-color: #9F9494;
 }
+=======
+    background-color: #ff0000;
+    color: #fff;
+}
+>>>>>>> 6975a6afa409e260089c5ea7ad60f737da5e60b6
 .login-container {
     display: flex;
     flex-direction: column;
@@ -79,7 +85,12 @@ nav#menu ul ul > li > a:hover {
     align-items: center;
     height: 500px;
     width: 400px;
+<<<<<<< HEAD
     background-color: #fff;
+=======
+    background: rgb(189,92,243);
+    background: linear-gradient(0deg, rgba(189,92,243,1) 0%, rgba(100,143,243,1) 50%); 
+>>>>>>> 6975a6afa409e260089c5ea7ad60f737da5e60b6
     border-radius: 20px;
     box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.5);
 }
@@ -109,6 +120,21 @@ nav#menu ul ul > li > a:hover {
 }
 .login-form button:hover {
     box-shadow: 0 0 0 5px #365BB0;
+    transition: box-shadow 1s;
+}
+
+button#login {
+    width: 150px;
+    height: 50px;
+    border: 1px solid #0091ff;
+    border-radius: 3px;
+    font-size: 20px;
+    background-color: #0091ff;
+    color: #ffffff;
+    transition: box-shadow 1s;
+}
+button#login:hover {
+    box-shadow: 0 0 0 5px #72C2FF;
     transition: box-shadow 1s;
 }
 
@@ -215,6 +241,7 @@ a {
     justify-content: center;
     align-items: center;
     text-align: center;
+    flex-direction: column;
 }
 
 .reservation-form {
@@ -251,16 +278,27 @@ div#divCalendari > table th, div#divCalendari > table td {
     border-radius: 5px;
     background-color: #F2F2F2;
     box-shadow: 0 0 1px 1px #C4C4C4;
+<<<<<<< HEAD
     transition: background-color 0.5s;
 }
 .diaMes:hover {
     background-color: #C9C7C7;
     transition: background-color 0.5s;
+=======
+    transition: box-shadow 1s, background-color 0.1s, border 0.5s;
+}
+.diaMes:hover {
+    border: 1px solid #0091ff;
+    border-radius: 5px;
+    box-shadow: 0 0 3px 3px #C4C4C4;
+    transition: box-shadow 1s, background-color 0.1s, border 0.5s;
+>>>>>>> 6975a6afa409e260089c5ea7ad60f737da5e60b6
 }
 .diesFestius {
     color: #C50000;
     font-weight: bold;
 }
+<<<<<<< HEAD
 .diaMesActual {
     border-radius: 5px;
     background-color: #0D3184;
@@ -273,6 +311,10 @@ div#divCalendari > table th, div#divCalendari > table td {
 }
 .diaActual {
     color: #fff;
+=======
+.diaActual {
+    color: #0D3184;
+>>>>>>> 6975a6afa409e260089c5ea7ad60f737da5e60b6
     font-weight: bold;
 }
 div#navCalendari {
