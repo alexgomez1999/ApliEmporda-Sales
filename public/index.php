@@ -9,8 +9,8 @@ include "../src/controladors/dologin.php";
 include "../src/controladors/logout.php";
 include "../src/controladors/calendari.php";
 include "../src/controladors/newReservation.php";
-include "../src/controladors/makeReservation.php";
 include "../src/controladors/eliminarReserva.php";
+include "../src/controladors/ajaxServer.php";
 
 include "../src/middleware/middleAdmin.php";
 include "../src/middleware/middleLogin.php";
@@ -33,10 +33,18 @@ if ($r == "") {
     $resposta = ctrlCalendari($peticio, $resposta, $contenidor);
 } elseif ($r === "newReservation") {
     $resposta = ctrlNewReservation($peticio, $resposta, $contenidor);
-} elseif ($r === "makeReservation") {
-    $resposta = ctrlMakeReservation($peticio, $resposta, $contenidor);
 } elseif ($r === "deleteReservation") {
     $resposta = ctrlDeleteReservation($peticio, $resposta, $contenidor);
+} elseif ($r === "checkUbi") {
+    $resposta = ctrlCheckUbi($peticio, $resposta, $contenidor);
+} elseif ($r === "checkCenter") {
+    $resposta = ctrlCheckCenter($peticio, $resposta, $contenidor);
+} elseif ($r === "checkDay") {
+    $resposta = ctrlCheckDay($peticio, $resposta, $contenidor);
+} elseif ($r === "checkHours") {
+    $resposta = ctrlCheckHours($peticio, $resposta, $contenidor);
+} elseif ($r === "checkPersons") {
+    $resposta = ctrlCheckPersons($peticio, $resposta, $contenidor);
 }
 
 $resposta->resposta();
