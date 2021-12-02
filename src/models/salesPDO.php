@@ -22,7 +22,7 @@ class SalesPDO
     public function getReserva($CodiUsuari)
     {
         $query = 
-        'SELECT A.Codi, B.Nom, B.Centre, B.Ubicacio,
+        'SELECT A.Id, A.Codi, B.Nom, B.Centre, B.Ubicacio,
         A.Data, A.HoraInici, A.HoraFi
         FROM reserves A
         INNER JOIN sales B ON(A.CodiSala = B.Codi)
@@ -43,5 +43,18 @@ class SalesPDO
             die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
         }
         return $llista;
+    }
+
+    public function delete($Id) 
+    {
+        $query = 'DELETE FROM reserves WHERE Id = :Id';
+        $delete = $this->sql->prepare($query);
+        $result = $delete->execute([':Id' => $Id]);
+
+        if ($delete->errorCode() !== '00000') {
+            $err = $delete->errorInfo();
+            $code = $delete->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
     }
 }

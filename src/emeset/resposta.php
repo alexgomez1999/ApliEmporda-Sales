@@ -60,11 +60,6 @@ class Resposta
         $_SESSION[$id] = $valor;
     }
 
-    public function logout()
-    {
-        session_unset();
-    }
-
     /**
      * setCookie funció afegida per consistència crea una cookie.
      *
