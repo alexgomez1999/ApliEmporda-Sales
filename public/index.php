@@ -22,6 +22,7 @@ $r = $_REQUEST["r"];
 $contenidor = new Emeset\Contenidor($config);
 $resposta = $contenidor->resposta();
 $peticio = $contenidor->peticio();
+$modelPDO = $contenidor->model();
 
 if ($r == "") {
     $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlIndex");

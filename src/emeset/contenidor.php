@@ -40,6 +40,10 @@ class Contenidor
         return new \Emeset\Peticio();
     }
 
+    public function model(){
+        return new \Daw\ModelPDO($this->config);
+    }
+
     public function usuaris(){
         return new \Daw\UsuarisPDO($this->config);
     }
