@@ -58,18 +58,12 @@ nav#menu ul ul > li > a:hover {
 .missatge-login {
     padding: 10px;
     border-radius: 15px;
-<<<<<<< HEAD
     background-color: #970808;
     color: #fff;
 }
 .login-body {
     background-color: #9F9494;
 }
-=======
-    background-color: #ff0000;
-    color: #fff;
-}
->>>>>>> 6975a6afa409e260089c5ea7ad60f737da5e60b6
 .login-container {
     display: flex;
     flex-direction: column;
@@ -85,12 +79,7 @@ nav#menu ul ul > li > a:hover {
     align-items: center;
     height: 500px;
     width: 400px;
-<<<<<<< HEAD
     background-color: #fff;
-=======
-    background: rgb(189,92,243);
-    background: linear-gradient(0deg, rgba(189,92,243,1) 0%, rgba(100,143,243,1) 50%); 
->>>>>>> 6975a6afa409e260089c5ea7ad60f737da5e60b6
     border-radius: 20px;
     box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.5);
 }
@@ -278,13 +267,6 @@ div#divCalendari > table th, div#divCalendari > table td {
     border-radius: 5px;
     background-color: #F2F2F2;
     box-shadow: 0 0 1px 1px #C4C4C4;
-<<<<<<< HEAD
-    transition: background-color 0.5s;
-}
-.diaMes:hover {
-    background-color: #C9C7C7;
-    transition: background-color 0.5s;
-=======
     transition: box-shadow 1s, background-color 0.1s, border 0.5s;
 }
 .diaMes:hover {
@@ -292,29 +274,13 @@ div#divCalendari > table th, div#divCalendari > table td {
     border-radius: 5px;
     box-shadow: 0 0 3px 3px #C4C4C4;
     transition: box-shadow 1s, background-color 0.1s, border 0.5s;
->>>>>>> 6975a6afa409e260089c5ea7ad60f737da5e60b6
 }
 .diesFestius {
     color: #C50000;
     font-weight: bold;
 }
-<<<<<<< HEAD
-.diaMesActual {
-    border-radius: 5px;
-    background-color: #0D3184;
-    box-shadow: 0 0 1px 1px #C4C4C4;
-    transition: background-color 0.5s;
-}
-.diaMesActual:hover {
-    background-color: #011543;
-    transition: background-color 0.5s;
-}
-.diaActual {
-    color: #fff;
-=======
 .diaActual {
     color: #0D3184;
->>>>>>> 6975a6afa409e260089c5ea7ad60f737da5e60b6
     font-weight: bold;
 }
 div#navCalendari {
