@@ -35,8 +35,6 @@ nav#menu li:hover > ul {
     display: block;
 }
 nav#menu ul ul {
-    right: 3px;
-    top: auto;
     background-color: #1240AB;
 }
 nav#menu ul ul > li > a {
