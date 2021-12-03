@@ -1,12 +1,14 @@
 <?php
 
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
+
 include "../src/config.php";
 
 include "../src/controladors/index.php";
 include "../src/controladors/login.php";
 include "../src/controladors/dologin.php";
 include "../src/controladors/logout.php";
+include "../src/controladors/userProfile.php";
 include "../src/controladors/calendari.php";
 include "../src/controladors/newReservation.php";
 include "../src/controladors/eliminarReserva.php";
@@ -29,6 +31,8 @@ if ($r == "") {
     $resposta = ctrlLogin($peticio, $resposta, $contenidor);
 } elseif ($r === "logout") {
     $resposta = ctrlLogout($peticio, $resposta, $contenidor);
+} elseif ($r === "userProfile") {
+    $resposta = ctrlUserProfile($peticio, $resposta, $contenidor);
 } elseif ($r === "calendari") {
     $resposta = ctrlCalendari($peticio, $resposta, $contenidor);
 } elseif ($r === "newReservation") {
