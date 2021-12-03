@@ -12,6 +12,5 @@ function middleLogin($peticio, $resposta, $contenidor, $next)
         $resposta = $next($peticio, $resposta, $contenidor);
     }
 
-
     return $resposta;
 }

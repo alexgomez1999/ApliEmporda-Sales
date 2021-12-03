@@ -30,25 +30,25 @@ if ($r == "") {
 } elseif ($r === "login") {
     $resposta = ctrlLogin($peticio, $resposta, $contenidor);
 } elseif ($r === "logout") {
-    $resposta = ctrlLogout($peticio, $resposta, $contenidor);
+    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlLogout");
 } elseif ($r === "userProfile") {
-    $resposta = ctrlUserProfile($peticio, $resposta, $contenidor);
+    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlUserProfile");
 } elseif ($r === "calendari") {
-    $resposta = ctrlCalendari($peticio, $resposta, $contenidor);
+    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlCalendari");
 } elseif ($r === "newReservation") {
-    $resposta = ctrlNewReservation($peticio, $resposta, $contenidor);
+    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlNewReservation");
 } elseif ($r === "deleteReservation") {
-    $resposta = ctrlDeleteReservation($peticio, $resposta, $contenidor);
+    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlDeleteReservation");
 } elseif ($r === "checkUbi") {
-    $resposta = ctrlCheckUbi($peticio, $resposta, $contenidor);
+    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlCheckUbi");
 } elseif ($r === "checkCenter") {
-    $resposta = ctrlCheckCenter($peticio, $resposta, $contenidor);
+    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlCheckCenter");
 } elseif ($r === "checkDay") {
-    $resposta = ctrlCheckDay($peticio, $resposta, $contenidor);
+    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlCheckDay");
 } elseif ($r === "checkHours") {
-    $resposta = ctrlCheckHours($peticio, $resposta, $contenidor);
+    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlCheckHours");
 } elseif ($r === "checkPersons") {
-    $resposta = ctrlCheckPersons($peticio, $resposta, $contenidor);
+    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlCheckPersons");
 }
 
 $resposta->resposta();

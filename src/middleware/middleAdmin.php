@@ -7,7 +7,7 @@ function middleAdmin($peticio, $resposta, $contenidor, $next)
    
 
     /* Validem que nom i cognom estan definits */
-    if (!$logat) {
+    if (!$logat && $login["Rol"] === "Administrador") {
         $resposta->setSession("error", "Has intentat accedir a la pàgina sense identificar-te!!!!!!\n");
         $resposta->redirect("Location:index.php?r=login");
     } else {
