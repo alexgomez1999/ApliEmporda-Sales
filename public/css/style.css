@@ -51,6 +51,26 @@ nav#menu ul ul > li > a:hover {
 
 /* END NAVBAR */
 
+/* SIDEBAR ADMIN */
+
+div#sidebaradmin {
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
+    background-color: #1240AB;
+}
+
+div#sidebaradmin ul li {
+    transition: background-color 0.7s;
+}
+div#sidebaradmin ul li:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: background-color 0.7s;
+}
+.itemsidebaractive {
+    background-color: rgba(175, 120, 11, 0.7);
+}
+
+/* END SIDEBAR ADMIN */
+
 /* LOGIN PAGE */
 
 .missatge-login {
