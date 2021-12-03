@@ -5,7 +5,7 @@
       <?php include "util/head.php" ?>
     <title>Login</title>
   </head>
-  <body>
+  <body class="login-body">
     <div class="login-container">
       <form class="login-form" action="index.php" method="POST">
         <?php if (isset($missatgelogin)) { ?>

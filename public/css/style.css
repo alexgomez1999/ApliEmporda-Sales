@@ -58,8 +58,11 @@ nav#menu ul ul > li > a:hover {
 .missatge-login {
     padding: 10px;
     border-radius: 15px;
-    background-color: #ff0000;
+    background-color: #970808;
     color: #fff;
+}
+.login-body {
+    background-color: #9F9494;
 }
 .login-container {
     display: flex;
@@ -76,18 +79,37 @@ nav#menu ul ul > li > a:hover {
     align-items: center;
     height: 500px;
     width: 400px;
-    background: rgb(189,92,243);
-    background: linear-gradient(0deg, rgba(189,92,243,1) 0%, rgba(100,143,243,1) 50%); 
+    background-color: #fff;
     border-radius: 20px;
     box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.5);
 }
 
 .login-form div input {
     margin: 5px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.login-form div i {
+    font-size: 23px;
+    color: #000;
 }
 
 .login-form button {
     margin-top: 25px;
+    width: 150px;
+    height: 50px;
+    border: 1px solid #1240AB;
+    border-radius: 3px;
+    font-size: 20px;
+    background-color: #1240AB;
+    color: #ffffff;
+    transition: box-shadow 1s;
+}
+.login-form button:hover {
+    box-shadow: 0 0 0 5px #365BB0;
+    transition: box-shadow 1s;
 }
 
 button#login {
