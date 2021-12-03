@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-            <a href="#" class="nav-link"><i class="fa fa-tachometer-alt"></i></a>
+            <a href="index.php" class="nav-link"><i class="fa fa-tachometer-alt"></i></a>
         </li>
         <li class="nav-item">
             <a href="#" class="nav-link"><i class="fa fa-file-alt"></i></a>
