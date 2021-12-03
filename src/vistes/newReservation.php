@@ -32,15 +32,15 @@
             </div>
             <div class="flex-column-container">
                 <label for="hentrada">Hora entrada</label>
-                <input type="text" name="HoraEntrada" id="hentrada">
+                <input type="time" name="HoraEntrada" id="hentrada">
             </div>
             <div class="flex-column-container">
                 <label for="hsortida">Hora sortida</label>
-                <input type="text" name="HoraFi" id="hsortida">
+                <input type="time" name="HoraFi" id="hsortida">
             </div>
             <div class="flex-column-container">
                 <label for="persones">Persones</label>
-                <input type="number" name="Persones" id="persones">
+                <input type="number" name="Persones" id="persones" min=0>
             </div>
             <div class="flex-column-container">
                 <button type="submit" id="submit"><i class="fas fa-search"></i></button>

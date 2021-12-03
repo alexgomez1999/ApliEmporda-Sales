@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-            <a href="#" class="nav-link"><i class="fa fa-tachometer-alt"></i></a>
+            <a href="index.php" class="nav-link"><i class="fa fa-tachometer-alt"></i></a>
         </li>
         <li class="nav-item">
             <a href="#" class="nav-link"><i class="fa fa-file-alt"></i></a>
@@ -24,7 +24,7 @@
             <i class="fa fa-user-circle"></i> <?= $_SESSION['login']['Usuari'] ?>
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-              <li><a class="dropdown-item" href="index.php?r=elMeuPerfil"><i class="fa fa-id-badge"></i> El Meu Perfil</a></li>
+              <li><a class="dropdown-item" href="index.php?r=userProfile"><i class="fa fa-id-badge"></i> El Meu Perfil</a></li>
               <li><a class="dropdown-item" href="index.php?r=lesMevesSales"><i class="fa fa-person-booth"></i> Les Meves Sales</a></li>
               <li><hr class="dropdown-separacio"></li>
               <li><a class="dropdown-item" href="index.php?r=logout"><i class="fa fa-sign-out-alt"></i> Tanca la Sessió</a></li>

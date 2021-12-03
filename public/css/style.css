@@ -9,7 +9,7 @@ nav {
     z-index: 2;
     top: 0;
     width: 100%;
-    box-shadow: 0 0 5px 5px #C4C4C4;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
     background-color: #1240AB;
 }
 nav#menu > div > div#navbarNav {
@@ -35,8 +35,6 @@ nav#menu li:hover > ul {
     display: block;
 }
 nav#menu ul ul {
-    right: 3px;
-    top: auto;
     background-color: #1240AB;
 }
 nav#menu ul ul > li > a {
@@ -267,20 +265,28 @@ div#divCalendari > table th, div#divCalendari > table td {
     border-radius: 5px;
     background-color: #F2F2F2;
     box-shadow: 0 0 1px 1px #C4C4C4;
-    transition: box-shadow 1s, background-color 0.1s, border 0.5s;
+    transition: background-color 0.5s;
 }
 .diaMes:hover {
-    border: 1px solid #0091ff;
-    border-radius: 5px;
-    box-shadow: 0 0 3px 3px #C4C4C4;
-    transition: box-shadow 1s, background-color 0.1s, border 0.5s;
+    background-color: #C9C7C7;
+    transition: background-color 0.5s;
 }
 .diesFestius {
     color: #C50000;
     font-weight: bold;
 }
+.diaMesActual {
+    border-radius: 5px;
+    background-color: #0D3184;
+    box-shadow: 0 0 1px 1px #C4C4C4;
+    transition: background-color 0.5s;
+}
+.diaMesActual:hover {
+    background-color: #011543;
+    transition: background-color 0.5s;
+}
 .diaActual {
-    color: #0D3184;
+    color: #fff;
     font-weight: bold;
 }
 div#navCalendari {

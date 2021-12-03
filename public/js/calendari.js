@@ -152,7 +152,7 @@ function setCalendari(anySelect, mesSelect) {
 
             if (anySelect == dataActual.getFullYear() && mesSelect == dataActual.getMonth() && dia == dataActual.getDate()) {
                 divCalendari.children[0].children[1].children[setmana].children[dia_setmana].removeAttribute("class")
-                divCalendari.children[0].children[1].children[setmana].children[dia_setmana].setAttribute("class", "diaMes diaActual");
+                divCalendari.children[0].children[1].children[setmana].children[dia_setmana].setAttribute("class", "diaMesActual diaActual");
             }
         }
 

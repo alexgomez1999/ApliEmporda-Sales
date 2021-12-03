@@ -40,8 +40,12 @@ class Contenidor
         return new \Emeset\Peticio();
     }
 
-    public function imatges(){
-        return new \Daw\ImatgesSQLite($this->config["sqlite"]);;
+    public function usuaris(){
+        return new \Daw\UsuarisPDO($this->config);
+    }
+
+    public function sales(){
+        return new \Daw\SalesPDO($this->config);
     }
 
 }

@@ -6,7 +6,6 @@
   </head>
   <body>
   <?php include "util/navbar.php" ?>
-  <?php include "util/sidebaradmin.php" ?>
     <?php if($_SESSION['login']['Rol'] != 'Administrador') { ?>
       <!-- VISTA USUARI NORMAL -->
       <div class="index-user-container">
@@ -44,18 +43,13 @@
       <?php } else { ?>
         
       <!-- VISTA ADMINISTRADOR -->
-      <div class="index-admin-container">
-        <div class="selector-container">
-          <div class="dip"><p>Sales</p></div>
-          <div class="dip"><p>Reservar sala</p></div>
-          <div class="dip"><p>Veure sales reservades</p></div>
-          <div class="dip"><p>Calendari</p></div>
-          <div class="dip"><p>Item extra 1</p></div>
-          <div class="dip"><p>Item extra 2</p></div>
-        </div>
-        <div class="show-container">
+      <div class="row">
+      <?php include "util/sidebaradmin.php" ?>
+      <div class="col-9 index-admin-container">
+        <div>
           <h3>PROVA SHOW</h3>
         </div>
+      </div>
       </div>
       <?php } ?>
   </body>
