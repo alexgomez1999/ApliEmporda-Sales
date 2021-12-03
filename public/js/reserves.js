@@ -9,13 +9,16 @@ const cont = $('#cont');
 
 // ubication listener
 $('#ubi').on('change', () => {
-    ubi = $("#ubi option:selected").text();
+    ubi = {
+        ubicacio: $("#ubi option:selected").text()
+    };
     $.ajax({
         url: 'index.php?r=checkUbi',
         type: 'POST',
-        data: { ubi },
-        success: (response) => {
-            console.log(response);
+        data: ubi,
+        success: function(response) {
+            const res = (response);
+            console.log(res);
         }
     });
     drawResults();

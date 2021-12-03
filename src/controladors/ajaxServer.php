@@ -2,9 +2,14 @@
 
 function ctrlCheckUbi($peticio, $resposta, $contenidor)
 {
-    $ubi = $peticio->get(INPUT_POST, "ubi");
+    $ubi = $peticio->get(INPUT_POST, "ubicacio");
     
-    echo $ubi;
+    $Sales = new \Daw\SalesPDO($contenidor->config["db"]);
+    $dades = $Sales->searchUbication($ubi);
+
+    $jsonDades = json_encode($dades);
+    
+    echo $jsonDades;
 
     return $resposta;
 }

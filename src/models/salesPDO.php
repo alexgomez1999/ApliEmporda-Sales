@@ -57,4 +57,24 @@ class SalesPDO
             die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
         }
     }
+
+    public function searchUbication($search)
+    {
+        $query = 'SELECT * FROM sales WHERE Ubicacio LIKE :search';
+        
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':search' => $search]);
+
+        $llista = [];
+        while ($sala = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $llista = $sala;
+        }
+
+        if ($this->sql->errorCode() !== '00000') {
+            $err = $this->sql->errorInfo();
+            $code = $this->sql->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        return $llista;
+    }
 }
