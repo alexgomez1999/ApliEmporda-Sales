@@ -22,4 +22,4 @@
 - Pàgina sales i recursos
 - Pàgina calendari (En desenvolupament - Juanjo)
 - Pàgina incidencies
-- Pàgina dashboard ADMIN
+- Pàgina dashboard ADMIN (En desenvolupament - Juanjo)
