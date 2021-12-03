@@ -334,3 +334,12 @@ div#navCalendari button:hover {
 div#navCalendari button i {
     font-size: 15px;
 }
+
+/*PANELL ADMINISTRADOR*/
+div#opcionsAdmin {
+    width: 100%;
+}
+div#opcionsAdmin div {
+    padding: 50px;
+    border: 1px solid #000;
+}

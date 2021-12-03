@@ -127,6 +127,24 @@
                 <!-- FILES DINÀMIQUES CONFORME SALES TINGUI RESERVADES L'USUARI -->
               </tbody>
             </table>
+            <?php } else { ?>
+                <div id="opcionsAdmin" class="row">
+                  <div class="col-md-2">
+                    Usuaris
+                  </div>
+                  <div class="col-md-2">
+                    Sales
+                  </div>
+                  <div class="col-md-2">
+                    Recursos
+                  </div>
+                  <div class="col-md-2">
+                    Reserves
+                  </div>
+                  <div class="col-md-2">
+                    Incidències
+                  </div>
+                </div>
             <?php } ?>
         </div>
       </div>
