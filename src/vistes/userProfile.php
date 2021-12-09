@@ -5,7 +5,7 @@
     <title>El Meu Perfil</title>
   </head>
   <body>
-    <?php include "util/navbar.php" ?>
+    <?php include "../src/vistes/util/navbar.php" ?>
     <br>
     <div class="container"></div>
   </body>
