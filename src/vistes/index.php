@@ -44,7 +44,7 @@
         
       <!-- VISTA ADMINISTRADOR -->
       <div class="row">
-      <?php include "util/sidebaradmin.php" ?>
+      <?php include "../src/vistes/util/sidebaradmin.php" ?>
       <div class="col-10 index-admin-container">
         <div>
           <?php if ($_REQUEST["info"] === "usuaris") { ?>
@@ -134,20 +134,20 @@
               </tbody>
             </table>
             <?php } else { ?>
-                <div id="opcionsAdmin" class="row">
-                  <div class="col-md-2">
+                <div id="opcionsAdmin" class="col-md-10 row">
+                  <div class="col-md-3">
                     Usuaris
                   </div>
-                  <div class="col-md-2">
+                  <div class="col-md-3">
                     Sales
                   </div>
-                  <div class="col-md-2">
+                  <div class="col-md-3">
                     Recursos
                   </div>
-                  <div class="col-md-2">
+                  <div class="col-md-3">
                     Reserves
                   </div>
-                  <div class="col-md-2">
+                  <div class="col-md-3">
                     Incidències
                   </div>
                 </div>
