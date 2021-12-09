@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include "util/head.php" ?>
+    <?php include "../src/vistes/util/head.php" ?>
     <title>Reservation</title>
 </head>
 
 <body>
-<?php include "util/navbar.php" ?>
+<?php include "../src/vistes/util/navbar.php" ?>
     <div class="flex-container">
         <form action="index.php" method="POST" class="reservation-form" autocomplete="off">
             <input type="hidden" name="r" value="makeReservation">

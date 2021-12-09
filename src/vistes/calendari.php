@@ -6,7 +6,7 @@
     <script src="js/calendari.js"></script>
   </head>
   <body>
-    <?php include "util/navbar.php" ?>
+    <?php include "../src/vistes/util/navbar.php" ?>
     <br>
     <div class="container-sm">
       <div id="navCalendari">
