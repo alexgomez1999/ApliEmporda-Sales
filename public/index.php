@@ -19,7 +19,7 @@ include "../src/middleware/middleLogin.php";
 
 $r = $_REQUEST["r"];
 
-$contenidor = new Emeset\Contenidor($config);
+$contenidor = new Emeset\Contenidor($config["db"]);
 $resposta = $contenidor->resposta();
 $peticio = $contenidor->peticio();
 

@@ -34,5 +34,19 @@ class UsuarisPDO
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
 
+    public function getLlistat()
+    {
+        $query = 'SELECT * FROM usuaris';
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':user' => $user]);
+
+        $usuaris = array();
+        while ($usuari = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $usuaris[$usuari["Id"]] = $usuari;
+        }
+        
+        return $usuaris;
+    }
+
   
 }

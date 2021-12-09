@@ -51,7 +51,6 @@
             <table class="table crud-table">
               <thead>
                 <tr>
-                  <th scope="col">#</th>
                   <th scope="col">Codi</th>
                   <th scope="col">Nom</th>
                   <th scope="col">Contrasenya</th>
@@ -59,7 +58,14 @@
                 </tr>
               </thead>
               <tbody>
-                <!-- FILES DINÀMIQUES CONFORME SALES TINGUI RESERVADES L'USUARI -->
+                <?php foreach ($llistatUsuaris as $actual) { ?>
+                    <tr>
+                      <td><?=$actual["Codi"];?></td>
+                      <td><?=$actual["Usuari"];?></td>
+                      <td><?=$actual["Contrasenya"];?></td>
+                      <td><?=$actual["Rol"];?></td>
+                    </tr>
+                <?php } ?>
               </tbody>
             </table>
           <?php } elseif ($_REQUEST["info"] === "sales") { ?>

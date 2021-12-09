@@ -11,7 +11,11 @@ function ctrlIndex($peticio, $resposta, $contenidor)
         $resposta->set('sala', $sala);
 
     } else {
-       // ADMIN
+       $usuarisPDO = $contenidor->usuaris();
+
+       $llistatUsuaris = $usuarisPDO->getLlistat();
+
+       $resposta->set('llistatUsuaris', $llistatUsuaris);
     }
 
     $resposta->SetTemplate("index.php");
