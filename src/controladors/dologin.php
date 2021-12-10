@@ -14,11 +14,11 @@ function ctrldoLogin($peticio, $resposta, $contenidor)
     if($actual && $actual["Contrasenya"] === $pass) {
         $resposta->setSession("logat", true);
         $resposta->setSession("login", $actual);
-        $resposta->redirect("location: index.php");
+        $resposta->redirect("Location:index.php");
     } else {
         $resposta->setSession("logat", false);  
         $resposta->setSession("missatge-login", "Usuari o contrasenya incorrecte"); 
-        $resposta->redirect("location: index.php?r=login");
+        $resposta->redirect("Location:index.php?r=login");
     }
     return $resposta;
 }
