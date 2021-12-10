@@ -5,7 +5,7 @@ function ctrldoLogin($peticio, $resposta, $contenidor)
     $usuari = $peticio->get(INPUT_POST, "user");
     $pass = $peticio->get(INPUT_POST, "pass");
 
-    $usuaris = new \Daw\UsuarisPDO($contenidor->config["db"]);
+    $usuaris = $contenidor->usuaris();
 
     $actual = $usuaris->getUser($usuari);
 

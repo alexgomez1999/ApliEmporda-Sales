@@ -41,11 +41,11 @@ class Contenidor
     }
 
     public function usuaris(){
-        return new \Daw\UsuarisPDO($this->config);
+        return new \Daw\UsuarisPDO($this->config["db"]);
     }
 
     public function sales(){
-        return new \Daw\SalesPDO($this->config);
+        return new \Daw\SalesPDO($this->config["db"]);
     }
 
 }
