@@ -135,20 +135,20 @@
             </table>
             <?php } else { ?>
                 <div id="opcionsAdmin" class="col-md-10 row">
-                  <div class="col-md-3">
-                    Usuaris
+                  <div class="col-md-4" id="anarusuaris">
+                    <p>Usuaris</p>
                   </div>
-                  <div class="col-md-3">
-                    Sales
+                  <div class="col-md-4" id="anarsales">
+                    <p>Sales</p>
                   </div>
-                  <div class="col-md-3">
-                    Recursos
+                  <div class="col-md-4" id="anarrecursos">
+                    <p>Recursos</p>
                   </div>
-                  <div class="col-md-3">
-                    Reserves
+                  <div class="col-md-4" id="anarreserves">
+                    <p>Reserves</p>
                   </div>
-                  <div class="col-md-3">
-                    Incidències
+                  <div class="col-md-4" id="anarincidencies">
+                    <p>Incidències</p>
                   </div>
                 </div>
             <?php } ?>
@@ -157,4 +157,5 @@
       </div>
       <?php } ?>
   </body>
+  <script src="js/admin.js"></script>
 </html>
