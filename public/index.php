@@ -55,6 +55,8 @@ if ($r == "") {
     $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlLlistaReserves");
 } elseif ($r === "salesDisponibles") {
     $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlSalesDisponibles");
+} elseif ($r === "anarusuaris") {
+    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlAjaxAdminUsuaris");
 }
 
 $resposta->resposta();

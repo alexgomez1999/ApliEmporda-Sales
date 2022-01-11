@@ -17,4 +17,23 @@
       <div id="divCalendari"></div>
     </div>
   </body>
+
+  <!-- Modal de Reserva Sala -->
+  <div id="modalReservaSala" class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 id="TitolModal1" class="modal-title"></h5>
+        <span id="TancaModal1"><i class="fas fa-close"></i></span>
+      </div>
+      <div id="CosModal1" class="modal-body">
+        <p></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Reserva Sala</button>
+        <button type="button" id="btnTancaModal1" class="btn btn-secondary" data-bs-dismiss="modal">Cancel·la</button>
+      </div>
+    </div>
+  </div>
+</div>
 </html>
