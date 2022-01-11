@@ -20,6 +20,7 @@ namespace Emeset;
 class Contenidor
 {
     public $config = [];
+    public $connexio;
 
     /**
      * __construct:  Crear contenidor
@@ -30,6 +31,7 @@ class Contenidor
     public function __construct($config)
     {
         $this->config = $config;
+        $this->connexio = new \Daw\Connexio($this->config["db"]);
     }
 
     public function resposta(){
@@ -40,12 +42,16 @@ class Contenidor
         return new \Emeset\Peticio();
     }
 
+    public function connexio(){
+        return $this->connexio;
+    }
+
     public function usuaris(){
-        return new \Daw\UsuarisPDO($this->config["db"]);
+        return new \Daw\UsuarisPDO($this->connexio);
     }
 
     public function sales(){
-        return new \Daw\SalesPDO($this->config["db"]);
+        return new \Daw\SalesPDO($this->connexio);
     }
 
 }

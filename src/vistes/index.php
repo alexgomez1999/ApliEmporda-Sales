@@ -43,9 +43,9 @@
       <?php } else { ?>
         
       <!-- VISTA ADMINISTRADOR -->
-      <div class="row">
+      <div id="divCentral">
       <?php include "../src/vistes/util/sidebaradmin.php" ?>
-      <div class="col-10 index-admin-container">
+      <div id="contentAdmin" class="index-admin-container">
         <div>
           <?php if ($_REQUEST["info"] === "usuaris") { ?>
             <table class="table crud-table">

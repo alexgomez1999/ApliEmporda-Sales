@@ -2,6 +2,20 @@ body {
     box-sizing: border-box;
 }
 
+#divCentral {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+#sidebaradmin {
+    grid-area: 1 / 1 / 6 / 6;
+}
+#contentAdmin {
+    grid-area: 1 / 2 / 6 / 6;
+}
+
 /* NAVBAR */
 
 nav {
@@ -32,6 +46,7 @@ nav#menu ul > li > a:hover{
 }
 nav#menu li:hover > ul {
     display: block;
+    margin-right: 2em;
 }
 nav#menu ul ul {
     background-color: #1240AB;
