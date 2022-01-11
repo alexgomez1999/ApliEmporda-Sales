@@ -3,7 +3,8 @@
 function ctrlLlistaReserves($peticio, $resposta, $contenidor)
 {
         $CodiUsuari = $_SESSION['login']['Codi'];
-        $sales = new \Daw\SalesPDO($contenidor->config["db"]);
+        
+        $sales = $contenidor->sales();
 
         $sala = $sales->getReserva($CodiUsuari);
         $resposta->set('sala', $sala);
