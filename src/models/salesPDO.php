@@ -14,11 +14,12 @@ class SalesPDO
     public function getReserva($CodiUsuari)
     {
         $query = 
-        'SELECT A.Id, A.Codi, B.Nom, B.Centre, B.Ubicacio,
+        'SELECT A.Id, A.Codi, B.Nom, D.Nom "Centre", B.Ubicacio,
         A.Data, A.HoraInici, A.HoraFi
         FROM reserves A
         INNER JOIN sales B ON(A.CodiSala = B.Codi)
         INNER JOIN usuaris C ON (A.CodiUsuari = C.Codi)
+        INNER JOIN centres D ON (B.Centre = D.Codi)
         WHERE C.Codi = :CodiUsuari';
         
         $stm = $this->sql->prepare($query);
