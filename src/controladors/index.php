@@ -9,11 +9,13 @@ function ctrlIndex($peticio, $resposta, $contenidor)
 
         $sala = $sales->getReserva($CodiUsuari);
         $resposta->set('sala', $sala);
+        $resposta->SetTemplate("llistaReserves.php");
 
     } else {
        // ADMIN
+       $resposta->SetTemplate("index.php");
     }
 
-    $resposta->SetTemplate("index.php");
+    
     return $resposta;
 }

@@ -6,31 +6,6 @@
   </head>
   <body>
   <?php include "../src/vistes/util/navbar.php" ?>
-    <?php if($_SESSION['login']['Rol'] != 'Administrador') { ?>
-      <!-- VISTA USUARI NORMAL -->
-      <div class="index-user-container">
-        <?php foreach ($sala as $row) { ?>
-        <div class="index-user-container2">
-          <img src="https://www.desarrollolibre.net/public/broken-img.png" alt="" class="imatge-sala">
-          <div class="column-container">
-            <b><?= $row['Nom'] ?></b>
-            <p><?= $row['Ubicacio'] ?>, <?= $row['Centre'] ?></p>
-          </div>
-          <div class="column-container">
-            <b>Data</b>
-            <p><?= $row['Data'] ?></p>
-          </div>
-          <div class="column-container">
-            <b>Hora</b>
-            <p>De:  <?= $row['HoraInici'] ?> A: <?= $row['HoraFi'] ?></p>
-          </div>
-          <a href="index.php?r=deleteReservation&id=<?= $row['Id'] ?>">Eliminar</a>
-          <a href="index.php?r=newReservation" class="reservarBtn" style="text-decoration:none"><i class="fas fa-plus"></i></a>
-        </div>
-        <?php } ?>
-        </div>
-      <?php } else { ?>
-        
       <!-- VISTA ADMINISTRADOR -->
       <div class="row">
       <?php include "util/sidebaradmin.php" ?>
@@ -138,6 +113,5 @@
         </div>
       </div>
       </div>
-      <?php } ?>
   </body>
 </html>

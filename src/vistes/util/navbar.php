@@ -14,7 +14,7 @@
             <a href="#" class="nav-link"><i class="fa fa-file-alt"></i> Incidències</a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link"><i class="fa fa-person-booth"></i> Sales</a>
+            <a href="index.php?r=llistaReserves&id=<?= $_SESSION['login']['Codi'] ?>" class="nav-link"><i class="fa fa-person-booth"></i> Sales</a>
         </li>
         <li class="nav-item">
             <a href="index.php?r=calendari" class="nav-link"><i class="fa fa-calendar"></i> Calendari</a>
@@ -25,7 +25,7 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
               <li><a class="dropdown-item" href="index.php?r=userProfile"><i class="fa fa-id-badge"></i> El Meu Perfil</a></li>
-              <li><a class="dropdown-item" href="index.php?r=lesMevesSales"><i class="fa fa-person-booth"></i> Les Meves Sales</a></li>
+              <li><a class="dropdown-item" href="index.php?r=llistaReserves"><i class="fa fa-person-booth"></i> Les Meves Sales</a></li>
               <li><hr class="dropdown-separacio"></li>
               <li><a class="dropdown-item" href="index.php?r=logout"><i class="fa fa-sign-out-alt"></i> Tanca la Sessió</a></li>
           </ul>

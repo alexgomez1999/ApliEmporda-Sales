@@ -13,6 +13,7 @@ include "../src/controladors/calendari.php";
 include "../src/controladors/newReservation.php";
 include "../src/controladors/eliminarReserva.php";
 include "../src/controladors/ajaxServer.php";
+include "../src/controladors/llistaReserves.php";
 
 include "../src/middleware/middleAdmin.php";
 include "../src/middleware/middleLogin.php";
@@ -49,6 +50,8 @@ if ($r == "") {
     $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlCheckHours");
 } elseif ($r === "checkPersons") {
     $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlCheckPersons");
+} elseif ($r === "llistaReserves") {
+    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlLlistaReserves");
 }
 
 $resposta->resposta();
