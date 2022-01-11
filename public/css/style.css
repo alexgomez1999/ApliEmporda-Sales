@@ -171,6 +171,30 @@ button#login:hover {
     justify-content: center;
     text-align: center;
     align-items: center;
+    flex-direction: column;
+}
+
+.index-user-container2 {
+    display: flex;
+    height: 15vh;
+    width: 80%;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    border-bottom: 2px solid black;
+}
+
+.column-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.imatge-sala {
+    width: 100px;
+    height: 100px;
 }
 
 .crud-table {
