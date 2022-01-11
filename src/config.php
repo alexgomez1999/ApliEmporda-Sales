@@ -13,5 +13,6 @@ require_once "../src/emeset/peticio.php";
 require_once "../src/emeset/resposta.php";
 require_once "../src/emeset/contenidor.php";
 
+require_once "../src/models/connexio.php";
 require_once "../src/models/usuarisPDO.php";
 require_once "../src/models/salesPDO.php";

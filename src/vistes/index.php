@@ -7,15 +7,14 @@
   <body>
   <?php include "../src/vistes/util/navbar.php" ?>
       <!-- VISTA ADMINISTRADOR -->
-      <div class="row">
-      <?php include "util/sidebaradmin.php" ?>
-      <div class="col-10 index-admin-container">
+      <div id="divCentral">
+      <?php include "../src/vistes/util/sidebaradmin.php" ?>
+      <div id="contentAdmin" class="index-admin-container">
         <div>
           <?php if ($_REQUEST["info"] === "usuaris") { ?>
             <table class="table crud-table">
               <thead>
                 <tr>
-                  <th scope="col">#</th>
                   <th scope="col">Codi</th>
                   <th scope="col">Nom</th>
                   <th scope="col">Contrasenya</th>
@@ -23,7 +22,14 @@
                 </tr>
               </thead>
               <tbody>
-                <!-- FILES DINÀMIQUES CONFORME SALES TINGUI RESERVADES L'USUARI -->
+                <?php foreach ($llistatUsuaris as $actual) { ?>
+                    <tr>
+                      <td><?=$actual["Codi"];?></td>
+                      <td><?=$actual["Usuari"];?></td>
+                      <td><?=$actual["Contrasenya"];?></td>
+                      <td><?=$actual["Rol"];?></td>
+                    </tr>
+                <?php } ?>
               </tbody>
             </table>
           <?php } elseif ($_REQUEST["info"] === "sales") { ?>
@@ -92,21 +98,21 @@
               </tbody>
             </table>
             <?php } else { ?>
-                <div id="opcionsAdmin" class="row">
-                  <div class="col-md-2">
-                    Usuaris
+                <div id="opcionsAdmin" class="col-md-10 row">
+                  <div class="col-md-4" id="anarusuaris">
+                    <p>Usuaris</p>
                   </div>
-                  <div class="col-md-2">
-                    Sales
+                  <div class="col-md-4" id="anarsales">
+                    <p>Sales</p>
                   </div>
-                  <div class="col-md-2">
-                    Recursos
+                  <div class="col-md-4" id="anarrecursos">
+                    <p>Recursos</p>
                   </div>
-                  <div class="col-md-2">
-                    Reserves
+                  <div class="col-md-4" id="anarreserves">
+                    <p>Reserves</p>
                   </div>
-                  <div class="col-md-2">
-                    Incidències
+                  <div class="col-md-4" id="anarincidencies">
+                    <p>Incidències</p>
                   </div>
                 </div>
             <?php } ?>
@@ -114,4 +120,5 @@
       </div>
       </div>
   </body>
+  <script src="js/admin.js"></script>
 </html>
