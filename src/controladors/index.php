@@ -12,10 +12,14 @@ function ctrlIndex($peticio, $resposta, $contenidor)
         $resposta->SetTemplate("llistaReserves.php");
 
     } else {
-       // ADMIN
-       $resposta->SetTemplate("index.php");
+       $usuarisPDO = $contenidor->usuaris();
+
+       $llistatUsuaris = $usuarisPDO->getLlistat();
+
+       $resposta->set('llistatUsuaris', $llistatUsuaris);
     }
 
+    $resposta->SetTemplate("index.php");
     
     return $resposta;
 }

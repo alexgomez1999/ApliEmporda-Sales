@@ -1,4 +1,4 @@
-<div id="sidebaradmin" class="col-2 d-flex flex-column flex-shrink-0 p-3" style="width: 280px;">
+<div id="sidebaradmin" class="col-md-2 d-flex flex-column flex-shrink-0 p-3">
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
         <?php if ($_REQUEST["info"] === "usuaris") { ?>

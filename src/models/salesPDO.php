@@ -6,17 +6,9 @@ class SalesPDO
 {
     private $sql;
 
-    public function __construct($config)
+    public function __construct($connexio)
     {
-        $dsn = "mysql:dbname={$config['dbname']};host={$config['host']}";
-        $usuari = $config['user'];
-        $clau = $config['pass'];
-
-        try {
-            $this->sql = new \PDO($dsn, $usuari, $clau);
-        } catch (\PDOException $e) {
-            die('Ha fallat la connexió: ' . $e->getMessage() . " $usuari");
-        }
+        $this->sql = $connexio->getConnexio();
     }
 
     public function getReserva($CodiUsuari)
