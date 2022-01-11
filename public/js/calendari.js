@@ -6,14 +6,30 @@ let diasSetmanaEuropeu = ["Dl.", "Dt.", "Dm.", "Dj.", "Dv.", "Ds.", "Dg."];
 /**
  * Funció que s'executara quan la pàgina estigui totalment carregada
  * **/
-window.onload = function() {
+$(document).ready(function() {
     setEstructura();
 
     setTitol()
     
     document.getElementById("btnAbans").addEventListener("click", setMesAnterior);
     document.getElementById("btnDespres").addEventListener("click", setMesSeguent);
-}
+    $("div#divCalendari table tr > td").click(function(e) {
+        let diaActual = $( e.target ).text();
+        let mesActual = $( e.target ).children("input[name=mesActual]").val();
+        let anyActual = $( e.target ).children("input[name=anyActual]").val();
+
+        $("#TitolModal1").html(`<span><i class="fas fa-info-circle"></i></span> Reserva Sala pel ${ diaActual } / ${ mesActual } / ${ anyActual }`);
+
+        $("#CosModal1").html(`<p>Dia ${ diaActual }<br>
+        Mes ${ mesActual }<br>
+        Any: ${ anyActual }</p>`);
+
+        $("#modalReservaSala").show();
+    });
+    $("#TancaModal1, #btnTancaModal1").click(function() {
+        $("#modalReservaSala").hide();
+    });
+});
 
 /**
  * setMesSeguent: Funció que retrocedeix un mes en el temps
@@ -144,6 +160,16 @@ function setCalendari(anySelect, mesSelect) {
         if (mesSelect == mes) {
             divCalendari.children[0].children[1].children[setmana].children[dia_setmana].setAttribute("class", "diaMes");
             divCalendari.children[0].children[1].children[setmana].children[dia_setmana].innerHTML = dia;
+            let inputMes = document.createElement("input");
+            inputMes.setAttribute("type", "hidden");
+            inputMes.setAttribute("value", (mes+1));
+            inputMes.setAttribute("name", "mesActual");
+            divCalendari.children[0].children[1].children[setmana].children[dia_setmana].appendChild(inputMes);
+            let inputAny = document.createElement("input");
+            inputAny.setAttribute("type", "hidden");
+            inputAny.setAttribute("value", data.getFullYear());
+            inputAny.setAttribute("name", "anyActual");
+            divCalendari.children[0].children[1].children[setmana].children[dia_setmana].appendChild(inputAny);
 
             if (dia_setmana == 5 || dia_setmana == 6) {
                 divCalendari.children[0].children[1].children[setmana].children[dia_setmana].removeAttribute("class")
