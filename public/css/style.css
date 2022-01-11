@@ -285,6 +285,16 @@ a {
 /* END RESERVATION PAGE */
 
 /* SELECT DAY RESERVATION IN CALENDAR PAGE */
+@media screen and (min-width: 901px) {
+    div#divCalendari table {
+        height: 500px;
+    }
+}
+@media screen and (max-width: 900px) {
+    div#divCalendari table {
+        height: 400px;
+    }
+}
 div#divCalendari, div#navCalendari {
     font-size: 20px;
 }

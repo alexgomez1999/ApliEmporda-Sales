@@ -49,6 +49,8 @@ if ($r == "") {
     $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlCheckHours");
 } elseif ($r === "checkPersons") {
     $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlCheckPersons");
+} elseif ($r === "anarusuaris") {
+    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlAjaxAdminUsuaris");
 }
 
 $resposta->resposta();
