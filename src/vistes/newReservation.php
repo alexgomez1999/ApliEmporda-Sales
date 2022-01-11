@@ -22,8 +22,8 @@
                 <label for="centre">Centre</label>
                 <select name="Centre" id="centre">
                     <option value="-">-</option>
-                    <option value="Centre1">Centre1</option>
-                    <option value="Centre2">Centre2</option>
+                    <option value="Centre 1">Centre 1</option>
+                    <option value="Centre 2">Centre 2</option>
                 </select>
             </div>
             <div class="flex-column-container">

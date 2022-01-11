@@ -70,4 +70,28 @@ class SalesPDO
         }
         return $llista;
     }
+
+    public function getSales($Ubicacio, $Centre) {
+        $query = 'SELECT A.Nom, A.NomRecurs, A.Ubicacio, A.Foto,
+        B.Nom "Centre"
+        FROM sales A
+        INNER JOIN centres B ON (A.Centre = B.Codi)
+        WHERE A.Ubicacio = :Ubicacio
+        AND B.Nom = :Centre';
+
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':Ubicacio' => $Ubicacio, ':Centre' => $Centre]);
+
+        $llista = [];
+        while ($sala = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $llista[] = $sala;
+        }
+
+        if ($this->sql->errorCode() !== '00000') {
+            $err = $this->sql->errorInfo();
+            $code = $this->sql->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        return $llista;
+    }
 }
