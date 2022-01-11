@@ -47,6 +47,36 @@
             </div>
         </form>
         <div id="cont"></div>
+        <!-- Per cada sala disponible -->
+        <div id="sales">
+            <div id="dades-sala">
+                <p>Nom sala</p>
+                <p>Nom centre</p>
+                <p>Ubicació</p>
+            </div>
+            <div id="recursos-sala">
+                <p>Recursos</p>
+            </div>
+            <div id="foto-sala">
+                <img src="https://www.desarrollolibre.net/public/broken-img.png" alt="" class="imatge-sala">
+            </div>
+        </div>
+        <!--  -->
+        <!-- Per cada sala disponible -->
+        <div id="sales">
+            <div id="dades-sala">
+                <p>Nom sala</p>
+                <p>Nom centre</p>
+                <p>Ubicació</p>
+            </div>
+            <div id="recursos-sala">
+                <p>Recursos</p>
+            </div>
+            <div id="foto-sala">
+                <img src="https://www.desarrollolibre.net/public/broken-img.png" alt="" class="imatge-sala">
+            </div>
+        </div>
+        <!--  -->
     </div>
 </body>
 <footer>

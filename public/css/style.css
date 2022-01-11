@@ -2,6 +2,10 @@ body {
     box-sizing: border-box;
 }
 
+p {
+    margin: 0 !important;
+}
+
 #divCentral {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -276,6 +280,47 @@ a {
     align-items: center;
     text-align: center;
     flex-direction: column;
+    margin: 0 13px;
+}
+
+#cont {
+    margin-top: 50px;
+}
+
+#sales {
+    display: flex;
+    width: 90%;
+    height: 150px;
+    border: 2px solid;
+    margin-bottom: 50px;
+}
+
+#sales:hover {
+    background: rgba(211, 211, 211, 0.678);
+    cursor: pointer;
+}
+
+#dades-sala {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 100%;
+    border: 1px solid;
+}
+
+#recursos-sala {
+    width: 63%;
+    border: 1px solid;
+}
+
+#foto-sala {
+    width: 17%;
+    border: 1px solid;
+}
+
+#foto-sala .imatge-sala {
+    width: 100%;
+    height: 100%;
 }
 
 .flex-container {
