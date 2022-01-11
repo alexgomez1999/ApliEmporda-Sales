@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-      <?php include "util/head.php" ?>
+      <?php include "../src/vistes/util/head.php" ?>
     <title>Login</title>
   </head>
   <body class="login-body">

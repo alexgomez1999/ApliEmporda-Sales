@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <?php include "util/head.php" ?>
+    <?php include "../src/vistes/util/head.php" ?>
     <title>Inici</title>
   </head>
   <body>
-  <?php include "util/navbar.php" ?>
+  <?php include "../src/vistes/util/navbar.php" ?>
     <?php if($_SESSION['login']['Rol'] != 'Administrador') { ?>
       <!-- VISTA USUARI NORMAL -->
       <div class="index-user-container">
