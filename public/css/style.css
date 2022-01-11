@@ -290,9 +290,8 @@ a {
 #sales {
     display: flex;
     width: 90%;
-    height: 150px;
-    border: 2px solid;
-    margin-bottom: 50px;
+    height: 190px;
+    margin-bottom: 5px;
 }
 
 #sales:hover {
@@ -306,11 +305,16 @@ a {
     width: 20%;
     height: 100%;
     border: 1px solid;
+    justify-content: center;
 }
 
 #recursos-sala {
+    display: flex;
+    flex-direction: column;
     width: 63%;
     border: 1px solid;
+    height: 100%;
+    justify-content: center;
 }
 
 #foto-sala {
