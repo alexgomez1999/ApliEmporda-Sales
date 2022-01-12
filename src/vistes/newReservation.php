@@ -20,63 +20,35 @@
             </div>
             <div class="flex-column-container">
                 <label for="centre">Centre</label>
-                <select name="Centre" id="centre">
+                <select name="Centre" id="centre" disabled>
                     <option value="-">-</option>
-                    <option value="Centre 1">Centre 1</option>
-                    <option value="Centre 2">Centre 2</option>
+                    <option value="1">Centre 1</option>
+                    <option value="2">Centre 2</option>
                 </select>
             </div>
             <div class="flex-column-container">
                 <label for="data">Dia</label>
-                <input type="date" name="Data" id="data">
+                <input type="date" name="Data" id="data" disabled>
             </div>
             <div class="flex-column-container">
                 <label for="hentrada">Hora entrada</label>
-                <input type="time" name="HoraEntrada" id="hentrada">
+                <input type="time" name="HoraEntrada" id="hentrada" disabled>
             </div>
             <div class="flex-column-container">
                 <label for="hsortida">Hora sortida</label>
-                <input type="time" name="HoraFi" id="hsortida">
+                <input type="time" name="HoraFi" id="hsortida" disabled>
             </div>
             <div class="flex-column-container">
                 <label for="persones">Persones</label>
-                <input type="number" name="Persones" id="persones" min=0>
+                <input type="number" name="Persones" id="persones" min=0 disabled>
             </div>
             <div class="flex-column-container">
                 <button type="submit" id="submit"><i class="fas fa-search"></i></button>
             </div>
         </form>
         <div id="cont"></div>
-        <!-- Per cada sala disponible -->
-        <div id="sales">
-            <div id="dades-sala">
-                <p>Nom sala</p>
-                <p>Nom centre</p>
-                <p>Ubicació</p>
-            </div>
-            <div id="recursos-sala">
-                <p>Recursos</p>
-            </div>
-            <div id="foto-sala">
-                <img src="https://www.desarrollolibre.net/public/broken-img.png" alt="" class="imatge-sala">
-            </div>
-        </div>
-        <!--  -->
-        <!-- Per cada sala disponible -->
-        <div id="sales">
-            <div id="dades-sala">
-                <p>Nom sala</p>
-                <p>Nom centre</p>
-                <p>Ubicació</p>
-            </div>
-            <div id="recursos-sala">
-                <p>Recursos</p>
-            </div>
-            <div id="foto-sala">
-                <img src="https://www.desarrollolibre.net/public/broken-img.png" alt="" class="imatge-sala">
-            </div>
-        </div>
-        <!--  -->
+        <div id="sales"></div>
+        
     </div>
 </body>
 <footer>

@@ -16,24 +16,26 @@ $('#ubi').on('change', () => {
         type: 'POST',
         data: { ubicacio: ubi },
         success: function(response) {
-
+            fetchResults(response);
         }
     });
-    drawResults();
+
+    $("#centre").prop('disabled', false);
 });
 
 // center listener
 $('#centre').on('change', () => {
-    centre = $("#centre option:selected").text();
+    centre = $("#centre option:selected").val();
+
     $.ajax({
         url: 'index.php?r=checkCenter',
         type: 'POST',
-        data: { centre },
+        data: { ubicacio: ubi, centre: centre },
         success: (response) => {
-            
+            fetchResults(response);
         }
     });
-    drawResults();
+    $("#data").prop('disabled', false);
 });
 
 // date listener
@@ -51,13 +53,14 @@ $('#data').on('change', () => {
             
         }
     });
-    drawResults();
+    $("#hentrada").prop('disabled', false);
 });
 
 // arrival listener
 $('#hentrada').on('keyup', () => {
     entrada = $('#hentrada').val();
-    drawResults();
+    
+    $("#hsortida").prop('disabled', false);
 });
 
 // departure listener
@@ -71,7 +74,7 @@ $('#hsortida').on('keyup', () => {
             
         }
     });
-    drawResults();
+    $("#persones").prop('disabled', false);
 });
 
 // persons listener
@@ -85,7 +88,6 @@ $('#persones').on('keyup change', () => {
             
         }
     });
-    drawResults();
 });
 
 // submit button listener
@@ -112,16 +114,42 @@ $('.reservation-form').on('submit', (e) => {
     });
 });
 
-// function to implement results
-function drawResults() {
-    let temp =  `<p>
-                Ubi: ${ubi}<br>
-                Centre: ${centre}<br>
-                Dia: ${dia}<br>
-                Arrivada: ${entrada}<br>
-                Sortida: ${sortida}<br>
-                Persones: ${persones}<br>
-                </p>`;
+function fetchResults(response) {
 
-    cont.html(temp);
+    const r = response.substring(0, response.indexOf("<"));
+    const res = JSON.parse(r);
+
+    let temp = '';
+    $(res).each((val, index) => {
+        temp += 
+        `
+        <div id="sala">
+        <div id="dades-sala">
+            <p>${index.Nom}</p>
+            <p>${index.NomCentre}</p>
+            <p>${index.Ubicacio}</p>
+        </div>
+        <div id="recursos-sala">
+            <table cellpadding="20">
+                <tr class="underlined-cell">
+                    <td><strong>Recurs:</strong></td>
+                    <td>Cadira</td>
+                    <td>Taula</td>
+                    <td>Projector</td>
+                </tr>
+                <tr>
+                    <td><strong>Quantitat:</strong></td>
+                    <td>15</td>
+                    <td>5</td>
+                    <td>1</td>
+                </tr>
+            </table>
+            </div>
+            <div id="foto-sala">
+                <img src="https://img.lovepik.com/photo/20211123/medium/lovepik-corporate-conference-room-environment-picture_500803335.jpg" alt="" class="imatge-sala">
+            </div>
+        </div>
+        `;
+    });
+    $('#sales').html(temp);
 }

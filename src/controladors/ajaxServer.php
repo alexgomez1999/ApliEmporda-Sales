@@ -4,11 +4,11 @@ function ctrlCheckUbi($peticio, $resposta, $contenidor)
 {
     $ubi = $peticio->get(INPUT_POST, "ubicacio");
     
-    $Sales = new \Daw\SalesPDO($contenidor->config["db"]);
-    $dades = $Sales->searchUbication($ubi);
+    $sales = $contenidor->sales();
+    $dades = $sales->searchUbication($ubi);
 
     $jsonDades = json_encode($dades);
-    
+
     echo $jsonDades;
 
     return $resposta;
@@ -16,9 +16,15 @@ function ctrlCheckUbi($peticio, $resposta, $contenidor)
 
 function ctrlCheckCenter($peticio, $resposta, $contenidor)
 {
+    $ubi = $peticio->get(INPUT_POST, "ubicacio");
     $centre = $peticio->get(INPUT_POST, "centre");
+
+    $sales = $contenidor->sales();
+    $dades = $sales->searchCenter($ubi, $centre);
     
-    echo $centre;
+    $jsonDades = json_encode($dades);
+    
+    echo $jsonDades;
 
     return $resposta;
 }

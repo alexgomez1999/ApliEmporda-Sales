@@ -53,10 +53,36 @@ class SalesPDO
 
     public function searchUbication($search)
     {
-        $query = 'SELECT * FROM sales WHERE Ubicacio LIKE :search';
+        $query = 
+        'SELECT A.*, B.Nom "NomCentre" FROM sales A
+         JOIN centres B ON (A.Centre = B.Codi)
+         WHERE A.Ubicacio = :search';
         
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([':search' => $search]);
+
+        $llista = [];
+        while ($sala = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $llista = $sala;
+        }
+
+        if ($this->sql->errorCode() !== '00000') {
+            $err = $this->sql->errorInfo();
+            $code = $this->sql->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        return $llista;
+    }
+
+    public function searchCenter($ubicacio, $centre)
+    {
+        $query = 
+        'SELECT A.*, B.Nom "NomCentre" FROM sales A
+         JOIN centres B ON (A.Centre = B.Codi)
+         WHERE A.Ubicacio LIKE :ubicacio AND A.Centre = :centre';
+        
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':ubicacio' => $ubicacio, ':centre' => $centre]);
 
         $llista = [];
         while ($sala = $stm->fetch(\PDO::FETCH_ASSOC)) {

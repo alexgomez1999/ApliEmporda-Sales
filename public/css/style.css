@@ -289,12 +289,20 @@ a {
 
 #sales {
     display: flex;
+    flex-direction: column;
     width: 90%;
     height: 190px;
     margin-bottom: 5px;
 }
 
-#sales:hover {
+#sala {
+    display: flex;
+    width: 100%;
+    height: 190px;
+    margin-bottom: 5px;
+}
+
+#sala:hover {
     background: rgba(211, 211, 211, 0.678);
     cursor: pointer;
 }
@@ -315,6 +323,11 @@ a {
     border: 1px solid;
     height: 100%;
     justify-content: center;
+    flex-wrap: wrap;
+}
+
+.underlined-cell {
+    border-bottom: 2px solid;
 }
 
 #foto-sala {
