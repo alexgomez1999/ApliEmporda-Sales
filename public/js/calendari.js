@@ -2,6 +2,7 @@ let anySelect;
 let mesSelect;
 let mesosAny = ["Gener", "Febrer", "Març", "Abril", "Maig", "Juny", "Juliol", "Agost", "Setembre", "Octubre", "Novembre", "Desembre"];
 let diasSetmanaEuropeu = ["Dl.", "Dt.", "Dm.", "Dj.", "Dv.", "Ds.", "Dg."];
+let diasSetmanaAmerica = ["Diumenge", "Dilluns", "Dimarts", "Dimecres", "Dijous", "Divendres", "Dissabte"];
 
 /**
  * Funció que s'executara quan la pàgina estigui totalment carregada
@@ -18,16 +19,37 @@ $(document).ready(function() {
         let mesActual = $( e.target ).children("input[name=mesActual]").val();
         let anyActual = $( e.target ).children("input[name=anyActual]").val();
 
-        $("#TitolModal1").html(`<span><i class="fas fa-info-circle"></i></span> Reserva Sala pel ${ diaActual } / ${ mesActual } / ${ anyActual }`);
+        let dataSelect = `${ anyActual }-${ mesActual }-${ diaActual }`;
 
-        $("#CosModal1").html(`<p>Dia ${ diaActual }<br>
-        Mes ${ mesActual }<br>
-        Any: ${ anyActual }</p>`);
+        let dataSelectObj = new Date(dataSelect);
 
-        $("#modalReservaSala").show();
+        $("#CosModal1").children().remove();
+
+        $.ajax({
+            url: 'index.php?r=tevesReservesAjax',
+            type: 'POST',
+            data: { dataSelect }, 
+            success: function(data) {
+                $("#CosModal1").append(`<ul class="list-group"></ul>`);
+
+                let resultatJson = data;
+                resultatJson = resultatJson.substring(0, resultatJson.indexOf("<"));
+
+                let resultat = $.parseJSON(resultatJson);
+
+                resultat.forEach(element => {
+                    $("#CosModal1 > ul").append(`<li class="
+                    list-group-item list-group-item-primary">${ element["Nom"] }</li>`);
+                });
+            }
+        });
+
+        $("#TitolModal1").html(`<span><i class="fas fa-info-circle"></i></span> Reserves del ${ diasSetmanaAmerica[dataSelectObj.getDay()] } ${ dataSelectObj.getDate() } de ${ mesosAny[dataSelectObj.getMonth()] } del ${ dataSelectObj.getFullYear() }`);
+
+        $("#modalReservaSala").show().animate({"top": "10px"});
     });
     $("#TancaModal1, #btnTancaModal1").click(function() {
-        $("#modalReservaSala").hide();
+        $("#modalReservaSala").hide().animate({"top": "-10px"});
     });
 });
 

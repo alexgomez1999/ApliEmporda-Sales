@@ -50,3 +50,22 @@ function ctrlCheckPersons($peticio, $resposta, $contenidor)
 
     return $resposta;
 }
+
+function ctrlTevesReservesAjax($peticio, $resposta, $contenidor)
+{
+    $usuarisPDO = $contenidor->usuaris();
+    $salesPDO = $contenidor->sales();
+
+    $login = $peticio->get("SESSION", "login");
+    $dataSelect = $peticio->get(INPUT_POST, "dataSelect");
+
+    $dataSelectObj = new DateTime($dataSelect);
+
+    $dadesUsuariLogat = $usuarisPDO->getUser($login["Usuari"]);
+
+    $reserves = $salesPDO->getReservaPerData($dadesUsuariLogat["Id"], $dataSelectObj->format("Y-m-d"));
+    
+    echo json_encode($reserves);
+
+    return $resposta;
+}

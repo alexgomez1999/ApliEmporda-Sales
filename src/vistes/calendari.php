@@ -20,11 +20,11 @@
 
   <!-- Modal de Reserva Sala -->
   <div id="modalReservaSala" class="modal" tabindex="-1">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
         <h5 id="TitolModal1" class="modal-title"></h5>
-        <span id="TancaModal1"><i class="fas fa-close"></i></span>
+        <button id="TancaModal1" type="button" class="btn btn-close"><i class="fas fa-close"></i></button>
       </div>
       <div id="CosModal1" class="modal-body">
         <p></p>
