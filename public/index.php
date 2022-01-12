@@ -14,6 +14,7 @@ include "../src/controladors/newReservation.php";
 include "../src/controladors/eliminarReserva.php";
 include "../src/controladors/ajaxServer.php";
 include "../src/controladors/llistaReserves.php";
+include "../src/controladors/salesDisponibles.php";
 
 include "../src/middleware/middleAdmin.php";
 include "../src/middleware/middleLogin.php";
@@ -54,6 +55,10 @@ if ($r == "") {
     $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlLlistaReserves");
 } elseif ($r === "tevesReservesAjax") {
     $resposta = ctrlTevesReservesAjax($peticio, $resposta, $contenidor);
+} elseif ($r === "salesDisponibles") {
+    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlSalesDisponibles");
+} elseif ($r === "anarusuaris") {
+    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlAjaxAdminUsuaris");
 }
 
 $resposta->resposta();

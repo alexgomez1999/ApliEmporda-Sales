@@ -22,8 +22,8 @@
                 <label for="centre">Centre</label>
                 <select name="Centre" id="centre">
                     <option value="-">-</option>
-                    <option value="Centre1">Centre1</option>
-                    <option value="Centre2">Centre2</option>
+                    <option value="Centre 1">Centre 1</option>
+                    <option value="Centre 2">Centre 2</option>
                 </select>
             </div>
             <div class="flex-column-container">
@@ -47,6 +47,36 @@
             </div>
         </form>
         <div id="cont"></div>
+        <!-- Per cada sala disponible -->
+        <div id="sales">
+            <div id="dades-sala">
+                <p>Nom sala</p>
+                <p>Nom centre</p>
+                <p>Ubicació</p>
+            </div>
+            <div id="recursos-sala">
+                <p>Recursos</p>
+            </div>
+            <div id="foto-sala">
+                <img src="https://www.desarrollolibre.net/public/broken-img.png" alt="" class="imatge-sala">
+            </div>
+        </div>
+        <!--  -->
+        <!-- Per cada sala disponible -->
+        <div id="sales">
+            <div id="dades-sala">
+                <p>Nom sala</p>
+                <p>Nom centre</p>
+                <p>Ubicació</p>
+            </div>
+            <div id="recursos-sala">
+                <p>Recursos</p>
+            </div>
+            <div id="foto-sala">
+                <img src="https://www.desarrollolibre.net/public/broken-img.png" alt="" class="imatge-sala">
+            </div>
+        </div>
+        <!--  -->
     </div>
 </body>
 <footer>

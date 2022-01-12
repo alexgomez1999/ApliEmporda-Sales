@@ -9,16 +9,14 @@ const cont = $('#cont');
 
 // ubication listener
 $('#ubi').on('change', () => {
-    ubi = {
-        ubicacio: $("#ubi option:selected").text()
-    };
+    ubi = $("#ubi option:selected").text();
+    
     $.ajax({
         url: 'index.php?r=checkUbi',
         type: 'POST',
-        data: ubi,
+        data: { ubicacio: ubi },
         success: function(response) {
-            const res = (response);
-            console.log(res);
+
         }
     });
     drawResults();
@@ -32,7 +30,7 @@ $('#centre').on('change', () => {
         type: 'POST',
         data: { centre },
         success: (response) => {
-            console.log(response);
+            
         }
     });
     drawResults();
@@ -50,7 +48,7 @@ $('#data').on('change', () => {
         type: 'POST',
         data: { dia },
         success: (response) => {
-            console.log(response);
+            
         }
     });
     drawResults();
@@ -70,7 +68,7 @@ $('#hsortida').on('keyup', () => {
         type: 'POST',
         data: { entrada, sortida },
         success: (response) => {
-            console.log(response);
+            
         }
     });
     drawResults();
@@ -84,16 +82,34 @@ $('#persones').on('keyup change', () => {
         type: 'POST',
         data: { persones },
         success: (response) => {
-            console.log(response);
+            
         }
     });
     drawResults();
 });
 
 // submit button listener
-$('#submit').on('click', (e) => {
+$('.reservation-form').on('submit', (e) => {
     e.preventDefault();
-    drawResults();
+
+    const postData = {
+        'ubicacio': $('#ubi').val(),
+        'centre': $('#centre').val(),
+        'dia': $('#data').val(),
+        'entrada': $('#hentrada').val(),
+        'sortida': $('#hsortida').val(),
+        'persones': $('#persones').val()
+    }
+
+    $.ajax({
+        url: 'index.php?r=salesDisponibles',
+        type: 'POST',
+        data: postData,
+        success: (response) => {
+            // const res = JSON.parse(response);
+            console.log(response);
+        }
+    });
 });
 
 // function to implement results
