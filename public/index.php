@@ -53,6 +53,8 @@ if ($r == "") {
     $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlCheckPersons");
 } elseif ($r === "llistaReserves") {
     $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlLlistaReserves");
+} elseif ($r === "tevesReservesAjax") {
+    $resposta = ctrlTevesReservesAjax($peticio, $resposta, $contenidor);
 } elseif ($r === "salesDisponibles") {
     $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlSalesDisponibles");
 } elseif ($r === "anarusuaris") {

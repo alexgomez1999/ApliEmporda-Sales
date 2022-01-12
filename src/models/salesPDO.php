@@ -38,6 +38,34 @@ class SalesPDO
         return $llista;
     }
 
+    public function getReservaPerData($CodiUsuari, $dataSelect)
+    {
+        $query = 
+        'SELECT A.Id, A.Codi, B.Nom, D.Nom "Centre", B.Ubicacio,
+        A.Data, A.HoraInici, A.HoraFi
+        FROM reserves A
+        INNER JOIN sales B ON(A.CodiSala = B.Codi)
+        INNER JOIN usuaris C ON (A.CodiUsuari = C.Codi)
+        INNER JOIN centres D ON (B.Centre = D.Codi)
+        WHERE C.Codi = :CodiUsuari AND A.Data = :DataSelect';
+        
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':CodiUsuari' => $CodiUsuari,':DataSelect' => $dataSelect]);
+
+        $llista = [];
+        while ($sala = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $llista[] = $sala;
+        }
+
+        if ($this->sql->errorCode() !== '00000') {
+            $err = $this->sql->errorInfo();
+            $code = $this->sql->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        
+        return $llista;
+    }
+
     public function delete($Id) 
     {
         $query = 'DELETE FROM reserves WHERE Id = :Id';
