@@ -11,8 +11,6 @@ $(document).ready(function() {
     setEstructura();
 
     setTitol();
-
-    setReservesCalendari();
     
     document.getElementById("btnAbans").addEventListener("click", setMesAnterior);
     document.getElementById("btnDespres").addEventListener("click", setMesSeguent);
@@ -264,6 +262,8 @@ function setCalendari(anySelect, mesSelect) {
             setmana = setmana + 1;
         }
     }
+
+    setReservesCalendari();
 };
 
 /**
