@@ -34,7 +34,6 @@ $(document).ready(function() {
 
                 let resultatJson = data;
                 resultatJson = resultatJson.substring(0, resultatJson.indexOf("<"));
-
                 let resultat = $.parseJSON(resultatJson);
 
                 resultat.forEach(element => {
