@@ -43,8 +43,12 @@ $(document).ready(function() {
                         $("#CosModal1").append(`<ul class="list-group"></ul>`);
 
                         resultat.forEach(element => {
-                            $("#CosModal1 > ul").append(`<li class="
-                            list-group-item list-group-item-primary">${ element["Nom"] }</li>`);
+                            $("#CosModal1 > ul").append(`<li class="list-group-item list-group-item-light">
+                            <h5>${ element["Nom"] }</h5><br>
+                            <p>Data: ${ element["Data"] }</p><br>
+                            <p>Duració: de ${ element["HoraInici"] } a ${ element["HoraFi"] }</p><br>
+                            <p>Assistència: ${ element["Aforament"] } persones</p><br>
+                            <p>Lloc: ${ element["Centre"] }, ${ element["Ubicacio"] }</p></li>`);
                         });
 
                         $("#TitolModal1").html(`<span><i class="fas fa-info-circle"></i></span> Reserves del ${ diasSetmanaAmerica[dataSelectObj.getDay()] } ${ dataSelectObj.getDate() } de ${ mesosAny[dataSelectObj.getMonth()] } del ${ dataSelectObj.getFullYear() }`);
@@ -57,6 +61,9 @@ $(document).ready(function() {
     });
     $("#TancaModal1, #btnTancaModal1").click(function() {
         $("#modalReservaSala").hide().animate({"top": "-10px"});
+    });
+    $(".salaReservadaModal").click(function(e) {
+        console.log($( e.target ));
     });
 });
 
