@@ -86,6 +86,7 @@ function ctrlTevesReservesAjax($peticio, $resposta, $contenidor)
 
     $login = $peticio->get("SESSION", "login");
     $dataSelect = $peticio->get(INPUT_POST, "dataSelect");
+    $mesActual = $peticio->get(INPUT_POST, "mesActual");
 
     $dataSelectObj = new DateTime($dataSelect);
 
@@ -93,7 +94,7 @@ function ctrlTevesReservesAjax($peticio, $resposta, $contenidor)
 
     $reserves = $salesPDO->getReservaPerData($dadesUsuariLogat["Id"], $dataSelectObj->format("Y-m-d"));
     
-    if (isset($reserves) && count($reserves) > 0) {
+    if (isset($reserves) && count($reserves) > 0 && ($mesActual == $dataSelectObj->format("n"))) {
         echo json_encode($reserves);
     } else {
         echo "0";
