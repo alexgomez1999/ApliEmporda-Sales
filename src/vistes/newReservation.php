@@ -13,7 +13,7 @@
             <div class="flex-column-container">
                 <label for="ubi">Ubicació</label>
                 <select name="Ubicacio" id="ubi">
-                    <option value="-">-</option>
+                    <option value="%">-</option>
                     <option value="Figueres">Figueres</option>
                     <option value="Girona">Girona</option>
                 </select>
@@ -21,7 +21,7 @@
             <div class="flex-column-container">
                 <label for="centre">Centre</label>
                 <select name="Centre" id="centre" disabled>
-                    <option value="-">-</option>
+                    <option value="0">-</option>
                     <option value="1">Centre 1</option>
                     <option value="2">Centre 2</option>
                 </select>
@@ -40,7 +40,7 @@
             </div>
             <div class="flex-column-container">
                 <label for="persones">Persones</label>
-                <input type="number" name="Persones" id="persones" min=0 disabled>
+                <input type="number" name="Persones" id="persones" value="0" min=0 disabled>
             </div>
             <div class="flex-column-container">
                 <button type="submit" id="submit"><i class="fas fa-search"></i></button>

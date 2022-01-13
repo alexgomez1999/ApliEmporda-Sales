@@ -52,6 +52,13 @@ $(document).ready(function() {
                         $("#TitolModal1").html(`<span><i class="fas fa-info-circle"></i></span> Reserves del ${ diasSetmanaAmerica[dataSelectObj.getDay()] } ${ dataSelectObj.getDate() } de ${ mesosAny[dataSelectObj.getMonth()] } del ${ dataSelectObj.getFullYear() }`);
 
                         $("#modalReservaSala").show().animate({"top": "10px"});
+                    } else {
+                        $("#CosModal1").append(`<div class="alert alert-warning" role="alert">
+                        No tens cap Reserva per aquest dia.</div>`);
+
+                        $("#TitolModal1").html(`<span><i class="fas fa-info-circle"></i></span> Reserves del ${ diasSetmanaAmerica[dataSelectObj.getDay()] } ${ dataSelectObj.getDate() } de ${ mesosAny[dataSelectObj.getMonth()] } del ${ dataSelectObj.getFullYear() }`);
+
+                        $("#modalReservaSala").show().animate({"top": "10px"});
                     }
                 }
             });
