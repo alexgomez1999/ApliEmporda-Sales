@@ -71,7 +71,11 @@ function ctrlTevesReservesAjax($peticio, $resposta, $contenidor)
 
     $reserves = $salesPDO->getReservaPerData($dadesUsuariLogat["Id"], $dataSelectObj->format("Y-m-d"));
     
-    echo json_encode($reserves);
+    if (isset($reserves) && count($reserves) > 0) {
+        echo json_encode($reserves);
+    } else {
+        echo "0";
+    }
 
     return $resposta;
 }
