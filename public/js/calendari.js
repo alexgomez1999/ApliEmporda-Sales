@@ -10,7 +10,9 @@ let diasSetmanaAmerica = ["Diumenge", "Dilluns", "Dimarts", "Dimecres", "Dijous"
 $(document).ready(function() {
     setEstructura();
 
-    setTitol()
+    setTitol();
+
+    setReservesCalendari();
     
     document.getElementById("btnAbans").addEventListener("click", setMesAnterior);
     document.getElementById("btnDespres").addEventListener("click", setMesSeguent);
@@ -19,38 +21,93 @@ $(document).ready(function() {
         let mesActual = $( e.target ).children("input[name=mesActual]").val();
         let anyActual = $( e.target ).children("input[name=anyActual]").val();
 
-        let dataSelect = `${ anyActual }-${ mesActual }-${ diaActual }`;
+        if (diaActual != " ") {
+            let dataSelect = `${ anyActual }-${ mesActual }-${ diaActual }`;
 
-        let dataSelectObj = new Date(dataSelect);
+            let dataSelectObj = new Date(dataSelect);
 
-        $("#CosModal1").children().remove();
+            $("#CosModal1").children().remove();
 
-        $.ajax({
-            url: 'index.php?r=tevesReservesAjax',
-            type: 'POST',
-            data: { dataSelect }, 
-            success: function(data) {
-                $("#CosModal1").append(`<ul class="list-group"></ul>`);
+            $.ajax({
+                url: 'index.php?r=tevesReservesAjax',
+                type: 'POST',
+                data: { dataSelect }, 
+                success: function(data) {
+                    let resultatJson = data;
+                    resultatJson = resultatJson.substring(0, resultatJson.indexOf("<"));
 
-                let resultatJson = data;
-                resultatJson = resultatJson.substring(0, resultatJson.indexOf("<"));
-                let resultat = $.parseJSON(resultatJson);
+                    let resultat;
+                    if (resultatJson != "0") {
+                        resultat = $.parseJSON(resultatJson);
 
-                resultat.forEach(element => {
-                    $("#CosModal1 > ul").append(`<li class="
-                    list-group-item list-group-item-primary">${ element["Nom"] }</li>`);
-                });
-            }
-        });
+                        $("#CosModal1").append(`<ul class="list-group"></ul>`);
 
-        $("#TitolModal1").html(`<span><i class="fas fa-info-circle"></i></span> Reserves del ${ diasSetmanaAmerica[dataSelectObj.getDay()] } ${ dataSelectObj.getDate() } de ${ mesosAny[dataSelectObj.getMonth()] } del ${ dataSelectObj.getFullYear() }`);
+                        resultat.forEach(element => {
+                            $("#CosModal1 > ul").append(`<li class="list-group-item list-group-item-light">
+                            <h5>${ element["Nom"] }</h5><br>
+                            <p>Data: ${ element["Data"] }</p><br>
+                            <p>Duració: de ${ element["HoraInici"] } a ${ element["HoraFi"] }</p><br>
+                            <p>Assistència: ${ element["Aforament"] } persones</p><br>
+                            <p>Lloc: ${ element["Centre"] }, ${ element["Ubicacio"] }</p></li>`);
+                        });
 
-        $("#modalReservaSala").show().animate({"top": "10px"});
+                        $("#TitolModal1").html(`<span><i class="fas fa-info-circle"></i></span> Reserves del ${ diasSetmanaAmerica[dataSelectObj.getDay()] } ${ dataSelectObj.getDate() } de ${ mesosAny[dataSelectObj.getMonth()] } del ${ dataSelectObj.getFullYear() }`);
+
+                        $("#modalReservaSala").show().animate({"top": "10px"});
+                    }
+                }
+            });
+        }
     });
     $("#TancaModal1, #btnTancaModal1").click(function() {
         $("#modalReservaSala").hide().animate({"top": "-10px"});
     });
+    $(".salaReservadaModal").click(function(e) {
+        console.log($( e.target ));
+    });
 });
+
+/**
+ * setReservesCalendari: Funció que mostra al calendari els dies amb reserves
+ * **/
+function setReservesCalendari() {
+    let arrayDies = $("div#divCalendari table tr > td");
+
+    arrayDies.each(function(index) {
+        let diaActual = $( this ).text();
+        let mesActual = $( this ).children("input[name=mesActual]").val();
+        let anyActual = $( this ).children("input[name=anyActual]").val();
+
+        if (diaActual != " ") {
+            let dataSelect = `${ anyActual }-${ mesActual }-${ diaActual }`;
+
+            $.ajax({
+                url: 'index.php?r=tevesReservesAjax',
+                type: 'POST',
+                data: { dataSelect }, 
+                success: function(data) {
+                    let resultatJson = data;
+                    resultatJson = resultatJson.substring(0, resultatJson.indexOf("<"));
+
+                    let resultat;
+                    if (resultatJson != "0") {
+                        resultat = $.parseJSON(resultatJson);
+
+                        let divSales = document.createElement("div");
+                        arrayDies[index].prepend(divSales);
+                        
+                        let spanPare = document.createElement("span");
+                        spanPare.setAttribute("class", "position-absolute ml-3 top-0 start-100 translate-middle p-2 bg-success border border-light rounded-circle");
+                        divSales.appendChild(spanPare);
+                        let spanFill = document.createElement("span");
+                        spanFill.setAttribute("class", "visually-hidden");
+                        spanPare.appendChild(spanFill);
+                    }
+                }
+            });
+        }
+    });
+};
 
 /**
  * setMesSeguent: Funció que retrocedeix un mes en el temps
