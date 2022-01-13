@@ -29,7 +29,7 @@ $(document).ready(function() {
             $.ajax({
                 url: 'index.php?r=tevesReservesAjax',
                 type: 'POST',
-                data: { dataSelect }, 
+                data: { dataSelect, mesActual }, 
                 success: function(data) {
                     let resultatJson = data;
                     resultatJson = resultatJson.substring(0, resultatJson.indexOf("<"));
@@ -89,7 +89,7 @@ function setReservesCalendari() {
             $.ajax({
                 url: 'index.php?r=tevesReservesAjax',
                 type: 'POST',
-                data: { dataSelect }, 
+                data: { dataSelect, mesActual }, 
                 success: function(data) {
                     let resultatJson = data;
                     resultatJson = resultatJson.substring(0, resultatJson.indexOf("<"));
