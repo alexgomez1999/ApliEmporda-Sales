@@ -90,7 +90,7 @@ function setReservesCalendari() {
                         arrayDies[index].prepend(divSales);
                         
                         let spanPare = document.createElement("span");
-                        spanPare.setAttribute("class", "position-absolute ml-3 top-0 start-100 translate-middle p-2 bg-warning border border-light rounded-circle");
+                        spanPare.setAttribute("class", "position-absolute ml-3 top-0 start-100 translate-middle p-2 bg-success border border-light rounded-circle");
                         divSales.appendChild(spanPare);
                         let spanFill = document.createElement("span");
                         spanFill.setAttribute("class", "visually-hidden");
