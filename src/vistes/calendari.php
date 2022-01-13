@@ -30,8 +30,7 @@
         <p></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Reserva Sala</button>
-        <button type="button" id="btnTancaModal1" class="btn btn-secondary" data-bs-dismiss="modal">Cancel·la</button>
+        <button type="button" id="btnTancaModal1" class="btn btn-secondary" data-bs-dismiss="modal">Tanca</button>
       </div>
     </div>
   </div>

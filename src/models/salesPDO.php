@@ -83,7 +83,7 @@ class SalesPDO
     {
         $query = 
         'SELECT A.Id, A.Codi, B.Nom, D.Nom "Centre", B.Ubicacio,
-        A.Data, A.HoraInici, A.HoraFi
+        A.Data, A.HoraInici, A.HoraFi, A.Aforament
         FROM reserves A
         INNER JOIN sales B ON(A.CodiSala = B.Codi)
         INNER JOIN usuaris C ON (A.CodiUsuari = C.Codi)
