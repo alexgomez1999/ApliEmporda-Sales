@@ -1,4 +1,4 @@
-let ubi = '';
+let ubi = '%';
 let centre = '';
 let dia = '';
 let entrada = '';
@@ -10,15 +10,8 @@ const cont = $('#cont');
 // ubication listener
 $('#ubi').on('change', () => {
     ubi = $("#ubi option:selected").text();
-    
-    $.ajax({
-        url: 'index.php?r=checkUbi',
-        type: 'POST',
-        data: { ubicacio: ubi },
-        success: function(response) {
-            fetchResults(response);
-        }
-    });
+
+    SQLquery();
 
     $("#centre").prop('disabled', false);
 });
@@ -27,14 +20,8 @@ $('#ubi').on('change', () => {
 $('#centre').on('change', () => {
     centre = $("#centre option:selected").val();
 
-    $.ajax({
-        url: 'index.php?r=checkCenter',
-        type: 'POST',
-        data: { ubicacio: ubi, centre: centre },
-        success: (response) => {
-            fetchResults(response);
-        }
-    });
+    SQLquery();
+
     $("#data").prop('disabled', false);
 });
 
@@ -80,14 +67,9 @@ $('#hsortida').on('keyup', () => {
 // persons listener
 $('#persones').on('keyup change', () => {
     persones = $('#persones').val();
-    $.ajax({
-        url: 'index.php?r=checkPersons',
-        type: 'POST',
-        data: { persones },
-        success: (response) => {
-            
-        }
-    });
+
+    SQLquery();
+
 });
 
 // submit button listener
@@ -114,9 +96,30 @@ $('.reservation-form').on('submit', (e) => {
     });
 });
 
+function SQLquery() {
+
+    const postData = {
+        ubi, centre, dia, entrada, sortida, persones
+    }
+
+    $.ajax({
+        url: 'index.php?r=NewReservationQuery',
+        type: 'POST',
+        data: postData,
+        success: (response) => {
+            fetchResults(response)
+        }
+    });
+}
+
 function fetchResults(response) {
 
-    const r = response.substring(0, response.indexOf("<"));
+    console.log(response);
+
+    const r = response.substring(response.indexOf("[{") - 2, response.indexOf("<"));
+
+    console.log("RESPOSTA: " + r);
+
     const res = JSON.parse(r);
 
     let temp = '';
@@ -128,6 +131,7 @@ function fetchResults(response) {
             <p>${index.Nom}</p>
             <p>${index.NomCentre}</p>
             <p>${index.Ubicacio}</p>
+            <p>Aforament Sala: ${index.AforamentDisponible}</p>
         </div>
         <div id="recursos-sala">
             <table cellpadding="20">

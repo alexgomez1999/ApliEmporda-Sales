@@ -38,6 +38,47 @@ class SalesPDO
         return $llista;
     }
 
+    public function ReservationQuary($ubi, $centre, $dia, $entrada, $sortida, $persones) 
+    {
+        $query = 
+        'SELECT A.Nom, A.Activa, A.NomRecurs, A.Centre, A.Ubicacio, A.Foto, A.AforamentDisponible, B.Nom "NomCentre" FROM sales A
+        JOIN centres B ON (A.Centre = B.Codi) WHERE A.Ubicacio LIKE :ubicacio';
+
+        if ($centre != 0) {
+            $query .= ' AND A.centre = :centre';
+        }
+
+        if ($persones != 0) {
+            $query .= ' AND A.AforamentDisponible >= :persones';
+        }
+        
+        $stm = $this->sql->prepare($query);
+
+        if ($persones != 0 && $centre != 0) {
+            $result = $stm->execute([':ubicacio' => $ubi, ':centre' => $centre, ':persones' => $persones]);
+        }
+
+        if ($centre != 0 && $persones == 0) {
+            $result = $stm->execute([':ubicacio' => $ubi, ':centre' => $centre]);
+        }
+
+        if ($persones == 0 && $centre == 0) {
+            $result = $stm->execute([':ubicacio' => $ubi]);
+        }
+        
+        $llista = [];
+        while ($sala = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $llista[] = $sala;
+        }
+
+        if ($this->sql->errorCode() !== '00000') {
+            $err = $this->sql->errorInfo();
+            $code = $this->sql->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        return $llista;
+    }
+
     public function getReservaPerData($CodiUsuari, $dataSelect)
     {
         $query = 
@@ -82,7 +123,7 @@ class SalesPDO
     public function searchUbication($search)
     {
         $query = 
-        'SELECT A.*, B.Nom "NomCentre" FROM sales A
+        'SELECT A.Nom, A.Activa, A.NomRecurs, A.Centre, A.Ubicacio, A.Foto, A.AforamentDisponible, B.Nom "NomCentre" FROM sales A
          JOIN centres B ON (A.Centre = B.Codi)
          WHERE A.Ubicacio = :search';
         
@@ -91,7 +132,7 @@ class SalesPDO
 
         $llista = [];
         while ($sala = $stm->fetch(\PDO::FETCH_ASSOC)) {
-            $llista = $sala;
+            $llista[] = $sala;
         }
 
         if ($this->sql->errorCode() !== '00000') {
@@ -105,8 +146,8 @@ class SalesPDO
     public function searchCenter($ubicacio, $centre)
     {
         $query = 
-        'SELECT A.*, B.Nom "NomCentre" FROM sales A
-         JOIN centres B ON (A.Centre = B.Codi)
+        'SELECT A.Nom, A.Activa, A.NomRecurs, A.Centre, A.Ubicacio, A.Foto, A.AforamentDisponible, B.Nom "NomCentre" FROM sales A
+        JOIN centres B ON (A.Centre = B.Codi)
          WHERE A.Ubicacio LIKE :ubicacio AND A.Centre = :centre';
         
         $stm = $this->sql->prepare($query);
@@ -114,7 +155,7 @@ class SalesPDO
 
         $llista = [];
         while ($sala = $stm->fetch(\PDO::FETCH_ASSOC)) {
-            $llista = $sala;
+            $llista[] = $sala;
         }
 
         if ($this->sql->errorCode() !== '00000') {
