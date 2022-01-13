@@ -14,16 +14,18 @@
                 <label for="ubi">Ubicació</label>
                 <select name="Ubicacio" id="ubi">
                     <option value="%">-</option>
-                    <option value="Figueres">Figueres</option>
-                    <option value="Girona">Girona</option>
+                    <?php foreach ($ubi as $ubicacio) { ?>
+                        <option value="<?= $ubicacio["Ubicacio"] ?>"><?= $ubicacio["Ubicacio"] ?></option>
+                    <?php } ?>
                 </select>
             </div>
             <div class="flex-column-container">
                 <label for="centre">Centre</label>
                 <select name="Centre" id="centre" disabled>
                     <option value="0">-</option>
-                    <option value="1">Centre 1</option>
-                    <option value="2">Centre 2</option>
+                    <?php foreach ($centre as $c) { ?>
+                        <option value="<?= $c["Centre"] ?>"><?= $c["Nom"] ?></option>
+                    <?php } ?>
                 </select>
             </div>
             <div class="flex-column-container">
