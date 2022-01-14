@@ -3,7 +3,7 @@
 function ctrlLlistaReserves($peticio, $resposta, $contenidor)
 {
         $CodiUsuari = $_SESSION['login']['Codi'];
-        
+
         $sales = $contenidor->sales();
 
         $sala = $sales->getReserva($CodiUsuari);

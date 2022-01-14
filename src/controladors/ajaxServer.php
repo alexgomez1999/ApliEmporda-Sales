@@ -1,6 +1,7 @@
 <?php
 
-function ctrlReservationQuary($peticio, $resposta, $contenidor) {
+function ctrlReservationQuary($peticio, $resposta, $contenidor)
+{
 
     $ubi = $peticio->get(INPUT_POST, "ubi");
     $centre = $peticio->get(INPUT_POST, "centre");
@@ -25,7 +26,7 @@ function ctrlCheckUbi($peticio, $resposta, $contenidor)
 {
 
     $ubi = $peticio->get(INPUT_POST, "ubicacio");
-    
+
     $sales = $contenidor->sales();
     $dades = $sales->searchUbication($ubi);
 
@@ -43,9 +44,9 @@ function ctrlCheckCenter($peticio, $resposta, $contenidor)
 
     $sales = $contenidor->sales();
     $dades = $sales->searchCenter($ubi, $centre);
-    
+
     $jsonDades = json_encode($dades);
-    
+
     echo $jsonDades;
 
     return $resposta;
@@ -54,7 +55,7 @@ function ctrlCheckCenter($peticio, $resposta, $contenidor)
 function ctrlCheckDay($peticio, $resposta, $contenidor)
 {
     $dia = $peticio->get(INPUT_POST, "dia");
-    
+
     echo $dia;
 
     return $resposta;
@@ -64,7 +65,7 @@ function ctrlCheckHours($peticio, $resposta, $contenidor)
 {
     $entrada = $peticio->get(INPUT_POST, "entrada");
     $sortida = $peticio->get(INPUT_POST, "sortida");
-    
+
     echo "Entrada" . $entrada . " Sortida: " . $sortida;
 
     return $resposta;
@@ -73,7 +74,7 @@ function ctrlCheckHours($peticio, $resposta, $contenidor)
 function ctrlCheckPersons($peticio, $resposta, $contenidor)
 {
     $persones = $peticio->get(INPUT_POST, "persones");
-    
+
     echo $persones;
 
     return $resposta;
@@ -93,7 +94,7 @@ function ctrlTevesReservesAjax($peticio, $resposta, $contenidor)
     $dadesUsuariLogat = $usuarisPDO->getUser($login["Usuari"]);
 
     $reserves = $salesPDO->getReservaPerData($dadesUsuariLogat["Id"], $dataSelectObj->format("Y-m-d"));
-    
+
     if (isset($reserves) && count($reserves) > 0 && ($mesActual == $dataSelectObj->format("n"))) {
         echo json_encode($reserves);
     } else {

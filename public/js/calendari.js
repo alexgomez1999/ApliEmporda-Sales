@@ -7,17 +7,17 @@ let diasSetmanaAmerica = ["Diumenge", "Dilluns", "Dimarts", "Dimecres", "Dijous"
 /**
  * Funció que s'executara quan la pàgina estigui totalment carregada
  * **/
-$(document).ready(function() {
+$(document).ready(function () {
     setEstructura();
 
     setTitol();
-    
+
     document.getElementById("btnAbans").addEventListener("click", setMesAnterior);
     document.getElementById("btnDespres").addEventListener("click", setMesSeguent);
-    $("div#divCalendari table tr > td").click(function(e) {
-        let diaActual = $( e.target ).text();
-        let mesActual = $( e.target ).children("input[name=mesActual]").val();
-        let anyActual = $( e.target ).children("input[name=anyActual]").val();
+    $("div#divCalendari table tr > td").click(function (e) {
+        let diaActual = $(e.target).text();
+        let mesActual = $(e.target).children("input[name=mesActual]").val();
+        let anyActual = $(e.target).children("input[name=anyActual]").val();
 
         if (diaActual != " ") {
             let dataSelect = `${ anyActual }-${ mesActual }-${ diaActual }`;
@@ -29,8 +29,8 @@ $(document).ready(function() {
             $.ajax({
                 url: 'index.php?r=tevesReservesAjax',
                 type: 'POST',
-                data: { dataSelect, mesActual }, 
-                success: function(data) {
+                data: { dataSelect, mesActual },
+                success: function (data) {
                     let resultatJson = data;
                     resultatJson = resultatJson.substring(0, resultatJson.indexOf("<"));
 
@@ -42,21 +42,22 @@ $(document).ready(function() {
 
                         resultat.forEach(element => {
                             $("#CosModal1 > ul").append(`<li class="list-group-item list-group-item-light">
-                            <h5>${ element["Nom"] }</h5><br>
-                            <p>Data: ${ element["Data"] }</p><br>
-                            <p>Duració: de ${ element["HoraInici"] } a ${ element["HoraFi"] }</p><br>
-                            <p>Assistència: ${ element["Aforament"] } persones</p><br>
-                            <p>Lloc: ${ element["Centre"] }, ${ element["Ubicacio"] }</p></li>`);
+                            <h5> ${ element["Nom"] }</h5>
+                            <hr>
+                            <p><strong>Data: </strong> ${ diasSetmanaAmerica[dataSelectObj.getDay()] } ${ dataSelectObj.getDate() } de ${ mesosAny[dataSelectObj.getMonth()] } del ${ dataSelectObj.getFullYear() }<br>
+                            <strong>Hora: </strong> de ${ element["HoraInici"] } a ${ element["HoraFi"] }<br>
+                            <strong>Lloc: </strong> ${ element["Centre"] }, ${ element["Ubicacio"] }<br>
+                            <strong>Assistència: </strong> ${ element["Aforament"] } persones</p></li>`);
                         });
 
-                        $("#TitolModal1").html(`<span><i class="fas fa-info-circle"></i></span> Reserves del ${ diasSetmanaAmerica[dataSelectObj.getDay()] } ${ dataSelectObj.getDate() } de ${ mesosAny[dataSelectObj.getMonth()] } del ${ dataSelectObj.getFullYear() }`);
+                        $("#TitolModal1").html(`<span><i class="fas fa-info-circle"></i></span>Reserves del ${ diasSetmanaAmerica[dataSelectObj.getDay()] } ${ dataSelectObj.getDate() } de ${ mesosAny[dataSelectObj.getMonth()] } del ${ dataSelectObj.getFullYear() }`);
 
                         $("#modalReservaSala").show().animate({"top": "10px"});
                     } else {
                         $("#CosModal1").append(`<div class="alert alert-warning" role="alert">
                         No tens cap Reserva per aquest dia.</div>`);
 
-                        $("#TitolModal1").html(`<span><i class="fas fa-info-circle"></i></span> Reserves del ${ diasSetmanaAmerica[dataSelectObj.getDay()] } ${ dataSelectObj.getDate() } de ${ mesosAny[dataSelectObj.getMonth()] } del ${ dataSelectObj.getFullYear() }`);
+                        $("#TitolModal1").html(`<span><i class="fas fa-info-circle"></i></span>Reserves del ${ diasSetmanaAmerica[dataSelectObj.getDay()] } ${ dataSelectObj.getDate() } de ${ mesosAny[dataSelectObj.getMonth()] } del ${ dataSelectObj.getFullYear() }`);
 
                         $("#modalReservaSala").show().animate({"top": "10px"});
                     }
@@ -64,24 +65,25 @@ $(document).ready(function() {
             });
         }
     });
-    $("#TancaModal1, #btnTancaModal1").click(function() {
+    $("#TancaModal1, #btnTancaModal1").click(function () {
         $("#modalReservaSala").hide().animate({"top": "-10px"});
     });
-    $(".salaReservadaModal").click(function(e) {
-        console.log($( e.target ));
+    $(".salesReservadesModal h5").click(function (e) {
+        console.log($(e.target));
     });
 });
 
 /**
  * setReservesCalendari: Funció que mostra al calendari els dies amb reserves
  * **/
-function setReservesCalendari() {
+function setReservesCalendari()
+{
     let arrayDies = $("div#divCalendari table tr > td");
 
-    arrayDies.each(function(index) {
-        let diaActual = $( this ).text();
-        let mesActual = $( this ).children("input[name=mesActual]").val();
-        let anyActual = $( this ).children("input[name=anyActual]").val();
+    $("div#divCalendari table tr > td").each(function (index) {
+        let diaActual = $(this).text();
+        let mesActual = $(this).children("input[name=mesActual]").val();
+        let anyActual = $(this).children("input[name=anyActual]").val();
 
         if (diaActual != " ") {
             let dataSelect = `${ anyActual }-${ mesActual }-${ diaActual }`;
@@ -89,18 +91,15 @@ function setReservesCalendari() {
             $.ajax({
                 url: 'index.php?r=tevesReservesAjax',
                 type: 'POST',
-                data: { dataSelect, mesActual }, 
-                success: function(data) {
+                data: { dataSelect, mesActual },
+                success: function (data) {
                     let resultatJson = data;
                     resultatJson = resultatJson.substring(0, resultatJson.indexOf("<"));
 
-                    let resultat;
                     if (resultatJson != "0") {
-                        resultat = $.parseJSON(resultatJson);
-
                         let divSales = document.createElement("div");
                         arrayDies[index].prepend(divSales);
-                        
+
                         let spanPare = document.createElement("span");
                         spanPare.setAttribute("class", "position-absolute ml-3 top-0 start-100 translate-middle p-2 bg-success border border-light rounded-circle");
                         divSales.appendChild(spanPare);
@@ -117,7 +116,8 @@ function setReservesCalendari() {
 /**
  * setMesSeguent: Funció que retrocedeix un mes en el temps
  * **/
-function setMesAnterior() {
+function setMesAnterior()
+{
     if (mesSelect > 0) {
         mesSelect = mesSelect - 1;
     } else {
@@ -132,7 +132,8 @@ function setMesAnterior() {
 /**
  * setMesSeguent: Funció que avança un mes en el temps
  * **/
-function setMesSeguent() {
+function setMesSeguent()
+{
     if (mesSelect < 11) {
         mesSelect = mesSelect + 1;
     } else {
@@ -149,7 +150,8 @@ function setMesSeguent() {
  * @param anySelect any actualment seleccionat del calendari
  * @param mesSelect mes actualment seleccionat del calendari
  * **/
-function setReiniciaCalendari(anySelect, mesSelect) {
+function setReiniciaCalendari(anySelect, mesSelect)
+{
     let tds = document.getElementsByTagName("td");
 
     for (let i = 0; i < tds.length; i++) {
@@ -163,14 +165,16 @@ function setReiniciaCalendari(anySelect, mesSelect) {
 /**
  * setTitol: Funció que afageix un titol informant del mes i any seleccionats
  * **/
-function setTitol() {
-    document.getElementById("infoCalendar").innerHTML = mesosAny[mesSelect]+" de "+anySelect;
+function setTitol()
+{
+    document.getElementById("infoCalendar").innerHTML = mesosAny[mesSelect] + " de " + anySelect;
 };
 
 /**
  * setEstructura: Funció que forma l'estructura del calendari i l'afageix a la pàgina
  * **/
-function setEstructura() {
+function setEstructura()
+{
     let dataActual = new Date();
 
     anySelect = dataActual.getFullYear();
@@ -184,7 +188,8 @@ function setEstructura() {
 /**
  * setCrearCalendari: Funció que forma l'estructura del calendari
  * **/
-function setCrearCalendari() {
+function setCrearCalendari()
+{
     let divCalendari = document.getElementById("divCalendari");
 
     let taula = document.createElement("table");
@@ -219,7 +224,8 @@ function setCrearCalendari() {
  * @param anySelect any actualment seleccionat del calendari
  * @param mesSelect mes actualment seleccionat del calendari
  * **/
-function setCalendari(anySelect, mesSelect) {
+function setCalendari(anySelect, mesSelect)
+{
     let dataActual = new Date();
     let divCalendari = document.getElementById("divCalendari");
     let setmana;
@@ -229,7 +235,7 @@ function setCalendari(anySelect, mesSelect) {
         let mes = data.getMonth();
         let dia = data.getDate();
         let dia_setmana = data.getDay();
-        
+
         if (dia == 1) {
             setmana = 0;
         }
@@ -245,7 +251,7 @@ function setCalendari(anySelect, mesSelect) {
             divCalendari.children[0].children[1].children[setmana].children[dia_setmana].innerHTML = dia;
             let inputMes = document.createElement("input");
             inputMes.setAttribute("type", "hidden");
-            inputMes.setAttribute("value", (mes+1));
+            inputMes.setAttribute("value", (mes + 1));
             inputMes.setAttribute("name", "mesActual");
             divCalendari.children[0].children[1].children[setmana].children[dia_setmana].appendChild(inputMes);
             let inputAny = document.createElement("input");
@@ -277,10 +283,11 @@ function setCalendari(anySelect, mesSelect) {
  * getDataPerDia: Funció que retorna un timestamp del dia especificat en el parametre
  * @param any any actual
  * @param dia dia actual
- * 
+ *
  * Aquesta funció s'executa a la funció setCalendari
  * **/
-function getDataPerDia(any, dia) {
+function getDataPerDia(any, dia)
+{
     let data = new Date(any, 0);
     return new Date(data.setDate(dia));
 };

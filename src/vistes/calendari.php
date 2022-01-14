@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <?php include "../src/vistes/util/head.php"?>
+    <?php require "../src/vistes/util/head.php"?>
     <title>Calendari de Sales</title>
     <script src="js/calendari.js"></script>
   </head>
   <body>
-    <?php include "../src/vistes/util/navbar.php" ?>
+    <?php require "../src/vistes/util/navbar.php" ?>
     <br>
     <div class="container-sm">
       <div id="navCalendari">

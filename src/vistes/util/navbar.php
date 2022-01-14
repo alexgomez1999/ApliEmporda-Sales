@@ -14,14 +14,14 @@
             <a href="#" class="nav-link"><i class="fa fa-file-alt"></i> Incidències</a>
         </li>
         <li class="nav-item">
-            <a href="index.php?r=llistaReserves&id=<?= $_SESSION['login']['Codi'] ?>" class="nav-link"><i class="fa fa-person-booth"></i> Sales</a>
+            <a href="index.php?r=llistaReserves&id=<?php echo $_SESSION['login']['Codi'] ?>" class="nav-link"><i class="fa fa-person-booth"></i> Sales</a>
         </li>
         <li class="nav-item">
             <a href="index.php?r=calendari" class="nav-link"><i class="fa fa-calendar"></i> Calendari</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="navbarScrollingDropdown" href="#">
-            <i class="fa fa-user-circle"></i> <?= $_SESSION['login']['Usuari'] ?>
+            <i class="fa fa-user-circle"></i> <?php echo $_SESSION['login']['Usuari'] ?>
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
               <li><a class="dropdown-item" href="index.php?r=userProfile"><i class="fa fa-id-badge"></i> El Meu Perfil</a></li>

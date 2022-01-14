@@ -10,16 +10,15 @@ function ctrlIndex($peticio, $resposta, $contenidor)
         $sala = $sales->getReserva($CodiUsuari);
         $resposta->set('sala', $sala);
         $resposta->SetTemplate("llistaReserves.php");
-
     } else {
-       $usuarisPDO = $contenidor->usuaris();
+        $usuarisPDO = $contenidor->usuaris();
 
-       $llistatUsuaris = $usuarisPDO->getLlistat();
+        $llistatUsuaris = $usuarisPDO->getLlistat();
 
-       $resposta->set('llistatUsuaris', $llistatUsuaris);
+        $resposta->set('llistatUsuaris', $llistatUsuaris);
     }
 
     $resposta->SetTemplate("index.php");
-    
+
     return $resposta;
 }
