@@ -32,7 +32,7 @@ $(document).ready(function() {
                 data: { dataSelect, mesActual }, 
                 success: function(data) {
                     let resultatJson = data;
-                    //resultatJson = resultatJson.substring(0, resultatJson.indexOf("<"));
+                    resultatJson = resultatJson.substring(0, resultatJson.indexOf("<"));
 
                     let resultat;
                     if (resultatJson != "0") {
@@ -42,11 +42,12 @@ $(document).ready(function() {
 
                         resultat.forEach(element => {
                             $("#CosModal1 > ul").append(`<li class="list-group-item list-group-item-light">
-                            <h5>${ element["Nom"] }</h5><br>
-                            <p>Data i Hora: ${ diasSetmanaAmerica[dataSelectObj.getDay()] } ${ dataSelectObj.getDate() } de ${ mesosAny[dataSelectObj.getMonth()] } del ${ dataSelectObj.getFullYear() }
-                             - de ${ element["HoraInici"] } a ${ element["HoraFi"] }</p><br>
-                            <p>Lloc: ${ element["Centre"] }, ${ element["Ubicacio"] }</p><br>
-                            <p>Assistència: ${ element["Aforament"] } persones</p></li>`);
+                            <h5>${ element["Nom"] }</h5>
+                            <hr>
+                            <p><strong>Data: </strong>${ diasSetmanaAmerica[dataSelectObj.getDay()] } ${ dataSelectObj.getDate() } de ${ mesosAny[dataSelectObj.getMonth()] } del ${ dataSelectObj.getFullYear() }<br>
+                            <strong>Hora: </strong>de ${ element["HoraInici"] } a ${ element["HoraFi"] }<br>
+                            <strong>Lloc: </strong>${ element["Centre"] }, ${ element["Ubicacio"] }<br>
+                            <strong>Assistència: </strong>${ element["Aforament"] } persones</p></li>`);
                         });
 
                         $("#TitolModal1").html(`<span><i class="fas fa-info-circle"></i></span> Reserves del ${ diasSetmanaAmerica[dataSelectObj.getDay()] } ${ dataSelectObj.getDate() } de ${ mesosAny[dataSelectObj.getMonth()] } del ${ dataSelectObj.getFullYear() }`);
@@ -67,7 +68,7 @@ $(document).ready(function() {
     $("#TancaModal1, #btnTancaModal1").click(function() {
         $("#modalReservaSala").hide().animate({"top": "-10px"});
     });
-    $(".salaReservadaModal").click(function(e) {
+    $(".salesReservadesModal h5").click(function(e) {
         console.log($( e.target ));
     });
 });
@@ -92,7 +93,7 @@ function setReservesCalendari() {
                 data: { dataSelect, mesActual }, 
                 success: function(data) {
                     let resultatJson = data;
-                    //resultatJson = resultatJson.substring(0, resultatJson.indexOf("<"));
+                    resultatJson = resultatJson.substring(0, resultatJson.indexOf("<"));
 
                     if (resultatJson != "0") {
                         let divSales = document.createElement("div");

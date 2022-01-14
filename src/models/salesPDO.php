@@ -88,7 +88,8 @@ class SalesPDO
         INNER JOIN sales B ON(A.CodiSala = B.Codi)
         INNER JOIN usuaris C ON (A.CodiUsuari = C.Codi)
         INNER JOIN centres D ON (B.Centre = D.Codi)
-        WHERE C.Codi = :CodiUsuari AND A.Data = :DataSelect';
+        WHERE C.Codi = :CodiUsuari AND A.Data = :DataSelect
+        ORDER BY A.HoraInici desc, A.HoraFi desc';
         
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([':CodiUsuari' => $CodiUsuari,':DataSelect' => $dataSelect]);
