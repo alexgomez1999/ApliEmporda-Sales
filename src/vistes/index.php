@@ -1,14 +1,18 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <?php require "util/head.php" ?>
+    <?php include "util/head.php" ?>
     <title>Inici</title>
   </head>
   <body>
-  <?php require "util/navbar.php" ?>
+  <?php include "util/navbar.php" ?>
+      <?php if ($login["Rol"] != "Administrador") { ?>
+      <!-- VISTA USUARI -->
+        <?php header("Location:index.php?r=llistaReserves"); ?>
+      <?php } else { ?>
       <!-- VISTA ADMINISTRADOR -->
       <div class="row">
-      <?php require "util/sidebaradmin.php" ?>
+      <?php include "util/sidebaradmin.php" ?>
       <div class="col-10 index-admin-container">
         <div>
           <?php if ($_REQUEST["info"] === "usuaris") { ?>
@@ -91,7 +95,7 @@
                 <!-- FILES DINÀMIQUES CONFORME SALES TINGUI RESERVADES L'USUARI -->
               </tbody>
             </table>
-          <?php } else { ?>
+            <?php } else { ?>
                 <div id="opcionsAdmin" class="row">
                   <div class="col-md-2">
                     Usuaris
@@ -109,9 +113,10 @@
                     Incidències
                   </div>
                 </div>
-          <?php } ?>
+            <?php } ?>
         </div>
       </div>
       </div>
+      <?php } ?>
   </body>
 </html>
