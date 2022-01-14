@@ -4,6 +4,9 @@ let mesosAny = ["Gener", "Febrer", "Març", "Abril", "Maig", "Juny", "Juliol", "
 let diasSetmanaEuropeu = ["Dl.", "Dt.", "Dm.", "Dj.", "Dv.", "Ds.", "Dg."];
 let diasSetmanaAmerica = ["Diumenge", "Dilluns", "Dimarts", "Dimecres", "Dijous", "Divendres", "Dissabte"];
 
+
+
+
 /**
  * Funció que s'executara quan la pàgina estigui totalment carregada
  * **/
