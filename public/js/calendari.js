@@ -20,7 +20,7 @@ $(document).ready(function () {
         let anyActual = $(e.target).children("input[name=anyActual]").val();
 
         if (diaActual != " ") {
-            let dataSelect = `${ anyActual } - ${ mesActual } - ${ diaActual }`;
+            let dataSelect = `${ anyActual }-${ mesActual }-${ diaActual }`;
 
             let dataSelectObj = new Date(dataSelect);
 
@@ -38,26 +38,26 @@ $(document).ready(function () {
                     if (resultatJson != "0") {
                         resultat = $.parseJSON(resultatJson);
 
-                        $("#CosModal1").append(` < ul class = "list-group" > < / ul > `);
+                        $("#CosModal1").append(`<ul class="list-group"></ul>`);
 
                         resultat.forEach(element => {
-                            $("#CosModal1 > ul").append(` < li class = "list-group-item list-group-item-light" >
-                            < h5 > ${ element["Nom"] } < / h5 >
-                            < hr >
-                            < p > < strong > Data: <  / strong > ${ diasSetmanaAmerica[dataSelectObj.getDay()] } ${ dataSelectObj.getDate() } de ${ mesosAny[dataSelectObj.getMonth()] } del ${ dataSelectObj.getFullYear() } < br >
-                            < strong > Hora: <  / strong > de ${ element["HoraInici"] } a ${ element["HoraFi"] } < br >
-                            < strong > Lloc: <  / strong > ${ element["Centre"] }, ${ element["Ubicacio"] } < br >
-                            < strong > Assistència: <  / strong > ${ element["Aforament"] } persones < / p > < / li > `);
+                            $("#CosModal1 > ul").append(`<li class="list-group-item list-group-item-light">
+                            <h5> ${ element["Nom"] }</h5>
+                            <hr>
+                            <p><strong>Data: </strong> ${ diasSetmanaAmerica[dataSelectObj.getDay()] } ${ dataSelectObj.getDate() } de ${ mesosAny[dataSelectObj.getMonth()] } del ${ dataSelectObj.getFullYear() }<br>
+                            <strong>Hora: </strong> de ${ element["HoraInici"] } a ${ element["HoraFi"] }<br>
+                            <strong>Lloc: </strong> ${ element["Centre"] }, ${ element["Ubicacio"] }<br>
+                            <strong>Assistència: </strong> ${ element["Aforament"] } persones</p></li>`);
                         });
 
-                        $("#TitolModal1").html(` < span > < i class = "fas fa-info-circle" > < / i > < / span > Reserves del ${ diasSetmanaAmerica[dataSelectObj.getDay()] } ${ dataSelectObj.getDate() } de ${ mesosAny[dataSelectObj.getMonth()] } del ${ dataSelectObj.getFullYear() }`);
+                        $("#TitolModal1").html(`<span><i class="fas fa-info-circle"></i></span>Reserves del ${ diasSetmanaAmerica[dataSelectObj.getDay()] } ${ dataSelectObj.getDate() } de ${ mesosAny[dataSelectObj.getMonth()] } del ${ dataSelectObj.getFullYear() }`);
 
                         $("#modalReservaSala").show().animate({"top": "10px"});
                     } else {
-                        $("#CosModal1").append(` < div class = "alert alert-warning" role = "alert" >
-                        No tens cap Reserva per aquest dia.< / div > `);
+                        $("#CosModal1").append(`<div class="alert alert-warning" role="alert">
+                        No tens cap Reserva per aquest dia.</div>`);
 
-                        $("#TitolModal1").html(` < span > < i class = "fas fa-info-circle" > < / i > < / span > Reserves del ${ diasSetmanaAmerica[dataSelectObj.getDay()] } ${ dataSelectObj.getDate() } de ${ mesosAny[dataSelectObj.getMonth()] } del ${ dataSelectObj.getFullYear() }`);
+                        $("#TitolModal1").html(`<span><i class="fas fa-info-circle"></i></span>Reserves del ${ diasSetmanaAmerica[dataSelectObj.getDay()] } ${ dataSelectObj.getDate() } de ${ mesosAny[dataSelectObj.getMonth()] } del ${ dataSelectObj.getFullYear() }`);
 
                         $("#modalReservaSala").show().animate({"top": "10px"});
                     }
@@ -86,7 +86,7 @@ function setReservesCalendari()
         let anyActual = $(this).children("input[name=anyActual]").val();
 
         if (diaActual != " ") {
-            let dataSelect = `${ anyActual } - ${ mesActual } - ${ diaActual }`;
+            let dataSelect = `${ anyActual }-${ mesActual }-${ diaActual }`;
 
             $.ajax({
                 url: 'index.php?r=tevesReservesAjax',
