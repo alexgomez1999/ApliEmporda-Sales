@@ -42,11 +42,12 @@ $(document).ready(function() {
 
                         resultat.forEach(element => {
                             $("#CosModal1 > ul").append(`<li class="list-group-item list-group-item-light">
-                            <h5>${ element["Nom"] }</h5><br>
-                            <p>Data: ${ element["Data"] }</p><br>
-                            <p>Duració: de ${ element["HoraInici"] } a ${ element["HoraFi"] }</p><br>
-                            <p>Assistència: ${ element["Aforament"] } persones</p><br>
-                            <p>Lloc: ${ element["Centre"] }, ${ element["Ubicacio"] }</p></li>`);
+                            <h5>${ element["Nom"] }</h5>
+                            <hr>
+                            <p><strong>Data: </strong>${ diasSetmanaAmerica[dataSelectObj.getDay()] } ${ dataSelectObj.getDate() } de ${ mesosAny[dataSelectObj.getMonth()] } del ${ dataSelectObj.getFullYear() }<br>
+                            <strong>Hora: </strong>de ${ element["HoraInici"] } a ${ element["HoraFi"] }<br>
+                            <strong>Lloc: </strong>${ element["Centre"] }, ${ element["Ubicacio"] }<br>
+                            <strong>Assistència: </strong>${ element["Aforament"] } persones</p></li>`);
                         });
 
                         $("#TitolModal1").html(`<span><i class="fas fa-info-circle"></i></span> Reserves del ${ diasSetmanaAmerica[dataSelectObj.getDay()] } ${ dataSelectObj.getDate() } de ${ mesosAny[dataSelectObj.getMonth()] } del ${ dataSelectObj.getFullYear() }`);
@@ -67,7 +68,7 @@ $(document).ready(function() {
     $("#TancaModal1, #btnTancaModal1").click(function() {
         $("#modalReservaSala").hide().animate({"top": "-10px"});
     });
-    $(".salaReservadaModal").click(function(e) {
+    $(".salesReservadesModal h5").click(function(e) {
         console.log($( e.target ));
     });
 });
@@ -78,7 +79,7 @@ $(document).ready(function() {
 function setReservesCalendari() {
     let arrayDies = $("div#divCalendari table tr > td");
 
-    arrayDies.each(function(index) {
+    $("div#divCalendari table tr > td").each(function(index) {
         let diaActual = $( this ).text();
         let mesActual = $( this ).children("input[name=mesActual]").val();
         let anyActual = $( this ).children("input[name=anyActual]").val();
@@ -94,10 +95,7 @@ function setReservesCalendari() {
                     let resultatJson = data;
                     resultatJson = resultatJson.substring(0, resultatJson.indexOf("<"));
 
-                    let resultat;
                     if (resultatJson != "0") {
-                        resultat = $.parseJSON(resultatJson);
-
                         let divSales = document.createElement("div");
                         arrayDies[index].prepend(divSales);
                         
