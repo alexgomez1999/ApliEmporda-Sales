@@ -2,6 +2,14 @@
 
 /**
  * Classe que gestiona la connexió a la base de dades
+ * 
+ * @author   Àlex Gómez <agomez@cendrassos.net>
+ * @author   Juan José Gómez Villegas <jgomez@cendrassos.net>
+ * @license  MIT https://choosealicense.com/licenses/mit/
+ * @version  1.0.0
+ * @category ApliEmpordà-Sales
+ * @package  ApliEmpordà-Sales
+ * @link     http://localhost:8080/
  * **/
 
 namespace Daw;
@@ -9,7 +17,7 @@ namespace Daw;
 /**
  * Connexio: Classe que gestiona la connexió a la base de dades
  *
- * Sera la classe que servira de model per els altres models que es connectin a la base de dades
+ * Sera la classe que utilitzaran tots els models per connectar-se a la base de dades
  * **/
 class Connexio
 {
@@ -32,10 +40,11 @@ class Connexio
             die("Ha fallat la connexió: " . $e->getMessage() . " $usuari");
         }
     }
+
     /**
      * getConnexio: S'encarrega de retorna la connexio a la base de dades
      *
-     * @return sql la connexio a la base de dades
+     * @return sql conté la connexio a la base de dades
      **/
     public function getConnexio()
     {

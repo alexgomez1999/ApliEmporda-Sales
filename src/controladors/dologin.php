@@ -11,13 +11,13 @@ function ctrldoLogin($peticio, $resposta, $contenidor)
 
     $resposta->setCookie("usuarilogat", $usuari, strtotime("+1 day"));
 
-    if($actual && $actual["Contrasenya"] === $pass) {
+    if ($actual && $actual["Contrasenya"] === $pass) {
         $resposta->setSession("logat", true);
         $resposta->setSession("login", $actual);
         $resposta->redirect("Location:index.php");
     } else {
-        $resposta->setSession("logat", false);  
-        $resposta->setSession("missatge-login", "Usuari o contrasenya incorrecte"); 
+        $resposta->setSession("logat", false);
+        $resposta->setSession("missatge-login", "Usuari o contrasenya incorrecte");
         $resposta->redirect("Location:index.php?r=login");
     }
     return $resposta;

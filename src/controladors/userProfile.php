@@ -11,6 +11,6 @@ function ctrlUserProfile($peticio, $resposta, $contenidor)
     $resposta->set("dadesUsuariLogat", $dadesUsuariLogat);
 
     $resposta->setTemplate("userProfile.php");
-    
+
     return $resposta;
 }

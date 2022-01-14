@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include "../src/vistes/util/head.php" ?>
+    <?php require "../src/vistes/util/head.php" ?>
     <title>Reservation</title>
 </head>
 
 <body>
-<?php include "../src/vistes/util/navbar.php" ?>
+<?php require "../src/vistes/util/navbar.php" ?>
     <div class="flex-container">
         <form action="index.php" method="POST" class="reservation-form" autocomplete="off">
             <input type="hidden" name="r" value="makeReservation">
@@ -15,7 +15,7 @@
                 <select name="Ubicacio" id="ubi">
                     <option value="%">-</option>
                     <?php foreach ($ubi as $ubicacio) { ?>
-                        <option value="<?= $ubicacio["Ubicacio"] ?>"><?= $ubicacio["Ubicacio"] ?></option>
+                        <option value="<?php echo $ubicacio["Ubicacio"] ?>"><?php echo $ubicacio["Ubicacio"] ?></option>
                     <?php } ?>
                 </select>
             </div>
@@ -24,7 +24,7 @@
                 <select name="Centre" id="centre" disabled>
                     <option value="0">-</option>
                     <?php foreach ($centre as $c) { ?>
-                        <option value="<?= $c["Centre"] ?>"><?= $c["Nom"] ?></option>
+                        <option value="<?php echo $c["Centre"] ?>"><?php echo $c["Nom"] ?></option>
                     <?php } ?>
                 </select>
             </div>
@@ -54,6 +54,6 @@
     </div>
 </body>
 <footer>
-    <?php include "util/footer.php" ?>
+    <?php require "util/footer.php" ?>
 </footer>
 </html>
