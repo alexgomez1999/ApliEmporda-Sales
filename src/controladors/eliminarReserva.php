@@ -7,6 +7,6 @@ function ctrlDeleteReservation($peticio, $resposta, $contenidor)
     $Sales->delete($id);
 
     $resposta->redirect("location: index.php");
-    
+
     return $resposta;
 }

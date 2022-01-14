@@ -16,44 +16,44 @@
         <a href="index.php?info=sales" class="nav-link text-white itemsidebaractive">
           Sales
         </a>
-        <?php } else { ?>
+      <?php } else { ?>
         <a href="index.php?info=sales" class="nav-link text-white">
           Sales
         </a>
-        <?php } ?>
+      <?php } ?>
       </li>
       <li>
       <?php if ($_REQUEST["info"] === "recursos") { ?>
         <a href="index.php?info=recursos" class="nav-link text-white itemsidebaractive">
           Recursos
         </a>
-        <?php } else { ?>
+      <?php } else { ?>
         <a href="index.php?info=recursos" class="nav-link text-white">
           Recursos
         </a>
-        <?php } ?>
+      <?php } ?>
       </li>
       <li>
       <?php if ($_REQUEST["info"] === "reserves") { ?>
         <a href="index.php?info=reserves" class="nav-link text-white itemsidebaractive">
           Reserves
         </a>
-        <?php } else { ?>
+      <?php } else { ?>
         <a href="index.php?info=reserves" class="nav-link text-white">
           Reserves
         </a>
-        <?php } ?>
+      <?php } ?>
       </li>
       <li>
       <?php if ($_REQUEST["info"] === "incidencies") { ?>
         <a href="index.php?info=incidencies" class="nav-link text-white itemsidebaractive">
           Incidències
         </a>
-        <?php } else { ?>
+      <?php } else { ?>
         <a href="index.php?info=incidencies" class="nav-link text-white">
           Incidències
         </a>
-        <?php } ?>
+      <?php } ?>
       </li>
     </ul>
   </div>
