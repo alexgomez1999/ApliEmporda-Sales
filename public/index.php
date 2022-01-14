@@ -61,6 +61,8 @@ if ($r == "") {
     $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlAjaxAdminUsuaris");
 } elseif ($r === "NewReservationQuery") {
     $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlReservationQuary");
+} elseif ($r === "getRecursos") {
+    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlReservationQuary");
 }
 
 $resposta->resposta();

@@ -30,7 +30,7 @@ class UsuarisPDO
     {
         $query = 'SELECT * FROM usuaris';
         $stm = $this->sql->prepare($query);
-        $result = $stm->execute([':user' => $user]);
+        $result = $stm->execute();
 
         $usuaris = array();
         while ($usuari = $stm->fetch(\PDO::FETCH_ASSOC)) {

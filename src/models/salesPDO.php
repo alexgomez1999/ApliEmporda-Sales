@@ -41,7 +41,7 @@ class SalesPDO
     public function ReservationQuary($ubi, $centre, $dia, $entrada, $sortida, $persones) 
     {
         $query = 
-        'SELECT A.Nom, A.Activa, A.NomRecurs, A.Centre, A.Ubicacio, A.Foto, A.AforamentDisponible, B.Nom "NomCentre" FROM sales A
+        'SELECT A.Codi, A.Nom, A.Activa, A.NomRecurs, A.Centre, A.Ubicacio, A.Foto, A.AforamentDisponible, B.Nom "NomCentre" FROM sales A
         JOIN centres B ON (A.Centre = B.Codi) WHERE A.Ubicacio LIKE :ubicacio';
 
         if ($centre != 0) {
@@ -168,6 +168,29 @@ class SalesPDO
 
         $stm = $this->sql->prepare($query);
         $result = $stm->execute();
+
+        $llista = [];
+        while ($sala = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $llista[] = $sala;
+        }
+
+        if ($this->sql->errorCode() !== '00000') {
+            $err = $this->sql->errorInfo();
+            $code = $this->sql->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+        return $llista;
+    }
+
+    public function getRecurs($CodiSala) {
+        $query = 'SELECT B.Nom "Sala", C.Nom "Recurs", A.QuantitatRecurs
+        FROM salesrecursos A
+        INNER JOIN sales B ON (A.CodiSala = B.Codi)
+        INNER JOIN recursos C ON (A.CodiRecurs = C.Codi)
+        WHERE B.Codi = :CodiSala';
+
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':CodiSala' => $CodiSala]);
 
         $llista = [];
         while ($sala = $stm->fetch(\PDO::FETCH_ASSOC)) {

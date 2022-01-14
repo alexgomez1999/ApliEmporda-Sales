@@ -102,3 +102,12 @@ function ctrlTevesReservesAjax($peticio, $resposta, $contenidor)
 
     return $resposta;
 }
+
+function ctrlGetRecursos($peticio, $resposta, $contenidor)
+{
+    $CodiSala = $peticio->get(INPUT_POST, "CodiSala");
+
+    echo $CodiSala;
+
+    return $resposta;
+}

@@ -1,9 +1,9 @@
 let ubi = '%';
-let centre = '';
+let centre = '0';
 let dia = '';
 let entrada = '';
 let sortida = '';
-let persones = '';
+let persones = '0';
 
 const cont = $('#cont');
 
@@ -114,9 +114,7 @@ function SQLquery() {
 
 function fetchResults(response) {
 
-    console.log(response);
-
-    const r = response.substring(response.indexOf("[{") - 2, response.indexOf("<"));
+    const r = response.substring(0, response.indexOf("<"));
 
     console.log("RESPOSTA: " + r);
 
@@ -124,6 +122,19 @@ function fetchResults(response) {
 
     let temp = '';
     $(res).each((val, index) => {
+
+        let CodiSala = index.Codi;
+        let postData = { CodiSala };
+
+        $.ajax({
+            url: 'index.php?r=getRecursos',
+            type: 'POST',
+            data: postData,
+            success: (response) => {
+                console.log(response);
+            }
+        });
+
         temp += 
         `
         <div id="sala">
