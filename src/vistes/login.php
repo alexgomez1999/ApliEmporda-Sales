@@ -21,4 +21,3 @@
   <?php require "util/footer.php" ?>
 </html>
 
-
