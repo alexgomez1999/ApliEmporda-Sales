@@ -8,7 +8,11 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-            <a href="index.php" class="nav-link"><i class="fa fa-tachometer-alt"></i> Dashboard</a>
+            <?php if ($_SESSION['login']['Rol'] === "Administrador") { ?>
+              <a href="index.php" class="nav-link"><i class="fa fa-tachometer-alt"></i> Dashboard</a>
+            <?php } else { ?>
+              <a href="index.php" class="nav-link"><i class="fa fa-home"></i> Home</a>
+            <?php } ?>
         </li>
         <li class="nav-item">
             <a href="#" class="nav-link"><i class="fa fa-file-alt"></i> Incidències</a>

@@ -92,26 +92,27 @@
               </tbody>
             </table>
             <?php } else { ?>
-                <div id="opcionsAdmin" class="row">
-                  <div class="col-md-2">
-                    Usuaris
+                <div id="opcionsAdmin">
+                  <div id="anarusuaris">
+                    <h4>Usuaris</h4>
                   </div>
-                  <div class="col-md-2">
-                    Sales
+                  <div id="anarsales">
+                    <h4>Sales</h4>
                   </div>
-                  <div class="col-md-2">
-                    Recursos
+                  <div id="anarrecursos">
+                    <h4>Recursos</h4>
                   </div>
-                  <div class="col-md-2">
-                    Reserves
+                  <div id="anarreserves">
+                    <h4>Reserves</h4>
                   </div>
-                  <div class="col-md-2">
-                    Incidències
+                  <div id="anarincidencies">
+                    <h4>Incidències</h4>
                   </div>
                 </div>
             <?php } ?>
         </div>
       </div>
       </div>
+      <script src="js/admin.js"></script>
   </body>
 </html>
