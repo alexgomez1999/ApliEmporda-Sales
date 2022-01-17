@@ -16,10 +16,7 @@
  * I amb el navegador visitar la url http://localhost:8080/
  **/
 
-
- 
-
-$config = array();
+//$config = array();
 
 /* configuració de connexió a la base dades */
 $config["db"] = array();
