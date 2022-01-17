@@ -2,7 +2,7 @@
 
 function ctrlCalendari($peticio, $resposta, $contenidor)
 {
-    $contenidor->usuaris();
+    $usuarisPDO = $contenidor->usuaris();
     $resposta->SetTemplate("calendari.php");
     return $resposta;
 }
