@@ -1,11 +1,33 @@
 <?php
 
+/**
+ * Classe que gestiona la gestió de sales
+ * 
+ * @author   Àlex Gómez <agomez@cendrassos.net>
+ * @author   Juan José Gómez Villegas <jgomez@cendrassos.net>
+ * @license  MIT https://choosealicense.com/licenses/mit/
+ * @version  1.0.0
+ * @category ApliEmpordà-Sales
+ * @package  ApliEmpordà-Sales
+ * @link     http://localhost:8080/
+ * **/
+
 namespace Daw;
 
+/**
+ * SalesPDO: Classe que gestiona la gestió de sales
+ *
+ * Sera la classe que permetra crear, editat o esborrar sales
+ * **/
 class SalesPDO
 {
     private $sql;
 
+    /**
+     * __construct: S'encarrega de establir la connexió amb la base de dades
+     *
+     * @param connexio es l'objecte que fa servir la classe per connectar-se amb la base de dades
+     **/
     public function __construct($connexio)
     {
         $this->sql = $connexio->getConnexio();
