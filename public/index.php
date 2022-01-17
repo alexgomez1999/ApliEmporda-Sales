@@ -71,4 +71,4 @@ if ($r === "dologin") {
 }
 
 /* Aplica la resposta */
-$resposta->resposta();
+//$resposta->resposta();
