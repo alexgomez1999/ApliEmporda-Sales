@@ -20,4 +20,3 @@
   </body>
   <?php require "util/footer.php" ?>
 </html>
-
