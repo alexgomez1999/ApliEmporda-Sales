@@ -167,7 +167,8 @@ class SalesPDO
      * @param Ubicacio Ubicacio a cercar
      * @param Centre Centre a cercar
      **/
-    public function getSales($Ubicacio, $Centre) {
+    public function getSales($Ubicacio, $Centre)
+    {
         $query = 'SELECT A.Nom, A.NomRecurs, A.Ubicacio, A.Foto,
         B.Nom "Centre"
         FROM sales A
@@ -194,7 +195,8 @@ class SalesPDO
     /**
      * getUbicacio: Obté totes les ubicacions
      **/
-    public function getUbicacio() {
+    public function getUbicacio()
+    {
         $query = 'SELECT DISTINCT Ubicacio FROM sales';
 
         $stm = $this->sql->prepare($query);
@@ -216,7 +218,8 @@ class SalesPDO
     /**
      * getCentre: Obté totes els centres
      **/
-    public function getCentre() {
+    public function getCentre()
+    {
         $query = 'SELECT DISTINCT A.Centre, B.Nom FROM sales A JOIN centres B ON (A.Centre = B.Codi)';
 
         $stm = $this->sql->prepare($query);
@@ -240,7 +243,8 @@ class SalesPDO
      * 
      * @param CodiSala codi de la sala que volem consultar els seus recursos
      **/
-    public function getRecurs($CodiSala) {
+    public function getRecurs($CodiSala)
+    {
         $query = 'SELECT B.Nom "Sala", C.Nom "Recurs", A.QuantitatRecurs
         FROM salesrecursos A
         INNER JOIN sales B ON (A.CodiSala = B.Codi)

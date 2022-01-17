@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <?php include "util/head.php" ?>
+    <?php require "util/head.php" ?>
     <title>Inici</title>
   </head>
   <body>
-  <?php include "util/navbar.php" ?>
+  <?php require "util/navbar.php" ?>
       <!-- VISTA ADMINISTRADOR -->
       <div class="row">
-      <?php include "util/sidebaradmin.php" ?>
+      <?php require "util/sidebaradmin.php" ?>
       <div class="col-10 index-admin-container">
         <div>
           <?php if ($_REQUEST["info"] === "usuaris") { ?>
@@ -91,7 +91,7 @@
                 <!-- FILES DINÀMIQUES CONFORME SALES TINGUI RESERVADES L'USUARI -->
               </tbody>
             </table>
-            <?php } else { ?>
+          <?php } else { ?>
                 <div id="opcionsAdmin">
                   <div id="anarusuaris">
                     <h4>Usuaris</h4>
@@ -109,7 +109,7 @@
                     <h4>Incidències</h4>
                   </div>
                 </div>
-            <?php } ?>
+          <?php } ?>
         </div>
       </div>
       </div>
