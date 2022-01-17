@@ -33,6 +33,11 @@ class SalesPDO
         $this->sql = $connexio->getConnexio();
     }
 
+    /**
+     * getReserva: Opté les reserves d'un usuari en concret
+     *
+     * @param CodiUsuari usuari del que volem obtenir les seves reserves
+     **/
     public function getReserva($CodiUsuari)
     {
         $query = 
@@ -60,6 +65,9 @@ class SalesPDO
         return $llista;
     }
 
+    /**
+     * ReservationQuary: Opté les reserves de la base de dades
+     **/
     public function ReservationQuary($ubi, $centre, $dia, $entrada, $sortida, $persones) 
     {
         $query = 
@@ -101,6 +109,12 @@ class SalesPDO
         return $llista;
     }
 
+    /**
+     * getReservaPerData: Opté les reserves d'un usuari en concret en una data en concret
+     *
+     * @param CodiUsuari usuari del que volem obtenir les seves reserves
+     * @param dataSelect la data de les reserves
+     **/
     public function getReservaPerData($CodiUsuari, $dataSelect)
     {
         $query = 
@@ -129,6 +143,11 @@ class SalesPDO
         return $llista;
     }
 
+    /**
+     * delete: Esborrar una reserva en concret
+     *
+     * @param Id id de la reserva que volem esborrar
+     **/
     public function delete($Id) 
     {
         $query = 'DELETE FROM reserves WHERE Id = :Id';
@@ -142,6 +161,12 @@ class SalesPDO
         }
     }
 
+    /**
+     * getSales: Obté totes les sales depenent de la seva ubicació i centre
+     *
+     * @param Ubicacio Ubicacio a cercar
+     * @param Centre Centre a cercar
+     **/
     public function getSales($Ubicacio, $Centre) {
         $query = 'SELECT A.Nom, A.NomRecurs, A.Ubicacio, A.Foto,
         B.Nom "Centre"
@@ -166,6 +191,9 @@ class SalesPDO
         return $llista;
     }
 
+    /**
+     * getUbicacio: Obté totes les ubicacions
+     **/
     public function getUbicacio() {
         $query = 'SELECT DISTINCT Ubicacio FROM sales';
 
@@ -185,6 +213,9 @@ class SalesPDO
         return $llista;
     }
 
+    /**
+     * getCentre: Obté totes els centres
+     **/
     public function getCentre() {
         $query = 'SELECT DISTINCT A.Centre, B.Nom FROM sales A JOIN centres B ON (A.Centre = B.Codi)';
 
@@ -204,6 +235,11 @@ class SalesPDO
         return $llista;
     }
 
+    /**
+     * getRecurs: Obté tots els recursos d'una sala
+     * 
+     * @param CodiSala codi de la sala que volem consultar els seus recursos
+     **/
     public function getRecurs($CodiSala) {
         $query = 'SELECT B.Nom "Sala", C.Nom "Recurs", A.QuantitatRecurs
         FROM salesrecursos A
