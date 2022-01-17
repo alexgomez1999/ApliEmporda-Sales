@@ -16,9 +16,10 @@ function ctrlIndex($peticio, $resposta, $contenidor)
         $llistatUsuaris = $usuarisPDO->getLlistat();
 
         $resposta->set('llistatUsuaris', $llistatUsuaris);
+        $resposta->SetTemplate("index.php");
+
     }
 
-    $resposta->SetTemplate("index.php");
 
     return $resposta;
 }
