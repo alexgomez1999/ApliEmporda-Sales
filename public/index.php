@@ -30,9 +30,7 @@ $resposta = $contenidor->resposta();
 $peticio = $contenidor->peticio();
 
 /* Depenent de la resposta executa un controlador o un altre */
-if ($r == "") {
-    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlIndex");
-} elseif ($r === "dologin") {
+if ($r === "dologin") {
     $resposta = ctrldoLogin($peticio, $resposta, $contenidor);
 } elseif ($r === "login") {
     $resposta = ctrlLogin($peticio, $resposta, $contenidor);
@@ -68,6 +66,8 @@ if ($r == "") {
     $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlReservationQuary");
 } elseif ($r === "getRecursos") {
     $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlReservationQuary");
+} elseif ($r == "") {
+    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlIndex");
 }
 
 /* Aplica la resposta */
