@@ -19,7 +19,7 @@
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 /* inclou el fitxer config.php */
-include "../src/config.php";
+require_once "../src/config.php";
 
 /* Rep el Parametre Request "r" */
 $r = $_REQUEST["r"];

@@ -34,18 +34,18 @@ require_once "../src/models/usuarisPDO.php";
 require_once "../src/models/salesPDO.php";
 
 /* inclou els controladors de l'aplicació */
-include "../src/controladors/index.php";
-include "../src/controladors/login.php";
-include "../src/controladors/dologin.php";
-include "../src/controladors/logout.php";
-include "../src/controladors/userProfile.php";
-include "../src/controladors/calendari.php";
-include "../src/controladors/newReservation.php";
-include "../src/controladors/eliminarReserva.php";
-include "../src/controladors/ajaxServer.php";
-include "../src/controladors/llistaReserves.php";
-include "../src/controladors/salesDisponibles.php";
+require_once "../src/controladors/index.php";
+require_once "../src/controladors/login.php";
+require_once "../src/controladors/dologin.php";
+require_once "../src/controladors/logout.php";
+require_once "../src/controladors/userProfile.php";
+require_once "../src/controladors/calendari.php";
+require_once "../src/controladors/newReservation.php";
+require_once "../src/controladors/eliminarReserva.php";
+require_once "../src/controladors/ajaxServer.php";
+require_once "../src/controladors/llistaReserves.php";
+require_once "../src/controladors/salesDisponibles.php";
 
 /* inclou els middleware de l'aplicació */
-include "../src/middleware/middleAdmin.php";
-include "../src/middleware/middleLogin.php";
+require_once "../src/middleware/middleAdmin.php";
+require_once "../src/middleware/middleLogin.php";
