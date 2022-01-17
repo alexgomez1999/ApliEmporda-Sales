@@ -15,18 +15,18 @@
 namespace Daw;
 
 /**
- * UsuarisPDO: Classe que gestiona la gestió d'usuaris
+ * UsuarisPDO: Classe que gestiona la gestió d'usiaris
  *
- * Sera la classe que podra crear, esborrar i modificar usuaris de la base de dades
+ * Sera la classe que permetra crear, editat o esborrar usuaris
  * **/
 class UsuarisPDO
 {
     private $sql;
 
     /**
-     * __construct: Rep la Connexio a la base de dades de l'objecte Connexio
+     * __construct: S'encarrega de establir la connexió amb la base de dades
      *
-     * @param connexio conte les dades necessaries per connectar-se amb la base de dades
+     * @param connexio es l'objecte que fa servir la classe per connectar-se amb la base de dades
      **/
     public function __construct($connexio)
     {
@@ -34,9 +34,9 @@ class UsuarisPDO
     }
 
     /**
-     * getUser: Retorna totes les dades d'un usuari a partir del seu username
+     * getUser: Opté les dades d'un usuari de la base de dades
      *
-     * @param user usuari a consultar
+     * @param user usuari del que volem obtenir les seves dades
      **/
     public function getUser($user)
     {
@@ -49,24 +49,24 @@ class UsuarisPDO
             $code = $stm->errorCode();
             die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
         }
-
+        
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
 
     /**
-     * getUser: Retorna tots els usuaris de la base de dades
+     * getLlistat: Opté tots els usuaris de la base de dades
      **/
     public function getLlistat()
     {
         $query = 'SELECT * FROM usuaris';
         $stm = $this->sql->prepare($query);
-        $result = $stm->execute([]);
+        $result = $stm->execute();
 
         $usuaris = array();
         while ($usuari = $stm->fetch(\PDO::FETCH_ASSOC)) {
             $usuaris[$usuari["Id"]] = $usuari;
         }
-
+        
         return $usuaris;
     }
 }

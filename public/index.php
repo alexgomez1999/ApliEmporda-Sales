@@ -18,22 +18,22 @@
 
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
-require "../src/config.php";
+include "../src/config.php";
 
-require "../src/controladors/index.php";
-require "../src/controladors/login.php";
-require "../src/controladors/dologin.php";
-require "../src/controladors/logout.php";
-require "../src/controladors/userProfile.php";
-require "../src/controladors/calendari.php";
-require "../src/controladors/newReservation.php";
-require "../src/controladors/eliminarReserva.php";
-require "../src/controladors/ajaxServer.php";
-require "../src/controladors/llistaReserves.php";
-require "../src/controladors/salesDisponibles.php";
+include "../src/controladors/index.php";
+include "../src/controladors/login.php";
+include "../src/controladors/dologin.php";
+include "../src/controladors/logout.php";
+include "../src/controladors/userProfile.php";
+include "../src/controladors/calendari.php";
+include "../src/controladors/newReservation.php";
+include "../src/controladors/eliminarReserva.php";
+include "../src/controladors/ajaxServer.php";
+include "../src/controladors/llistaReserves.php";
+include "../src/controladors/salesDisponibles.php";
 
-require "../src/middleware/middleAdmin.php";
-require "../src/middleware/middleLogin.php";
+include "../src/middleware/middleAdmin.php";
+include "../src/middleware/middleLogin.php";
 
 $r = $_REQUEST["r"];
 
@@ -76,6 +76,8 @@ if ($r == "") {
 } elseif ($r === "anarusuaris") {
     $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlAjaxAdminUsuaris");
 } elseif ($r === "NewReservationQuery") {
+    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlReservationQuary");
+} elseif ($r === "getRecursos") {
     $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlReservationQuary");
 }
 
