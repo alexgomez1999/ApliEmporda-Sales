@@ -6,10 +6,6 @@
   </head>
   <body>
   <?php include "util/navbar.php" ?>
-      <?php if ($login["Rol"] != "Administrador") { ?>
-      <!-- VISTA USUARI -->
-        <?php header("Location:index.php?r=llistaReserves"); ?>
-      <?php } else { ?>
       <!-- VISTA ADMINISTRADOR -->
       <div class="row">
       <?php include "util/sidebaradmin.php" ?>
@@ -117,6 +113,5 @@
         </div>
       </div>
       </div>
-      <?php } ?>
   </body>
 </html>
