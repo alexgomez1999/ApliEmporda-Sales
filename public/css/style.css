@@ -443,10 +443,57 @@ div#navCalendari button i {
 }
 
 /*PANELL ADMINISTRADOR*/
-div#opcionsAdmin {
-    width: 100%;
+@media screen and (min-width: 901px) {
+    div#opcionsAdmin {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 30px;
+    }
+    div#opcionsAdmin div {
+        padding: 50px;
+        text-align: center;
+        border: 1px solid #000;
+        border-radius: 10px;
+        box-shadow: 0 0 20px 3px rgba(0, 34, 112, 0.5);
+        background-color: #7FA6FF;
+        transition: background-color 1s, border-radius 1s, box-shadow 1s;
+    }
+    div#opcionsAdmin div:hover {
+        border-radius: 15px;
+        box-shadow: 0 0 5px 3px rgba(0, 34, 112, 0.5);
+        background-color: #1A5FFF;
+        transition: background-color 1s, border-radius 1s, box-shadow 1s;
+    }
+    div#opcionsAdmin div > H4 {
+        text-transform: uppercase;
+    }
 }
-div#opcionsAdmin div {
-    padding: 50px;
-    border: 1px solid #000;
+@media screen and (max-width: 900px) {
+    div#opcionsAdmin {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    div#opcionsAdmin div {
+        margin: 10px;
+        margin-top: 5px;
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #000;
+        border-radius: 10px;
+        box-shadow: 0 0 20px 3px rgba(0, 34, 112, 0.5);
+        background-color: #7FA6FF;
+        transition: background-color 1s, border-radius 1s, box-shadow 1s;
+    }
+    div#opcionsAdmin div:hover {
+        border-radius: 15px;
+        box-shadow: 0 0 5px 3px rgba(0, 34, 112, 0.5);
+        background-color: #1A5FFF;
+        transition: background-color 1s, border-radius 1s, box-shadow 1s;
+    }
+    div#opcionsAdmin div > H4 {
+        text-transform: uppercase;
+    }
 }
