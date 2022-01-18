@@ -443,7 +443,7 @@ div#navCalendari button i {
 }
 
 /*PANELL ADMINISTRADOR*/
-@media screen and (min-width: 901px) {
+@media screen and (min-width: 801px) {
     div#opcionsAdmin {
         display: flex;
         flex-direction: row;
@@ -469,7 +469,7 @@ div#navCalendari button i {
         text-transform: uppercase;
     }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 800px) {
     div#opcionsAdmin {
         display: flex;
         flex-direction: column;

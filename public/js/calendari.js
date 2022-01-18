@@ -8,36 +8,46 @@ let diasSetmanaAmerica = ["Diumenge", "Dilluns", "Dimarts", "Dimecres", "Dijous"
  * Funció que s'executara quan la pàgina estigui totalment carregada
  * **/
 $(document).ready(function () {
+    /* Executa les funcions que crean l'estructura del calendari */
     setEstructura();
-
     setTitol();
 
+    /* Events dels butons d'anar un mes cap enrere i un mes cap endavant */
     document.getElementById("btnAbans").addEventListener("click", setMesAnterior);
     document.getElementById("btnDespres").addEventListener("click", setMesSeguent);
+    /* Event al fer clic en un dia del calendari (<td> de la <table>) */
     $("div#divCalendari table tr > td").click(function (e) {
+        /* Busca el dia (text), el mes del dia (el valor del input "mesActual"), i l'any del dia (el valor del input "anyActual") */
         let diaActual = $(e.target).text();
         let mesActual = $(e.target).children("input[name=mesActual]").val();
         let anyActual = $(e.target).children("input[name=anyActual]").val();
 
+        /* Si el dia clicat no es buit */
         if (diaActual != " ") {
+            /* construeix la data, i genera un objecte Date a partir de la data seleccionada */
             let dataSelect = `${ anyActual }-${ mesActual }-${ diaActual }`;
-
             let dataSelectObj = new Date(dataSelect);
 
+            /* Esborra el cos del modal */
             $("#CosModal1").children().remove();
 
+            /* fa una petició ajax per aconsegir les reserves que té l'usuari logat per aquell dia */
             $.ajax({
                 url: 'index.php?r=tevesReservesAjax',
                 type: 'POST',
                 data: { dataSelect, mesActual },
                 success: function (data) {
+                    /* Recupera les dades retornades per la petició ajax */
                     let resultatJson = data;
                     resultatJson = resultatJson.substring(0, resultatJson.indexOf("<"));
 
                     let resultat;
+                    /* I si la petició ajax no retorna cap 0 */
                     if (resultatJson != "0") {
+                        /* Parseja el resultat de la petició ajax a JSON */
                         resultat = $.parseJSON(resultatJson);
 
+                        /* I afageix al cos del modal una llista amb totes les reserves de l'usuari logat per el dia seleccionat */
                         $("#CosModal1").append(`<ul class="list-group"></ul>`);
 
                         resultat.forEach(element => {
