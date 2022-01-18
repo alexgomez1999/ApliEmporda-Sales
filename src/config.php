@@ -25,10 +25,27 @@ $config["db"]["pass"] = '@dminProgramacio%2022';
 $config["db"]["dbname"] = 'applisales';
 $config["db"]["host"] = '185.66.41.58';
 
+/* inclou els models de l'aplicació */
 require_once "../src/emeset/peticio.php";
 require_once "../src/emeset/resposta.php";
 require_once "../src/emeset/contenidor.php";
-
 require_once "../src/models/connexio.php";
 require_once "../src/models/usuarisPDO.php";
 require_once "../src/models/salesPDO.php";
+
+/* inclou els controladors de l'aplicació */
+require_once "../src/controladors/index.php";
+require_once "../src/controladors/login.php";
+require_once "../src/controladors/dologin.php";
+require_once "../src/controladors/logout.php";
+require_once "../src/controladors/userProfile.php";
+require_once "../src/controladors/calendari.php";
+require_once "../src/controladors/newReservation.php";
+require_once "../src/controladors/eliminarReserva.php";
+require_once "../src/controladors/ajaxServer.php";
+require_once "../src/controladors/llistaReserves.php";
+require_once "../src/controladors/salesDisponibles.php";
+
+/* inclou els middleware de l'aplicació */
+require_once "../src/middleware/middleAdmin.php";
+require_once "../src/middleware/middleLogin.php";

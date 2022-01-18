@@ -3,10 +3,4 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script src="js/reserves.js"></script>
-<script>
-    $(document).ready(function() {
-    setTimeout(function() {
-        $(".bad").fadeOut(1500);
-    },3000);
-});
-</script>
+<script src="js/footer.js"></script>

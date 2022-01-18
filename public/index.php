@@ -18,32 +18,19 @@
 
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
-include "../src/config.php";
+/* inclou el fitxer config.php */
+require_once "../src/config.php";
 
-include "../src/controladors/index.php";
-include "../src/controladors/login.php";
-include "../src/controladors/dologin.php";
-include "../src/controladors/logout.php";
-include "../src/controladors/userProfile.php";
-include "../src/controladors/calendari.php";
-include "../src/controladors/newReservation.php";
-include "../src/controladors/eliminarReserva.php";
-include "../src/controladors/ajaxServer.php";
-include "../src/controladors/llistaReserves.php";
-include "../src/controladors/salesDisponibles.php";
-
-include "../src/middleware/middleAdmin.php";
-include "../src/middleware/middleLogin.php";
-
+/* Rep el Parametre Request "r" */
 $r = $_REQUEST["r"];
 
+/* instancia els models peticio, resposta i contenidor */
 $contenidor = new Emeset\Contenidor($config);
 $resposta = $contenidor->resposta();
 $peticio = $contenidor->peticio();
 
-if ($r == "") {
-    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlIndex");
-} elseif ($r === "dologin") {
+/* Depenent de la resposta executa un controlador o un altre */
+if ($r === "dologin") {
     $resposta = ctrldoLogin($peticio, $resposta, $contenidor);
 } elseif ($r === "login") {
     $resposta = ctrlLogin($peticio, $resposta, $contenidor);
@@ -79,6 +66,9 @@ if ($r == "") {
     $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlReservationQuary");
 } elseif ($r === "getRecursos") {
     $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlGetRecursos");
+} elseif ($r == "") {
+    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlIndex");
 }
 
+/* Aplica la resposta */
 $resposta->resposta();
