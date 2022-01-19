@@ -12,7 +12,7 @@
 <div class="index-user-container">
     <?php foreach ($sala as $row) { ?>
         <div class="index-user-container2">
-          <img src="https://www.desarrollolibre.net/public/broken-img.png" alt="" class="imatge-sala">
+        <img src="https://img.lovepik.com/photo/20211123/medium/lovepik-corporate-conference-room-environment-picture_500803335.jpg" alt="" class="imatge-sala2">
           <div class="column-container">
             <b><?php echo $row['Nom'] ?></b>
             <p><?php echo $row['Ubicacio'] ?>, <?php echo $row['Centre'] ?></p>
@@ -25,7 +25,7 @@
             <b>Hora</b>
             <p>De:  <?php echo $row['HoraInici'] ?> A: <?php echo $row['HoraFi'] ?></p>
           </div>
-          <a href="index.php?r=deleteReservation&id=<?php echo $row['Id'] ?>">Eliminar</a>
+          <a href="index.php?r=deleteReservation&id=<?php echo $row['Id'] ?>" class="delete-btn">Eliminar</a>
         </div>
     <?php } ?>
     <a href="index.php?r=newReservation" class="reservarBtn" style="text-decoration:none"><i class="fas fa-plus"></i></a>
