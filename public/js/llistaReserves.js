@@ -20,7 +20,7 @@ $(document).on('click', '.delete-btn', (e) => {
                 type: 'POST',
                 data: { id },
                 success: () => {
-                    window.location.replace("index.php?r=llistaReserves");
+                    setTimeout('window.location.replace("index.php?r=llistaReserves")', 2500);
                 }
             });
 
