@@ -25,10 +25,11 @@
             <b>Hora</b>
             <p>De:  <?php echo $row['HoraInici'] ?> A: <?php echo $row['HoraFi'] ?></p>
           </div>
-          <a href="index.php?r=deleteReservation&id=<?php echo $row['Id'] ?>" class="delete-btn">Eliminar</a>
+          <a href="#" codiSala="<?php echo $row['Id'] ?>" nomSala="<?= $row['Nom'] ?>" class="delete-btn">Eliminar</a>
         </div>
     <?php } ?>
     <a href="index.php?r=newReservation" class="reservarBtn" style="text-decoration:none"><i class="fas fa-plus"></i></a>
 </div>
 </body>
+<script src="js/llistaReserves.js"></script>
 </html>

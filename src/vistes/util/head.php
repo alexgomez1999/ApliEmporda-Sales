@@ -9,3 +9,5 @@
 <!-- JQUERY AND JQUERY UI -->
 <script src="js/jquery.js"></script>
 <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+<!-- SWEET ALERT -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
