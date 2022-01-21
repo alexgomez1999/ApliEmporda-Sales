@@ -11,7 +11,8 @@ $(document).on('click', '.delete-btn', (e) => {
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Sí, cancel·lar!'
+        confirmButtonText: 'Sí, cancel·lar!',
+        cancelButtonText: 'No'
       }).then((result) => {
         if (result.isConfirmed) {
 
