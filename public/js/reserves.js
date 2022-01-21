@@ -131,7 +131,9 @@ function fetchResults(response) {
             type: 'POST',
             data: postData,
             success: (response) => {
-                console.log(response);
+                const r = response.substring(0, response.indexOf("<"));
+
+                console.log("RESPOSTA: " + r);
             }
         });
 

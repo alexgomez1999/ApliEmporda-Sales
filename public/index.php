@@ -65,7 +65,7 @@ if ($r === "dologin") {
 } elseif ($r === "NewReservationQuery") {
     $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlReservationQuary");
 } elseif ($r === "getRecursos") {
-    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlReservationQuary");
+    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlGetRecursos");
 } elseif ($r == "") {
     $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlIndex");
 }

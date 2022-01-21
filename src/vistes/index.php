@@ -7,9 +7,9 @@
   <body>
   <?php require "util/navbar.php" ?>
       <!-- VISTA ADMINISTRADOR -->
-      <div class="row">
+      <div id="divRow">
       <?php require "util/sidebaradmin.php" ?>
-      <div class="col-10 index-admin-container">
+      <div id="contingut" class="index-admin-container">
         <div>
           <?php if ($_REQUEST["info"] === "usuaris") { ?>
             <table class="table crud-table">

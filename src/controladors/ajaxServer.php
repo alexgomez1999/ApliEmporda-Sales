@@ -108,7 +108,13 @@ function ctrlGetRecursos($peticio, $resposta, $contenidor)
 {
     $CodiSala = $peticio->get(INPUT_POST, "CodiSala");
 
-    echo $CodiSala;
+    $sala = $contenidor->sales();
+
+    $dades = $sala->getRecurs($CodiSala);
+
+    $jsonDades = json_encode($dades);
+
+    echo $jsonDades;
 
     return $resposta;
 }

@@ -2,7 +2,7 @@
 
 function ctrlDeleteReservation($peticio, $resposta, $contenidor)
 {
-    $id = $peticio->get(INPUT_GET, "id");
+    $id = $peticio->get(INPUT_POST, "id");
     $Sales = $contenidor->sales();
     $Sales->delete($id);
 
