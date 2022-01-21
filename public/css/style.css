@@ -596,7 +596,25 @@ div#navCalendari button i {
 }
 
 /*PANELL ADMINISTRADOR*/
-@media screen and (min-width: 801px) {
+div#sidebaradmin i.fas {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+}
+@media screen and (min-width: 901px) {
+    #divRow {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+    #divRow > div#sidebaradmin {
+        grid-area: 1 / 1 / 11 / 2;
+    }
+    #divRow > div#contingut {
+        grid-area: 1 / 2 / 11 / 11;
+    }
     div#opcionsAdmin {
         display: flex;
         flex-direction: row;
@@ -604,7 +622,7 @@ div#navCalendari button i {
         margin-top: 30px;
     }
     div#opcionsAdmin div {
-        padding: 50px;
+        padding: 15px;
         text-align: center;
         border: 1px solid #000;
         border-radius: 10px;
@@ -622,7 +640,7 @@ div#navCalendari button i {
         text-transform: uppercase;
     }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
     div#opcionsAdmin {
         display: flex;
         flex-direction: column;
