@@ -30,12 +30,12 @@
                         <?php } ?>
                     </select>
                 </div>
-            </div>
-            
                 <div class="flex-column-container">
                     <label for="data">Dia</label>
                     <input type="date" name="Data" id="data" disabled>
                 </div>
+            </div>
+    
                 <div class="flex-column-container2">
                     <div class="flex-column-container">
                         <label for="hentrada">Hora entrada</label>
@@ -45,11 +45,11 @@
                         <label for="hsortida">Hora sortida</label>
                         <input type="time" name="HoraFi" id="hsortida" disabled>
                     </div>
+                    <div class="flex-column-container">
+                        <label for="persones">Persones</label>
+                        <input type="number" name="Persones" id="persones" value="0" min=0 disabled>
+                    </div>
                 </div>
-            <div class="flex-column-container">
-                <label for="persones">Persones</label>
-                <input type="number" name="Persones" id="persones" value="0" min=0 disabled>
-            </div>
             <div class="flex-column-container">
                 <button type="submit" id="submit"><i class="fas fa-search"></i></button>
             </div>

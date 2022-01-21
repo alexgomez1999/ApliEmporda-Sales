@@ -352,19 +352,96 @@ a {
     margin-top: 50px;
 }
 
-#sales {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    height: 190px;
-    margin-bottom: 5px;
+@media screen and (max-width: 780px) {
+    #sales {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        min-height: 190px;
+        margin-bottom: 5px;
+        gap: 20px;
+    }
+
+    #sala {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-height: 190px;
+        margin-bottom: 5px;
+    }
+
+    #dades-sala {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        border: 1px solid;
+        justify-content: center;
+        padding: 10px 0;
+    }
+    
+    #recursos-sala {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border: 1px solid;
+        height: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    #foto-sala {
+        width: 100%;
+        min-height: 150px;
+        border: 1px solid;
+    }
+
+    .imatge-sala {
+        width: 75%;
+    }
+
 }
 
-#sala {
-    display: flex;
-    width: 100%;
-    height: 190px;
-    margin-bottom: 5px;
+@media screen and (min-width: 781px) {
+    #sales {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        height: 190px;
+        margin-bottom: 5px;
+    }
+
+    #sala {
+        display: flex;
+        width: 100%;
+        height: 190px;
+        margin-bottom: 5px;
+    }
+
+    #dades-sala {
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        height: 100%;
+        border: 1px solid;
+        justify-content: center;
+    }
+    
+    #recursos-sala {
+        display: flex;
+        flex-direction: column;
+        width: 63%;
+        border: 1px solid;
+        height: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    #foto-sala {
+        width: 17%;
+        border: 1px solid;
+    }
+
 }
 
 #sala:hover {
@@ -372,32 +449,8 @@ a {
     cursor: pointer;
 }
 
-#dades-sala {
-    display: flex;
-    flex-direction: column;
-    width: 20%;
-    height: 100%;
-    border: 1px solid;
-    justify-content: center;
-}
-
-#recursos-sala {
-    display: flex;
-    flex-direction: column;
-    width: 63%;
-    border: 1px solid;
-    height: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
 .underlined-cell {
     border-bottom: 2px solid;
-}
-
-#foto-sala {
-    width: 17%;
-    border: 1px solid;
 }
 
 #foto-sala .imatge-sala {
