@@ -12,6 +12,15 @@
  * @link     http://localhost:8080/
  * **/
 
+/**
+ * Middelware que gestiona l'aplicació
+ *
+ * @param petitcio $peticio
+ * @param resposta $resposta
+ * @param funcio $next  ha de ser el controlador
+ * @param array $config  paràmetres de configuració de l'aplicació
+ * @return result
+ */
 function middleLogin($peticio, $resposta, $contenidor, $next)
 {
     $login = $peticio->get("SESSION", "login");
@@ -21,7 +30,7 @@ function middleLogin($peticio, $resposta, $contenidor, $next)
         $resposta->setSession("error", "Has intentat accedir a la pàgina sense identificar-te!!!!!!\n");
         $resposta->redirect("Location:index.php?r=login");
     } else {
-        $resposta = $next($peticio, $resposta, $contenidor);
+        $resposta = nextMiddleware($peticio, $resposta, $contenidor, $next);
     }
 
     return $resposta;
