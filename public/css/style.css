@@ -615,6 +615,45 @@ div#sidebaradmin i.fas {
     #divRow > div#contingut {
         grid-area: 1 / 2 / 11 / 11;
     }
+    #sidebaradmin {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 3;
+        padding-top: 20px;
+    }
+    #sidebaradmin li {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 3;
+    }
+}
+@media screen and (max-width: 900px) {
+    #sidebaradmin {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 3;
+        padding-top: 20px;
+    }
+    #sidebaradmin li {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 3;
+    }
+}
+/*@media screen and (min-width: 901px) {
+    #divRow {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+    #divRow > div#sidebaradmin {
+        grid-area: 1 / 1 / 11 / 2;
+    }
+    #divRow > div#contingut {
+        grid-area: 1 / 2 / 11 / 11;
+    }
     div#opcionsAdmin {
         display: flex;
         flex-direction: row;
@@ -667,4 +706,4 @@ div#sidebaradmin i.fas {
     div#opcionsAdmin div > H4 {
         text-transform: uppercase;
     }
-}
+}*/
