@@ -27,7 +27,7 @@
           <a class="nav-link dropdown-toggle" id="navbarScrollingDropdown" href="#">
             <i class="fa fa-user-circle"></i> <?php echo $_SESSION['login']['Usuari'] ?>
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+          <ul class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarScrollingDropdown">
               <li><a class="dropdown-item" href="index.php?r=userProfile"><i class="fa fa-id-badge"></i> El Meu Perfil</a></li>
               <li><a class="dropdown-item" href="index.php?r=llistaReserves"><i class="fa fa-person-booth"></i> Les Meves Sales</a></li>
               <li><hr class="dropdown-separacio"></li>
