@@ -53,6 +53,11 @@ class Contenidor
         return $this->connexio;
     }
 
+    public function model()
+    {
+        return new \Daw\ModelPDO($this->connexio);
+    }
+
     public function usuaris()
     {
         return new \Daw\UsuarisPDO($this->connexio);

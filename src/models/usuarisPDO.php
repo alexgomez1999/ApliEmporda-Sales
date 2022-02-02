@@ -19,20 +19,8 @@ namespace Daw;
  *
  * Sera la classe que permetra crear, editat o esborrar usuaris
  * **/
-class UsuarisPDO
+class UsuarisPDO extends ModelPDO
 {
-    private $sql;
-
-    /**
-     * __construct: S'encarrega de establir la connexió amb la base de dades
-     *
-     * @param connexio es l'objecte que fa servir la classe per connectar-se amb la base de dades
-     **/
-    public function __construct($connexio)
-    {
-        $this->sql = $connexio->getConnexio();
-    }
-
     /**
      * getUser: Opté les dades d'un usuari de la base de dades
      *
@@ -54,18 +42,21 @@ class UsuarisPDO
     }
 
     /**
+     * getCount: Opté tots els usuaris de la base de dades
+     **/
+    public function getCount()
+    {
+        $usuaris = parent::getCountModel("usuaris");
+        
+        return $usuaris["Total"];
+    }
+
+    /**
      * getLlistat: Opté tots els usuaris de la base de dades
      **/
     public function getLlistat()
     {
-        $query = 'SELECT * FROM usuaris';
-        $stm = $this->sql->prepare($query);
-        $result = $stm->execute();
-
-        $usuaris = array();
-        while ($usuari = $stm->fetch(\PDO::FETCH_ASSOC)) {
-            $usuaris[$usuari["Id"]] = $usuari;
-        }
+        $usuaris = parent::getLlistatModel("usuaris");
         
         return $usuaris;
     }

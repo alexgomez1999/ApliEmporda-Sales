@@ -19,20 +19,8 @@ namespace Daw;
  *
  * Sera la classe que permetra crear, editat o esborrar sales
  * **/
-class SalesPDO
+class SalesPDO extends ModelPDO
 {
-    private $sql;
-
-    /**
-     * __construct: S'encarrega de establir la connexió amb la base de dades
-     *
-     * @param connexio es l'objecte que fa servir la classe per connectar-se amb la base de dades
-     **/
-    public function __construct($connexio)
-    {
-        $this->sql = $connexio->getConnexio();
-    }
-
     /**
      * getReserva: Opté les reserves d'un usuari en concret
      *
@@ -148,7 +136,7 @@ class SalesPDO
      *
      * @param Id id de la reserva que volem esborrar
      **/
-    public function delete($Id) 
+    public function delete($Id)
     {
         $query = 'DELETE FROM reserves WHERE Id = :Id';
         $delete = $this->sql->prepare($query);
