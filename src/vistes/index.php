@@ -19,7 +19,7 @@
               <div class="card-body">
                 <?php if (count($llistatUsuaris) > 0) { ?>
                   <div class="table-responsive">
-                      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                      <table class="table table-bordered table-striped table-hover" id="dataTable" width="100%" cellspacing="0">
                           <thead>
                               <tr>
                               <th scope="col">#</th>
@@ -63,7 +63,7 @@
               <div class="card-body">
                 <?php if (count($llistatSales) > 0) { ?>
                   <div class="table-responsive">
-                      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                      <table class="table table-bordered table-striped table-hover" id="dataTable" width="100%" cellspacing="0">
                           <thead>
                               <tr>
                               <th scope="col">#</th>
@@ -107,7 +107,7 @@
               <div class="card-body">
               <?php if (count($llistatRecursos) > 0) { ?>
                   <div class="table-responsive">
-                      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                      <table class="table table-bordered table-striped table-hover" id="dataTable" width="100%" cellspacing="0">
                           <thead>
                               <tr>
                               <th scope="col">#</th>
@@ -145,7 +145,7 @@
               <div class="card-body">
                 <?php if (count($llistatReserves) > 0) { ?>
                   <div class="table-responsive">
-                      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                      <table class="table table-bordered table-striped table-hover" id="dataTable" width="100%" cellspacing="0">
                           <thead>
                               <tr>
                               <th scope="col">#</th>
@@ -189,7 +189,7 @@
               <div class="card-body">
                 <?php if (count($llistatIncidencies) > 0) { ?>
                   <div class="table-responsive">
-                      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                      <table class="table table-bordered table-striped table-hover" id="dataTable" width="100%" cellspacing="0">
                           <thead>
                               <tr>
                               <th scope="col">#</th>
@@ -226,7 +226,7 @@
                                 <div class="col mr-2">
                                     <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                         Usuaris</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                                    <div id="countUsuaris" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
                                 </div>
                                 <div class="col-auto">
                                     <i class="fas fa-users fa-2x text-gray-300"></i>
@@ -242,7 +242,7 @@
                                 <div class="col mr-2">
                                     <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                       Sales</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                                    <div id="countSales" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
                                 </div>
                                 <div class="col-auto">
                                     <i class="fas fa-person-booth fa-2x text-gray-300"></i>
@@ -258,7 +258,7 @@
                                 <div class="col mr-2">
                                     <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                       Recursos</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                                    <div id="countRecursos" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
                                 </div>
                                 <div class="col-auto">
                                     <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
@@ -274,7 +274,7 @@
                                 <div class="col mr-2">
                                     <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                       Reserves</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                                    <div id="countReserves" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
                                 </div>
                                 <div class="col-auto">
                                     <i class="fas fa-concierge-bell fa-2x text-gray-300"></i>
@@ -290,7 +290,7 @@
                                 <div class="col mr-2">
                                     <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                       Incidències</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                                    <div id="countIncidencies" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
                                 </div>
                                 <div class="col-auto">
                                     <i class="fas fa-file-alt fa-2x text-gray-300"></i>
