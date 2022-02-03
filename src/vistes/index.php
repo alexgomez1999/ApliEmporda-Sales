@@ -11,137 +11,13 @@
       <?php require "util/sidebaradmin.php" ?>
       <div id="contingut" class="index-admin-container">
         <div>
-          <?php if ($_REQUEST["info"] === "usuaris") { ?>
+          <?php if ($_REQUEST["info"] === "estadistiques") { ?>
             <div class="card shadow mb-4">
               <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Usuaris</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Estadistiques</h6>
               </div>
               <div class="card-body">
-                <?php if (count($llistatUsuaris) > 0) { ?>
-                  <div class="table-responsive">
-                      <table class="table table-bordered table-striped table-hover" id="dataTable" width="100%" cellspacing="0">
-                          <thead>
-                              <tr>
-                              <th scope="col">#</th>
-                              <th scope="col">Codi</th>
-                              <th scope="col">Nom</th>
-                              <th scope="col">Rol</th>
-                              <th scope="col">Accions</th>
-                              </tr>
-                          </thead>
-                          <tfoot>
-                              <tr>
-                              <th scope="col">#</th>
-                              <th scope="col">Codi</th>
-                              <th scope="col">Nom</th>
-                              <th scope="col">Rol</th>
-                              <th scope="col">Accions</th>
-                              </tr>
-                          </tfoot>
-                          <tbody>
-                            <?php foreach ($llistatUsuaris as $actual) { ?>
-                              <tr>
-                                <td><?php echo $actual["Id"]; ?></td>
-                                <td><?php echo $actual["Codi"]; ?></td>
-                                <td><?php echo $actual["Usuari"]; ?></td>
-                                <td><?php echo $actual["Rol"]; ?></td>
-                                <td></td>
-                              </tr>
-                            <?php } ?>
-                          </tbody>
-                      </table>
-                  </div>
-                  <?php } else { ?>
-                    <div class="alert alert-warning" role="alert">
-                      No hi han Usuaris
-                    </div>
-                  <?php } ?>
-              </div>
-            </div>
-          <?php } elseif ($_REQUEST["info"] === "sales") { ?>
-            <div class="card shadow mb-4">
-              <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Sales</h6>
-              </div>
-              <div class="card-body">
-                <?php if (count($llistatSales) > 0) { ?>
-                  <div class="table-responsive">
-                      <table class="table table-bordered table-striped table-hover" id="dataTable" width="100%" cellspacing="0">
-                          <thead>
-                              <tr>
-                              <th scope="col">#</th>
-                              <th scope="col">Codi</th>
-                              <th scope="col">Nom</th>
-                              <th scope="col">Activa</th>
-                              <th scope="col">Centre</th>
-                              <th scope="col">Ubicació</th>
-                              <th scope="col">Observacions</th>
-                              <th scope="col">Fotos</th>
-                              <th scope="col">Accions</th>
-                              </tr>
-                          </thead>
-                          <tfoot>
-                              <tr>
-                              <th scope="col">#</th>
-                              <th scope="col">Codi</th>
-                              <th scope="col">Nom</th>
-                              <th scope="col">Activa</th>
-                              <th scope="col">Centre</th>
-                              <th scope="col">Ubicació</th>
-                              <th scope="col">Observacions</th>
-                              <th scope="col">Fotos</th>
-                              <th scope="col">Accions</th>
-                              </tr>
-                          </tfoot>
-                          <tbody>
-                          </tbody>
-                      </table>
-                  </div>
-                  <?php } else { ?>
-                    <div class="alert alert-warning" role="alert">
-                      No hi han Sales
-                    </div>
-                  <?php } ?>
-              </div>
-            </div>
-          <?php } elseif ($_REQUEST["info"] === "recursos") { ?>
-            <div class="card shadow mb-4">
-              <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Recursos</h6>
-              </div>
-              <div class="card-body">
-              <?php if (count($llistatRecursos) > 0) { ?>
-                  <div class="table-responsive">
-                      <table class="table table-bordered table-striped table-hover" id="dataTable" width="100%" cellspacing="0">
-                          <thead>
-                              <tr>
-                              <th scope="col">#</th>
-                              <th scope="col">Codi</th>
-                              <th scope="col">Nom</th>
-                              <th scope="col">Actiu</th>
-                              <th scope="col">Presentacions</th>
-                              <th scope="col">Accions</th>
-                              </tr>
-                          </thead>
-                          <tfoot>
-                              <tr>
-                              <th scope="col">#</th>
-                              <th scope="col">Codi</th>
-                              <th scope="col">Nom</th>
-                              <th scope="col">Actiu</th>
-                              <th scope="col">Presentacions</th>
-                              <th scope="col">Accions</th>
-                              </tr>
-                          </tfoot>
-                          <tbody>
-                          </tbody>
-                      </table>
-                  </div>
-                  <?php } else { ?>
-                    <div class="alert alert-warning" role="alert">
-                      No hi han Recursos
-                    </div>
-                  <?php } ?>
+                //
               </div>
             </div>
           <?php } elseif ($_REQUEST["info"] === "reserves") { ?>
@@ -230,81 +106,65 @@
             </div>
           <?php } else { ?>
                 <div id="opcionsAdmin" class="row mt-4">
-                  <div id="anarusuaris" class="col-xl-3 col-md-6 mb-4">
+                  <div id="anarreservesavui" class="col-xl-3 col-md-6 mb-4">
                     <div class="card border-left-primary shadow">
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
                                     <div class="itemDashboard text-xs font-weight-bold text-uppercase mb-1">
-                                        Usuaris</div>
-                                    <div id="countUsuaris" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
-                                </div>
-                                <div class="col-auto">
-                                    <i class="fas fa-users fa-2x text-gray-300"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                  </div>
-                  <div id="anarsales" class="col-xl-3 col-md-6 mb-4">
-                    <div class="card border-left-primary shadow">
-                        <div class="card-body">
-                            <div class="row no-gutters align-items-center">
-                                <div class="col mr-2">
-                                    <div class="itemDashboard text-xs font-weight-bold text-uppercase mb-1">
-                                      Sales</div>
+                                      Reserves per Avui</div>
                                     <div id="countSales" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
                                 </div>
                                 <div class="col-auto">
-                                    <i class="fas fa-building fa-2x text-gray-300"></i>
+                                    <i class="far fa-clock fa-2x text-gray-300"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
                   </div>
-                  <div id="anarrecursos" class="col-xl-3 col-md-6 mb-4">
+                  <div id="anarreservesfetesavui" class="col-xl-3 col-md-6 mb-4">
                     <div class="card border-left-primary shadow">
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
                                     <div class="itemDashboard text-xs font-weight-bold text-uppercase mb-1">
-                                      Recursos</div>
-                                    <div id="countRecursos" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                                      Reserves Fetes Avui</div>
+                                    <div id="countSales" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
                                 </div>
                                 <div class="col-auto">
-                                    <i class="fas fa-chair fa-2x text-gray-300"></i>
+                                    <i class="fas fa-check-circle fa-2x text-gray-300"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
                   </div>
-                  <div id="anarreserves" class="col-xl-3 col-md-6 mb-4">
+                  <div id="anarincidenciesavui" class="col-xl-3 col-md-6 mb-4">
                     <div class="card border-left-primary shadow">
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
                                     <div class="itemDashboard text-xs font-weight-bold text-uppercase mb-1">
-                                      Reserves</div>
-                                    <div id="countReserves" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
-                                </div>
-                                <div class="col-auto">
-                                    <i class="fas fa-concierge-bell fa-2x text-gray-300"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                  </div>
-                  <div id="anarincidencies" class="col-xl-3 col-md-6 mb-4">
-                    <div class="card border-left-primary shadow">
-                        <div class="card-body">
-                            <div class="row no-gutters align-items-center">
-                                <div class="col mr-2">
-                                    <div class="itemDashboard text-xs font-weight-bold text-uppercase mb-1">
-                                      Incidències</div>
+                                      Incidències per Avui</div>
                                     <div id="countIncidencies" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
                                 </div>
                                 <div class="col-auto">
                                     <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div id="anarincidenciesresoltes" class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-primary shadow">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="itemDashboard text-xs font-weight-bold text-uppercase mb-1">
+                                      Incidències Resoltes</div>
+                                    <div id="countIncidencies" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-clipboard-check fa-2x text-gray-300"></i>
                                 </div>
                             </div>
                         </div>
