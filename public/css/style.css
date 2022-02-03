@@ -601,6 +601,9 @@ div#sidebaradmin i.fas {
     justify-content: center;
     font-size: 25px;
 }
+.itemDashboard {
+    color: #1240AB;
+}
 @media screen and (min-width: 901px) {
     #divRow {
         display: grid;

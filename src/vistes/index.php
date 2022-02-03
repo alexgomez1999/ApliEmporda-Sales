@@ -235,7 +235,7 @@
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                    <div class="itemDashboard text-xs font-weight-bold text-uppercase mb-1">
                                         Usuaris</div>
                                     <div id="countUsuaris" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
                                 </div>
@@ -251,7 +251,7 @@
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                    <div class="itemDashboard text-xs font-weight-bold text-uppercase mb-1">
                                       Sales</div>
                                     <div id="countSales" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
                                 </div>
@@ -267,7 +267,7 @@
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                    <div class="itemDashboard text-xs font-weight-bold text-uppercase mb-1">
                                       Recursos</div>
                                     <div id="countRecursos" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
                                 </div>
@@ -283,7 +283,7 @@
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                    <div class="itemDashboard text-xs font-weight-bold text-uppercase mb-1">
                                       Reserves</div>
                                     <div id="countReserves" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
                                 </div>
@@ -299,7 +299,7 @@
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                    <div class="itemDashboard text-xs font-weight-bold text-uppercase mb-1">
                                       Incidències</div>
                                     <div id="countIncidencies" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
                                 </div>
