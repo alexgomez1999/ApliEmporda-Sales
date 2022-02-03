@@ -14,22 +14,22 @@
       <li>
       <?php if ($_REQUEST["info"] === "sales") { ?>
         <a href="index.php?info=sales" class="nav-link text-white itemsidebaractive">
-          <i class="fas fa-person-booth"></i>
+          <i class="fas fa-building"></i>
         </a>
       <?php } else { ?>
         <a href="index.php?info=sales" class="nav-link text-white">
-          <i class="fas fa-person-booth"></i>
+          <i class="fas fa-building"></i>
         </a>
       <?php } ?>
       </li>
       <li>
       <?php if ($_REQUEST["info"] === "recursos") { ?>
         <a href="index.php?info=recursos" class="nav-link text-white itemsidebaractive">
-          <i class="fas fa-clipboard-list"></i>
+          <i class="fas fa-chair"></i>
         </a>
       <?php } else { ?>
         <a href="index.php?info=recursos" class="nav-link text-white">
-          <i class="fas fa-clipboard-list"></i>
+          <i class="fas fa-chair"></i>
         </a>
       <?php } ?>
       </li>
@@ -47,11 +47,11 @@
       <li>
       <?php if ($_REQUEST["info"] === "incidencies") { ?>
         <a href="index.php?info=incidencies" class="nav-link text-white itemsidebaractive">
-          <i class="fas fa-file-alt"></i>
+          <i class="fas fa-clipboard-list"></i>
         </a>
       <?php } else { ?>
         <a href="index.php?info=incidencies" class="nav-link text-white">
-          <i class="fas fa-file-alt"></i>
+          <i class="fas fa-clipboard-list"></i>
         </a>
       <?php } ?>
       </li>
