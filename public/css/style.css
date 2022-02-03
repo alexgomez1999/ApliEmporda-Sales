@@ -596,10 +596,13 @@ div#navCalendari button i {
 }
 
 /*PANELL ADMINISTRADOR*/
-div#sidebaradmin i.fas {
+div#sidebaradmin i.fas, div#sidebaradmin i.far {
     display: flex;
     justify-content: center;
     font-size: 25px;
+}
+.itemDashboard {
+    color: #1240AB;
 }
 @media screen and (min-width: 901px) {
     #divRow {
