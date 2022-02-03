@@ -1,5 +1,16 @@
 # ApliEmporda-Sales
 
+## Desplegament de l'Aplicació
+
+Es pot comprovar com funciona executant.
+
+```sh
+$ cd public/
+$ php -S 0.0.0.0:8080
+```
+
+I posant la barra d'adreces del navegador (http://{IP_del_servidor}:8080).
+
 ## Estructura Web:
 
 - Home
