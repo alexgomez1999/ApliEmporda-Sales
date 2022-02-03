@@ -26,6 +26,7 @@
                               <th scope="col">Codi</th>
                               <th scope="col">Nom</th>
                               <th scope="col">Rol</th>
+                              <th scope="col">Accions</th>
                               </tr>
                           </thead>
                           <tfoot>
@@ -34,6 +35,7 @@
                               <th scope="col">Codi</th>
                               <th scope="col">Nom</th>
                               <th scope="col">Rol</th>
+                              <th scope="col">Accions</th>
                               </tr>
                           </tfoot>
                           <tbody>
@@ -43,6 +45,7 @@
                                 <td><?php echo $actual["Codi"]; ?></td>
                                 <td><?php echo $actual["Usuari"]; ?></td>
                                 <td><?php echo $actual["Rol"]; ?></td>
+                                <td></td>
                               </tr>
                             <?php } ?>
                           </tbody>
@@ -74,6 +77,7 @@
                               <th scope="col">Ubicació</th>
                               <th scope="col">Observacions</th>
                               <th scope="col">Fotos</th>
+                              <th scope="col">Accions</th>
                               </tr>
                           </thead>
                           <tfoot>
@@ -86,6 +90,7 @@
                               <th scope="col">Ubicació</th>
                               <th scope="col">Observacions</th>
                               <th scope="col">Fotos</th>
+                              <th scope="col">Accions</th>
                               </tr>
                           </tfoot>
                           <tbody>
@@ -115,6 +120,7 @@
                               <th scope="col">Nom</th>
                               <th scope="col">Actiu</th>
                               <th scope="col">Presentacions</th>
+                              <th scope="col">Accions</th>
                               </tr>
                           </thead>
                           <tfoot>
@@ -124,6 +130,7 @@
                               <th scope="col">Nom</th>
                               <th scope="col">Actiu</th>
                               <th scope="col">Presentacions</th>
+                              <th scope="col">Accions</th>
                               </tr>
                           </tfoot>
                           <tbody>
@@ -156,6 +163,7 @@
                               <th scope="col">HoraFi</th>
                               <th scope="col">ObservacionsReserva</th>
                               <th scope="col">ObservacionsFiReunio</th>
+                              <th scope="col">Accions</th>
                               </tr>
                           </thead>
                           <tfoot>
@@ -168,6 +176,7 @@
                               <th scope="col">HoraFi</th>
                               <th scope="col">ObservacionsReserva</th>
                               <th scope="col">ObservacionsFiReunio</th>
+                              <th scope="col">Accions</th>
                               </tr>
                           </tfoot>
                           <tbody>
@@ -196,6 +205,7 @@
                               <th scope="col">Codi</th>
                               <th scope="col">Data</th>
                               <th scope="col">Descripció</th>
+                              <th scope="col">Accions</th>
                               </tr>
                           </thead>
                           <tfoot>
@@ -204,6 +214,7 @@
                               <th scope="col">Codi</th>
                               <th scope="col">Data</th>
                               <th scope="col">Descripció</th>
+                              <th scope="col">Accions</th>
                               </tr>
                           </tfoot>
                           <tbody>
