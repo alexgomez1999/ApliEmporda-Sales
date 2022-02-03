@@ -229,7 +229,7 @@
               </div>
             </div>
           <?php } else { ?>
-                <div id="opcionsAdmin" class="row">
+                <div id="opcionsAdmin" class="row mt-4">
                   <div id="anarusuaris" class="col-xl-3 col-md-6 mb-4">
                     <div class="card border-left-primary shadow">
                         <div class="card-body">
