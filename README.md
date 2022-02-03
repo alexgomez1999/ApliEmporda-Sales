@@ -1,6 +1,7 @@
 # ApliEmporda-Sales
----
+
 ## Estructura Web:
+
 - Home
   - Dashboard (Administrador)
   - Home (Usuari)
@@ -15,11 +16,14 @@
 - Calendari
   - Poder veure dies amb sales reservades (Tots)
   - Poder editar reserves (Administrador)
+
 ---
+
 ## Roadmap
+
 - Pàgina home usuari (En desenvolupament - Àlex)
-- Pàgina reservar sala
-- Pàgina sales i recursos
+- Pàgina reservar sala (En desenvolupament - ?)
+- Pàgina sales i recursos (En desenvolupament - ?)
 - Pàgina calendari (En desenvolupament - Juanjo)
-- Pàgina incidencies
+- Pàgina incidencies (En desenvolupame - ?)
 - Pàgina dashboard ADMIN (En desenvolupament - Juanjo)
