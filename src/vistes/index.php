@@ -174,24 +174,19 @@
 
                 <br>
                 <hr>
-                <br>
                 
-                <div class="card shadow mb-4">
-                  <div class="card-header py-3">
-                      <h6 class="m-0 font-weight-bold text-primary">Estadistiques</h6>
-                  </div>
-                  <div class="card-body">
+                <div class="d-flex justify-content-center">
+                  <h3>Estadistiques</h3>
+                  <div>
                     //
                   </div>
                 </div>
 
                 <hr>
 
-                <div class="card shadow mb-4">
-                  <div class="card-header py-3">
-                      <h6 class="m-0 font-weight-bold text-primary">Registres</h6>
-                  </div>
-                  <div class="card-body">
+                <div class="d-flex justify-content-center">
+                  <h3>Registres</h3>
+                  <div>
                     //
                   </div>
                 </div>
