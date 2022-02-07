@@ -175,19 +175,56 @@
                 <br>
                 <hr>
                 
-                <div class="d-flex justify-content-center">
-                  <h3>Estadistiques</h3>
-                  <div>
+                <div>
+                  <h3 class="text-center text-uppercase">Estadistiques</h3>
+                  <div class="text-center">
                     //
                   </div>
                 </div>
 
                 <hr>
 
-                <div class="d-flex justify-content-center">
-                  <h3>Registres</h3>
-                  <div>
-                    //
+                <div>
+                  <h3 class="text-center text-uppercase">Reserves per Avui</h3>
+                  <div class="text-center">
+                    <?php if (count($llistatReserves) > 0) { ?>
+                      <div class="table-responsive">
+                          <table class="table table-bordered table-striped table-hover" id="dataTable" width="100%" cellspacing="0">
+                              <thead>
+                                  <tr>
+                                  <th scope="col">#</th>
+                                  <th scope="col">Codi</th>
+                                  <th scope="col">Data</th>
+                                  <th scope="col">Aforament</th>
+                                  <th scope="col">HoraInici</th>
+                                  <th scope="col">HoraFi</th>
+                                  <th scope="col">ObservacionsReserva</th>
+                                  <th scope="col">ObservacionsFiReunio</th>
+                                  <th scope="col">Accions</th>
+                                  </tr>
+                              </thead>
+                              <tfoot>
+                                  <tr>
+                                  <th scope="col">#</th>
+                                  <th scope="col">Codi</th>
+                                  <th scope="col">Data</th>
+                                  <th scope="col">Aforament</th>
+                                  <th scope="col">HoraInici</th>
+                                  <th scope="col">HoraFi</th>
+                                  <th scope="col">ObservacionsReserva</th>
+                                  <th scope="col">ObservacionsFiReunio</th>
+                                  <th scope="col">Accions</th>
+                                  </tr>
+                              </tfoot>
+                              <tbody>
+                              </tbody>
+                          </table>
+                      </div>
+                      <?php } else { ?>
+                        <div class="alert alert-warning" role="alert">
+                          No hi han Reserves per Avui
+                        </div>
+                      <?php } ?>
                   </div>
                 </div>
           <?php } ?>
