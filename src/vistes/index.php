@@ -132,7 +132,7 @@
                                     <div id="countSales" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
                                 </div>
                                 <div class="col-auto">
-                                    <i class="fas fa-check-circle fa-2x text-gray-300"></i>
+                                    <i class="far fa-check-circle fa-2x text-gray-300"></i>
                                 </div>
                             </div>
                         </div>
@@ -169,6 +169,30 @@
                             </div>
                         </div>
                     </div>
+                  </div>
+                </div>
+
+                <br>
+                <hr>
+                <br>
+                
+                <div class="card shadow mb-4">
+                  <div class="card-header py-3">
+                      <h6 class="m-0 font-weight-bold text-primary">Estadistiques</h6>
+                  </div>
+                  <div class="card-body">
+                    //
+                  </div>
+                </div>
+
+                <hr>
+
+                <div class="card shadow mb-4">
+                  <div class="card-header py-3">
+                      <h6 class="m-0 font-weight-bold text-primary">Registres</h6>
+                  </div>
+                  <div class="card-body">
+                    //
                   </div>
                 </div>
           <?php } ?>
