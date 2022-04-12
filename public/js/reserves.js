@@ -91,7 +91,7 @@ $('.reservation-form').on('submit', (e) => {
         data: postData,
         success: (response) => {
             // const res = JSON.parse(response);
-            console.log(response);
+
         }
     });
 });
@@ -112,12 +112,11 @@ function SQLquery() {
     });
 }
 
-function fetchResults(response) {
+function fetchResults(sales) {
 
-    const r = response.substring(0, response.indexOf("<"));
+    const r = sales.substring(0, sales.indexOf("Warning"));
 
-    console.log("RESPOSTA: " + r);
-
+    console.log(r);
     const res = JSON.parse(r);
 
     let temp = '';
@@ -130,35 +129,36 @@ function fetchResults(response) {
             url: 'index.php?r=getRecursos',
             type: 'POST',
             data: postData,
-            success: (response) => {
-                const r = response.substring(0, response.indexOf("<"));
+            success: (recursos) => {
+                const r2 = recursos.substring(0, recursos.indexOf("<"));
+                let res2 = JSON.parse(r2);   
+                
+                temp += 
+                `
+                <div id="sala">
+                <div id="dades-sala">
+                    <p>${index.Nom}</p>
+                    <p>${index.NomCentre}</p>
+                    <p>${index.Ubicacio}</p>
+                    <p>Aforament Sala: ${index.AforamentDisponible}</p>
+                </div>
+                <div id="recursos-sala">
+                    <table cellpadding="20">
+                        <tr class="underlined-cell">
+                            <td class="title-cell"><strong>Recurs:</strong></td>`;
 
-                console.log("RESPOSTA: " + r);
-            }
-        });
+                $(res2).each((val, index) => {
+                    temp += `<td class="text-cell">${index.Recurs}</td>`;
+                });
 
-        temp += 
-        `
-        <div id="sala">
-        <div id="dades-sala">
-            <p>${index.Nom}</p>
-            <p>${index.NomCentre}</p>
-            <p>${index.Ubicacio}</p>
-            <p>Aforament Sala: ${index.AforamentDisponible}</p>
-        </div>
-        <div id="recursos-sala">
-            <table cellpadding="20">
-                <tr class="underlined-cell">
-                    <td><strong>Recurs:</strong></td>
-                    <td>Cadira</td>
-                    <td>Taula</td>
-                    <td>Projector</td>
+                temp += `
                 </tr>
                 <tr>
-                    <td><strong>Quantitat:</strong></td>
-                    <td>15</td>
-                    <td>5</td>
-                    <td>1</td>
+                    <td class="title-cell"><strong>Quantitat:</strong></td>`
+                $(res2).each((val, index) => {
+                    temp += `<td class="text-cell">${index.QuantitatRecurs}</td>`;
+                });
+                temp += `
                 </tr>
             </table>
             </div>
@@ -167,6 +167,9 @@ function fetchResults(response) {
             </div>
         </div>
         `;
+                $('#sales').html(temp);
+            }
+        });
+                
     });
-    $('#sales').html(temp);
 }

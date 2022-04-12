@@ -48,6 +48,37 @@
                 <button type="submit" id="submit"><i class="fas fa-search"></i></button>
             </div>
         </form>
+
+        <!-- <div class="results">
+            <div class="desc-sala">
+                <p>Sala 1</p>
+                <p>Centre 1</p>
+                <p>Figueres</p>
+                <p>Aforament màxim: 10</p>
+            </div>
+            <div class="second-container">
+
+                <div class="res">
+                    <div class="name-title">
+                        <strong>Recurs:</strong>
+                    </div>
+                    <div class="res-content"></div>
+                </div>
+                
+                <div class="res">
+                    <div class="name-title">
+                        <strong>Quantitat:</strong>
+                    </div>
+                    <div class="res-content"></div>
+                </div>
+
+            </div>
+            
+            <div class="foto-sala2">
+                <img src="https://img.lovepik.com/photo/20211123/medium/lovepik-corporate-conference-room-environment-picture_500803335.jpg" alt="" class="imatge-sala">
+            </div>
+        </div> -->
+
         <div id="cont"></div>
         <div id="sales"></div>
         

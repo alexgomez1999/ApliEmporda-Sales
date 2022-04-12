@@ -497,3 +497,66 @@ div#navCalendari button i {
         text-transform: uppercase;
     }
 }
+
+/* proves */
+
+.results {
+    display: flex;
+    width: 90%;
+    height: 150px;
+    border: 1px solid;
+    flex-wrap: wrap;
+}
+
+.desc-sala {
+    display: flex;
+    width: 20%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.desc-sala p {
+ padding: 0 5px;
+}
+
+.second-container {
+    display: flex;
+    flex-direction: column;
+    width: 63%;
+    height: 100%;
+}
+
+.res {
+    display: flex;
+    height: 50%;
+}
+
+.name-title {
+    display: flex;
+    width: 15%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+}
+
+.res-content {
+    display: flex;
+    width: 85%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+}
+
+.foto-sala2 {
+    width: 17%;
+}
+
+.title-cell {
+    width: 20%;
+}
+
+.text-cell {
+    text-align: left;
+}

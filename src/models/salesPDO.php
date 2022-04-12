@@ -247,8 +247,8 @@ class SalesPDO
     {
         $query = 'SELECT B.Nom "Sala", C.Nom "Recurs", A.QuantitatRecurs
         FROM salesrecursos A
-        INNER JOIN sales B ON (A.CodiSala = B.Codi)
-        INNER JOIN recursos C ON (A.CodiRecurs = C.Codi)
+        LEFT JOIN sales B ON (A.CodiSala = B.Codi)
+        LEFT JOIN recursos C ON (A.CodiRecurs = C.Codi)
         WHERE B.Codi = :CodiSala';
 
         $stm = $this->sql->prepare($query);
