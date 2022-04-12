@@ -26,10 +26,14 @@ $config["db"]["dbname"] = 'applisales';
 $config["db"]["host"] = '185.66.41.58';
 
 /* inclou els models de l'aplicació */
-require_once "../src/emeset/peticio.php";
-require_once "../src/emeset/resposta.php";
-require_once "../src/emeset/contenidor.php";
+require_once "../src/emeset/Contenidor.php";
+require_once "../src/emeset/Emeset.php";
+require_once "../src/emeset/Middleware.php";
+require_once "../src/emeset/ruter/RuterParam.php";
+require_once "../src/emeset/http/peticio.php";
+require_once "../src/emeset/http/resposta.php";
 require_once "../src/models/connexio.php";
+require_once "../src/models/modelPDO.php";
 require_once "../src/models/usuarisPDO.php";
 require_once "../src/models/salesPDO.php";
 

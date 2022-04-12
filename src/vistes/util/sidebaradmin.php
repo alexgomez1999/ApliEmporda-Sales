@@ -1,57 +1,46 @@
-<div id="sidebaradmin" class="col-md-2 d-flex flex-column flex-shrink-0 p-3">
+<div id="sidebaradmin">
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <?php if ($_REQUEST["info"] === "usuaris") { ?>
-        <a href="index.php?info=usuaris" class="nav-link text-white itemsidebaractive">
-          Usuaris
-        </a>
+        <?php if ($_REQUEST["info"] === "") { ?>
+          <a href="index.php" class="nav-link text-white itemsidebaractive">
+            <i class="fas fa-columns"></i>
+          </a>
         <?php } else { ?>
-        <a href="index.php?info=usuaris" class="nav-link text-white">
-          Usuaris
-        </a>
+          <a href="index.php" class="nav-link text-white">
+            <i class="fas fa-columns"></i>
+          </a>
         <?php } ?>
       </li>
-      <li>
-      <?php if ($_REQUEST["info"] === "sales") { ?>
-        <a href="index.php?info=sales" class="nav-link text-white itemsidebaractive">
-          Sales
-        </a>
-      <?php } else { ?>
-        <a href="index.php?info=sales" class="nav-link text-white">
-          Sales
-        </a>
-      <?php } ?>
+      <li class="nav-item">
+        <?php if ($_REQUEST["info"] === "estadistiques") { ?>
+          <a href="index.php?info=estadistiques" class="nav-link text-white itemsidebaractive">
+            <i class="fas fa-chart-line"></i>
+          </a>
+        <?php } else { ?>
+          <a href="index.php?info=estadistiques" class="nav-link text-white">
+            <i class="fas fa-chart-line"></i>
+          </a>
+        <?php } ?>
       </li>
-      <li>
-      <?php if ($_REQUEST["info"] === "recursos") { ?>
-        <a href="index.php?info=recursos" class="nav-link text-white itemsidebaractive">
-          Recursos
-        </a>
-      <?php } else { ?>
-        <a href="index.php?info=recursos" class="nav-link text-white">
-          Recursos
-        </a>
-      <?php } ?>
-      </li>
-      <li>
+      <li class="nav-item">
       <?php if ($_REQUEST["info"] === "reserves") { ?>
         <a href="index.php?info=reserves" class="nav-link text-white itemsidebaractive">
-          Reserves
+          <i class="fas fa-clock"></i>
         </a>
       <?php } else { ?>
         <a href="index.php?info=reserves" class="nav-link text-white">
-          Reserves
+          <i class="fas fa-clock"></i>
         </a>
       <?php } ?>
       </li>
-      <li>
+      <li class="nav-item">
       <?php if ($_REQUEST["info"] === "incidencies") { ?>
         <a href="index.php?info=incidencies" class="nav-link text-white itemsidebaractive">
-          Incidències
+          <i class="fas fa-clipboard-list"></i>
         </a>
       <?php } else { ?>
         <a href="index.php?info=incidencies" class="nav-link text-white">
-          Incidències
+          <i class="fas fa-clipboard-list"></i>
         </a>
       <?php } ?>
       </li>

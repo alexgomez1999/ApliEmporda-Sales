@@ -35,17 +35,27 @@ class Contenidor
 
     public function resposta()
     {
-        return new \Emeset\Resposta();
+        return new \Emeset\Http\Resposta("../src/vistes/");
     }
 
     public function peticio()
     {
-        return new \Emeset\Peticio();
+        return new \Emeset\Http\Peticio();
+    }
+
+    public function ruter()
+    {
+        return new \Emeset\Ruters\RuterParam($this);
     }
 
     public function connexio()
     {
         return $this->connexio;
+    }
+
+    public function model()
+    {
+        return new \Daw\ModelPDO($this->connexio);
     }
 
     public function usuaris()

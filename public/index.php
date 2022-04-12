@@ -21,54 +21,30 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 /* inclou el fitxer config.php */
 require_once "../src/config.php";
 
-/* Rep el Parametre Request "r" */
-$r = $_REQUEST["r"];
-
-/* instancia els models peticio, resposta i contenidor */
-$contenidor = new Emeset\Contenidor($config);
-$resposta = $contenidor->resposta();
-$peticio = $contenidor->peticio();
+/* instancia els models contenidor i app */
+$contenidor = new \Emeset\Contenidor($config);
+$app = new \Emeset\Emeset($contenidor);
 
 /* Depenent de la resposta executa un controlador o un altre */
-if ($r === "dologin") {
-    $resposta = ctrldoLogin($peticio, $resposta, $contenidor);
-} elseif ($r === "login") {
-    $resposta = ctrlLogin($peticio, $resposta, $contenidor);
-} elseif ($r === "logout") {
-    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlLogout");
-} elseif ($r === "userProfile") {
-    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlUserProfile");
-} elseif ($r === "calendari") {
-    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlCalendari");
-} elseif ($r === "newReservation") {
-    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlNewReservation");
-} elseif ($r === "deleteReservation") {
-    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlDeleteReservation");
-} elseif ($r === "checkUbi") {
-    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlCheckUbi");
-} elseif ($r === "checkCenter") {
-    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlCheckCenter");
-} elseif ($r === "checkDay") {
-    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlCheckDay");
-} elseif ($r === "checkHours") {
-    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlCheckHours");
-} elseif ($r === "checkPersons") {
-    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlCheckPersons");
-} elseif ($r === "llistaReserves") {
-    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlLlistaReserves");
-} elseif ($r === "tevesReservesAjax") {
-    $resposta = ctrlTevesReservesAjax($peticio, $resposta, $contenidor);
-} elseif ($r === "salesDisponibles") {
-    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlSalesDisponibles");
-} elseif ($r === "anarusuaris") {
-    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlAjaxAdminUsuaris");
-} elseif ($r === "NewReservationQuery") {
-    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlReservationQuary");
-} elseif ($r === "getRecursos") {
-    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlGetRecursos");
-} elseif ($r == "") {
-    $resposta = middleLogin($peticio, $resposta, $contenidor, "ctrlIndex");
-}
+$app->ruta("dologin", "ctrldoLogin");
+$app->ruta("login", "ctrlLogin");
+$app->ruta("logout", "ctrlLogout", ["middleLogin"]);
+$app->ruta("userProfile", "ctrlUserProfile", ["middleLogin"]);
+$app->ruta("calendari", "ctrlCalendari", ["middleLogin"]);
+$app->ruta("newReservation", "ctrlNewReservation", ["middleLogin"]);
+$app->ruta("deleteReservation", "ctrlDeleteReservation", ["middleLogin"]);
+$app->ruta("checkUbi", "ctrlCheckUbi", ["middleLogin"]);
+$app->ruta("checkCenter", "ctrlCheckCenter", ["middleLogin"]);
+$app->ruta("checkDay", "ctrlCheckDay", ["middleLogin"]);
+$app->ruta("checkHours", "ctrlCheckHours", ["middleLogin"]);
+$app->ruta("checkPersons", "ctrlCheckPersons", ["middleLogin"]);
+$app->ruta("llistaReserves", "ctrlLlistaReserves", ["middleLogin"]);
+$app->ruta("tevesReservesAjax", "ctrlTevesReservesAjax");
+$app->ruta("salesDisponibles", "ctrlSalesDisponibles", ["middleLogin"]);
+$app->ruta("anarusuaris", "ctrlAjaxAdminUsuaris", ["middleLogin"]);
+$app->ruta("NewReservationQuery", "ctrlReservationQuary", ["middleLogin"]);
+$app->ruta("getRecursos", "ctrlGetRecursos", ["middleLogin"]);
+$app->ruta("", "ctrlIndex", ["middleLogin"]);
 
 /* Aplica la resposta */
-$resposta->resposta();
+$app->executa();
